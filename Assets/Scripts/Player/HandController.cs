@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace Player
 {
-    //Following: https://youtu.be/0jTPKz3ga4w
-    public class HandController : MonoBehaviour
+   public class HandController : MonoBehaviour
     {
         private Camera _camera;
+        [SerializeField] private float moveSpeed;
+        [SerializeField] private bool isLerped;
 
         // Start is called before the first frame update
         void Start()
@@ -18,16 +19,13 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
-            Move();
-        }
-
-        void Move()
-        {
-            var ray = _camera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out var hit))
+            Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+            if (!isLerped)
             {
-                transform.position = hit.point;
+                transform.position = mousePos;
             }
+            else
+                transform.position = Vector3.Lerp(transform.position, mousePos, moveSpeed * Time.deltaTime);
         }
     }
    
