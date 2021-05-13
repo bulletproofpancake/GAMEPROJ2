@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf85de17527147459c00dd1751f4abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paymentPopUp: {fileID: 717304753}
   slots:
   - {fileID: 2118222810}
   money:
@@ -409,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 717304754}
   m_Layer: 0
-  m_Name: UI
+  m_Name: PopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
