@@ -214,8 +214,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415688205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.25, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 1.5, z: 1}
   m_Children:
   - {fileID: 2118222810}
   m_Father: {fileID: 717304754}
@@ -400,6 +400,11 @@ MonoBehaviour:
   - {fileID: 2118222810}
   money:
   - {fileID: 4426199411516057760, guid: d0a3cdf2b0b89e846a28a174475c3665, type: 3}
+  - {fileID: 4329173882418359254, guid: 3a782a0e88ed2bb46989b369478fce3e, type: 3}
+  - {fileID: 6996277012899884969, guid: d1e07bf1dae1c244fa738066ca497ca9, type: 3}
+  - {fileID: 8199415913578712147, guid: 33d3979c5c23ca04b85d96686e73cfe0, type: 3}
+  - {fileID: 6226722828684060972, guid: f01cf6f3c5d92e44dbc91174941ee396, type: 3}
+  - {fileID: 2674776493498683665, guid: edeec702d359a3748891f2509af65edb, type: 3}
 --- !u!1 &717304753
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717304753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415688206}
