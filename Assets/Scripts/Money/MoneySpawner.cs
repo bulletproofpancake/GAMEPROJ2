@@ -17,8 +17,8 @@ namespace Money
 
         public void SpawnMoney()
         {
-            Instantiate(data.Prefab, Vector3.zero, Quaternion.identity);
-            _moneyManager.AddMoney(data.Value);
+            var money = Instantiate(data.Prefab, _moneyManager.transform);
+            _moneyManager.AddMoney(data.Value, money);
         }
     }
 
