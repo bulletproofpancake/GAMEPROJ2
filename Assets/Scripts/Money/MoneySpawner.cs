@@ -8,17 +8,17 @@ namespace Money
     public class MoneySpawner : MonoBehaviour
     {
         [SerializeField] private MoneyData data;
-        [SerializeField] private MoneyManager moneyManager;
+        private MoneyManager _moneyManager;
 
         private void Start()
         {
-            moneyManager = FindObjectOfType<MoneyManager>();
+            _moneyManager = FindObjectOfType<MoneyManager>();
         }
 
         public void SpawnMoney()
         {
             Instantiate(data.Prefab, Vector3.zero, Quaternion.identity);
-            moneyManager.AddMoney(data.Value);
+            _moneyManager.AddMoney(data.Value);
         }
     }
 
