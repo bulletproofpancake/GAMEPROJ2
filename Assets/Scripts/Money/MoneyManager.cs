@@ -39,17 +39,29 @@ namespace Money
                 Debug.LogWarning("No Customer Found");
                 return;
             }
+
+            if (_currentTotal == 0)
+            {
+                Debug.LogWarning("No money to give to customer");
+                customer = null;
+                return;
+            }
             
             print($"Gave {_currentTotal} to passenger");
+            
             if (_currentTotal == customer.moneyToReceive)
             {
-                print("Correct");
+                Debug.LogWarning("Correct");
             }
             else
             {
-                print("Wrong");
+                Debug.LogWarning("Wrong");
             }
+            
             ClearMoney();
+            
+            
+            
             //After giving the money to the customer
             //The money manager removes references to that customer
             customer = null;

@@ -1,8 +1,7 @@
-using System;
+using System.Collections;
 using Money;
 using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Customer
 {
@@ -37,5 +36,6 @@ namespace Customer
         {
             _moneyManager.customer = this;
         }
+
     }
 }
