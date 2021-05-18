@@ -9,7 +9,6 @@ namespace Money
     {
         [SerializeField] private MoneyData data;
         private SpriteRenderer _spriteRenderer;
-        private float value;
 
         private void Awake()
         {
@@ -18,14 +17,13 @@ namespace Money
 
         private void Start()
         {
-            LoadData();
-            print($"{value}");
+            LoadSprite();
+            print($"{data.Value}");
         }
 
-        private void LoadData()
+        private void LoadSprite()
         {
             _spriteRenderer.sprite = data.Icon;
-            value = data.Value;
         }
     }
 }
