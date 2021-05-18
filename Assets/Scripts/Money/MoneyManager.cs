@@ -1,21 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Money
 {
     public class MoneyManager : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        [SerializeField] private TextMeshProUGUI moneyDisplay;
+        private float _currentTotal;
 
+        private void Update()
+        {
+            //if there's no money in the scene, UI is empty
+            moneyDisplay.text = _currentTotal <= 0 ? string.Empty : $"{_currentTotal:0}";
         }
 
-        // Update is called once per frame
-        void Update()
+        public void AddMoney(float moneyToAdd)
         {
+            _currentTotal += moneyToAdd;
+        }
+        
+        public void GiveMoney()
+        {
+            
+        }
 
+        public void ClearMoney()
+        {
+            
         }
     }
 }
