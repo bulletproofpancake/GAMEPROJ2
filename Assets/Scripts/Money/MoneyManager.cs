@@ -40,6 +40,7 @@ namespace Money
             _currentTotal = 0;
             foreach (var moneyPrefab in _moneyPrefabs)
             {
+                //TODO: SET TO DISABLE WHEN OBJECT POOL IS MADE
                 Destroy(moneyPrefab);
             }
         }

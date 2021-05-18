@@ -17,6 +17,7 @@ namespace Money
 
         public void SpawnMoney()
         {
+            //TODO: SWITCH TO AN OBJECT POOL
             var money = Instantiate(data.Prefab, _moneyManager.transform);
             _moneyManager.AddMoney(data.Value, money);
         }
