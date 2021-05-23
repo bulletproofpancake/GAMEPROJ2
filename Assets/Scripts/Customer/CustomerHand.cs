@@ -10,7 +10,9 @@ namespace Customer
         private TextMeshPro _moneyDisplay;
         private MoneyManager _moneyManager;
         private SpriteRenderer _spriteRenderer;
-        
+
+        public bool isGivingMoney;
+        public float moneyToGive;
         public float moneyToReceive;
 
         private void Awake()
@@ -22,8 +24,13 @@ namespace Customer
 
         private void Start()
         {
-            moneyToReceive = Random.Range(1, 11);
-            _moneyDisplay.text = $"{moneyToReceive}";
+            
+        }
+
+        private void GivePayment()
+        {
+            isGivingMoney = true;
+            
         }
 
         private void Update()

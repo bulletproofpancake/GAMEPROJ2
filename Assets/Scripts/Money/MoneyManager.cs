@@ -12,7 +12,7 @@ namespace Money
         [SerializeField] private TextMeshProUGUI moneyDisplay;
         private float _currentTotal;
         private List<GameObject> _moneyPrefabs;
-        private Vector3 startingPosition;
+        private Vector3 _startingPosition;
         
         public CustomerHand customer;
 
@@ -23,7 +23,7 @@ namespace Money
 
         private void Start()
         {
-            startingPosition = transform.position;
+            _startingPosition = transform.position;
         }
 
         private void Update()
@@ -31,7 +31,12 @@ namespace Money
             //if there's no money in the scene, UI is empty
             moneyDisplay.text = _currentTotal <= 0 ? string.Empty : $"{_currentTotal:0}";
         }
-
+        
+        private void ReturnToStartingPosition()
+        {
+            transform.position = _startingPosition;
+        }
+        
         public void AddMoney(float moneyToAdd,GameObject moneyObject)
         {
             _currentTotal += moneyToAdd;
@@ -65,9 +70,7 @@ namespace Money
             }
             
             ClearMoney();
-            
-            
-            
+
             //After giving the money to the customer
             //The money manager removes references to that customer
             customer = null;
@@ -83,11 +86,6 @@ namespace Money
                 Destroy(moneyPrefab);
             }
             ReturnToStartingPosition();
-        }
-
-        private void ReturnToStartingPosition()
-        {
-            transform.position = startingPosition;
         }
 
         private void OnMouseUp()
