@@ -30,7 +30,7 @@ public class DragAndDrop : MonoBehaviour
         if (!_isDragging) return;
         _mousePos = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         transform.Translate(_mousePos);
-        RestrictMovement();
+        //RestrictMovement();
     }
 
     private void OnDisable()
