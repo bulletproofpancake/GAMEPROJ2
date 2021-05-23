@@ -24,13 +24,13 @@ namespace Customer
 
         private void Start()
         {
-            
+            GivePayment();
         }
 
         private void GivePayment()
         {
             isGivingMoney = true;
-            
+            _moneyDisplay.text = moneyToGive.ToString();
         }
 
         private void Update()
@@ -41,7 +41,16 @@ namespace Customer
 
         private void OnMouseDown()
         {
+            if (isGivingMoney)
+            {
+                _moneyManager.paymentReceived = moneyToGive;
+                _moneyDisplay.text = string.Empty;
+                isGivingMoney = false;
+            }
+            
             _moneyManager.customer = this;
+            
+            print(isGivingMoney);
         }
 
     }
