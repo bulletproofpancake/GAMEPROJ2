@@ -4,24 +4,26 @@ using UnityEngine;
 
 namespace Player
 {
-    public class HandController : MonoBehaviour
+   public class HandController : MonoBehaviour
     {
         private Camera _camera;
+
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             _camera = Camera.main;
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             Move();
         }
 
-        void Move()
+        private void Move()
         {
-            //Hand follows mouse position
+            Vector2 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = mousePos;
         }
     }
    
