@@ -6,14 +6,14 @@ public class WheelView : MonoBehaviour
 {
     public float modifier = 0.1f;   //Ideally time.deltaTime
 
-    DriftController thisCar;
+    CarController thisCar;
     Vector3 initRotation;
 
     // Start is called before the first frame update
     void Start()
     {
         // Get car
-        thisCar = transform.parent.GetComponent<DriftController>();
+        thisCar = transform.parent.GetComponent<CarController>();
         initRotation = transform.localEulerAngles;  // Rotation relative to parent (car)
     }
 
