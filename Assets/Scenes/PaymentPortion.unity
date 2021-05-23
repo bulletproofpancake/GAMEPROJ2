@@ -1469,9 +1469,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1412482997}
+  - component: {fileID: 1412482998}
   - component: {fileID: 1412482996}
   - component: {fileID: 1412482999}
-  - component: {fileID: 1412482998}
   m_Layer: 0
   m_Name: Money Manager
   m_TagString: Untagged
@@ -1545,6 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e3cac5905468841b45674268fda6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasSprite: 0
 --- !u!1 &1528716132
 GameObject:
   m_ObjectHideFlags: 0

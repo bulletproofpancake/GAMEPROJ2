@@ -12,12 +12,18 @@ namespace Money
         [SerializeField] private TextMeshProUGUI moneyDisplay;
         private float _currentTotal;
         private List<GameObject> _moneyPrefabs;
+        private Vector3 startingPosition;
         
         public CustomerHand customer;
 
         private void Awake()
         {
             _moneyPrefabs = new List<GameObject>();
+        }
+
+        private void Start()
+        {
+            startingPosition = transform.position;
         }
 
         private void Update()
@@ -76,6 +82,17 @@ namespace Money
                 //TODO: SET TO DISABLE WHEN OBJECT POOL IS MADE
                 Destroy(moneyPrefab);
             }
+            ReturnToStartingPosition();
+        }
+
+        private void ReturnToStartingPosition()
+        {
+            transform.position = startingPosition;
+        }
+
+        private void OnMouseUp()
+        {
+            ReturnToStartingPosition();
         }
     }
 }
