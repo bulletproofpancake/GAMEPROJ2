@@ -15,6 +15,7 @@ namespace Money
         private Vector3 _startingPosition;
         
         public CustomerHand customer;
+        public float paymentReceived;
 
         private void Awake()
         {
