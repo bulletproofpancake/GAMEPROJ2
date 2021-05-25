@@ -214,9 +214,9 @@ public class CarController : MonoBehaviour
     // Get input values from keyboard
     void InputKeyboard()
     {
-        inThrottle = Input.GetAxisRaw("Throttle");
-        inBoost = Input.GetAxisRaw("Boost") > 0f;
-        inTurn = Input.GetAxisRaw("Sideways");
+        inThrottle = Input.GetAxisRaw("Vertical");
+        inBoost = Input.GetAxisRaw("Jump") > 0f;
+        inTurn = Input.GetAxisRaw("Horizontal");
 
         // Reset will turn false after the respawn is successful
         inReset = inReset || Input.GetKeyDown(KeyCode.R);
