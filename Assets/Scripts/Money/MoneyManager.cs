@@ -15,6 +15,9 @@ namespace Money
         private Vector3 _startingPosition;
         
         public CustomerHand customer;
+        public float paymentReceived;
+
+        public float stationCost;
 
         private void Awake()
         {
@@ -24,12 +27,13 @@ namespace Money
         private void Start()
         {
             _startingPosition = transform.position;
+            moneyDisplay.text = string.Empty;
         }
 
         private void Update()
         {
-            //if there's no money in the scene, UI is empty
-            moneyDisplay.text = _currentTotal <= 0 ? string.Empty : $"{_currentTotal:0}";
+            if (customer != null)
+                moneyDisplay.text = $"{paymentReceived} - {stationCost} = {_currentTotal}";
         }
         
         private void ReturnToStartingPosition()
@@ -63,10 +67,12 @@ namespace Money
             if (_currentTotal == customer.moneyToReceive)
             {
                 Debug.LogWarning("Correct");
+                customer.ReceivePayment(true);
             }
             else
             {
                 Debug.LogWarning("Wrong");
+                customer.ReceivePayment(false);
             }
             
             ClearMoney();
@@ -78,6 +84,7 @@ namespace Money
 
         public void ClearMoney()
         {
+            moneyDisplay.text = string.Empty;
             print($"Cleared {_currentTotal} pesos");
             _currentTotal = 0;
             foreach (var moneyPrefab in _moneyPrefabs)
