@@ -17,6 +17,8 @@ namespace Money
         public CustomerHand customer;
         public float paymentReceived;
 
+        public float stationCost;
+
         private void Awake()
         {
             _moneyPrefabs = new List<GameObject>();
@@ -25,12 +27,13 @@ namespace Money
         private void Start()
         {
             _startingPosition = transform.position;
+            moneyDisplay.text = string.Empty;
         }
 
         private void Update()
         {
-            //if there's no money in the scene, UI is empty
-            moneyDisplay.text = _currentTotal <= 0 ? string.Empty : $"{_currentTotal:0}";
+            if (customer != null)
+                moneyDisplay.text = $"{paymentReceived} - {stationCost} = {_currentTotal}";
         }
         
         private void ReturnToStartingPosition()
@@ -61,13 +64,15 @@ namespace Money
             
             print($"Gave {_currentTotal} to passenger");
             
-            if (_currentTotal == customer.moneyToReceive)
+            if (_currentTotal == customer.MoneyToReceive)
             {
                 Debug.LogWarning("Correct");
+                customer.ReceivePayment(true);
             }
             else
             {
                 Debug.LogWarning("Wrong");
+                customer.ReceivePayment(false);
             }
             
             ClearMoney();
@@ -79,6 +84,7 @@ namespace Money
 
         public void ClearMoney()
         {
+            moneyDisplay.text = string.Empty;
             print($"Cleared {_currentTotal} pesos");
             _currentTotal = 0;
             foreach (var moneyPrefab in _moneyPrefabs)
