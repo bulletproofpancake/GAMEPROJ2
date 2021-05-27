@@ -11,16 +11,18 @@ namespace Customer
     {
 
         private GameManager _gameManager;
-        
         private MoneyManager _moneyManager;
         
         private TextMeshPro _moneyDisplay;
         private SpriteRenderer _spriteRenderer;
 
-        public bool isGivingMoney;
-        public float moneyToGive;
-        public float moneyToReceive;
-        public StationData stationSelected;
+        public int paymentCap;
+        
+        private float _moneyToGive;
+        
+        public float MoneyToReceive { get; private set; }
+        
+        private StationData _stationSelected;
 
         private bool _hasReceivedPayment;
 
@@ -40,15 +42,14 @@ namespace Customer
 
         private void SelectStation()
         {
-            stationSelected = _gameManager.RandomizeStation();
-            moneyToGive = stationSelected.Cost + Random.Range(1,11);
-            moneyToReceive = moneyToGive - stationSelected.Cost;
+            _stationSelected = _gameManager.RandomizeStation();
+            _moneyToGive = _stationSelected.Cost + Random.Range(1,paymentCap);
+            MoneyToReceive = _moneyToGive - _stationSelected.Cost;
         }
 
         private void GivePayment()
         {
-            isGivingMoney = true;
-            _moneyDisplay.text = moneyToGive.ToString();
+            _moneyDisplay.text = _moneyToGive.ToString();
         }
 
         private void Update()
@@ -60,23 +61,22 @@ namespace Customer
 
         private void OnMouseDown()
         {
-            if (isGivingMoney)
-            {
-                _moneyManager.paymentReceived = moneyToGive;
-                _moneyManager.stationCost = stationSelected.Cost;
-                _moneyDisplay.text = string.Empty;
-                isGivingMoney = false;
-            }
-            
+            _moneyManager.paymentReceived = _moneyToGive;
+            _moneyManager.stationCost = _stationSelected.Cost;
+            _moneyDisplay.text = string.Empty;
+
             _moneyManager.customer = this;
-            
-            print(isGivingMoney);
         }
 
         IEnumerator Respond(bool isCorrect)
         {
             _spriteRenderer.color = isCorrect ? Color.green : Color.red;
             yield return new WaitForSeconds(1f);
+            if (!isCorrect)
+            {
+                _hasReceivedPayment = false;
+                yield break;
+            }
             Destroy(gameObject);
         }
         

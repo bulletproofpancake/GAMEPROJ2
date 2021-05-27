@@ -64,7 +64,7 @@ namespace Money
             
             print($"Gave {_currentTotal} to passenger");
             
-            if (_currentTotal == customer.moneyToReceive)
+            if (_currentTotal == customer.MoneyToReceive)
             {
                 Debug.LogWarning("Correct");
                 customer.ReceivePayment(true);
