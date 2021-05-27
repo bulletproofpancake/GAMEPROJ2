@@ -1,6 +1,4 @@
-﻿using System;
-using Stations;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Core
@@ -8,17 +6,38 @@ namespace Core
     public class TimelineManager : MonoBehaviour
     {
         private GameManager _gameManager;
-        [SerializeField] private Slider timelineDisplay;
+        [SerializeField] private Slider[] timelineDisplay;
+
+        private int _currentStation = 0;
 
         private void Start()
         {
             _gameManager = FindObjectOfType<GameManager>();
-            timelineDisplay.maxValue = _gameManager.levelDuration;
+
+            foreach (var slider in timelineDisplay)
+            {
+                slider.maxValue = _gameManager.levelDuration;
+            }
+            
         }
 
         private void Update()
         {
-            timelineDisplay.value += Time.deltaTime;
+            DisplayTimeline();
         }
+
+        void DisplayTimeline()
+        {
+            if (_currentStation >= timelineDisplay.Length) return;
+            
+            timelineDisplay[_currentStation].value += Time.deltaTime;
+            
+            if (timelineDisplay[_currentStation].value >= timelineDisplay[_currentStation].maxValue)
+            {
+                //TODO: IMPLEMENT CUSTOMER ARRIVAL AND REMOVAL AT STATIONS
+                _currentStation++;
+            }
+        }
+        
     }
 }
