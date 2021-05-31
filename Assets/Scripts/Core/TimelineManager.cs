@@ -16,27 +16,27 @@ namespace Core
         {
             _gameManager = FindObjectOfType<GameManager>();
             timelineDisplay.maxValue = _gameManager.levelDuration;
+            handle.color = _gameManager.stations[0].Indicator;
         }
 
         private void Update()
         {
-            handle.color = _gameManager.stations[0].Indicator;
-            
             timelineDisplay.value += Time.deltaTime;
 
             _hasReachedStation = timelineDisplay.value >= timelineDisplay.maxValue;
 
-            if (_hasReachedStation)
-            {
-                if (_gameManager.stations.Count == 1)
-                {
-                    return;
-                }
-                
-                _gameManager.RemoveStation();
-                timelineDisplay.value = 0f;
-            }
+            if (!_hasReachedStation) return;
             
+            if (_gameManager.stations.Count == 1)
+            {
+                //TODO: CALL GAME OVER FUNCTION HERE
+                return;
+            }
+                
+            _gameManager.RemoveStation();
+            timelineDisplay.value = 0f;
+            handle.color = _gameManager.stations[0].Indicator;
+
         }
     }
 }
