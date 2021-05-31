@@ -8,22 +8,23 @@ namespace Core
     public class TimelineManager : MonoBehaviour
     {
         private GameManager _gameManager;
-        [SerializeField] private Slider timelineDisplay;
+        [SerializeField] private Slider display;
+        public Slider Display => display;
         [SerializeField] private Image handle;
         private bool _hasReachedStation;
 
         private void Start()
         {
             _gameManager = FindObjectOfType<GameManager>();
-            timelineDisplay.maxValue = _gameManager.levelDuration;
+            display.maxValue = _gameManager.levelDuration;
             handle.color = _gameManager.stations[0].Indicator;
         }
 
         private void Update()
         {
-            timelineDisplay.value += Time.deltaTime;
+            display.value += Time.deltaTime;
 
-            _hasReachedStation = timelineDisplay.value >= timelineDisplay.maxValue;
+            _hasReachedStation = display.value >= display.maxValue;
 
             if (!_hasReachedStation) return;
             
@@ -34,9 +35,14 @@ namespace Core
             }
                 
             _gameManager.RemoveStation();
-            timelineDisplay.value = 0f;
+            display.value = 0f;
             handle.color = _gameManager.stations[0].Indicator;
-
         }
+
+        public void SetMarker()
+        {
+            
+        }
+        
     }
 }
