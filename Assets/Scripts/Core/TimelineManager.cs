@@ -10,6 +10,8 @@ namespace Core
         private GameManager _gameManager;
         [SerializeField] private Slider timelineDisplay;
 
+        private bool _hasReachedStation;
+
         private void Start()
         {
             _gameManager = FindObjectOfType<GameManager>();
@@ -19,6 +21,20 @@ namespace Core
         private void Update()
         {
             timelineDisplay.value += Time.deltaTime;
+
+            _hasReachedStation = timelineDisplay.value >= timelineDisplay.maxValue;
+
+            if (_hasReachedStation)
+            {
+                if (_gameManager.stations.Count == 1)
+                {
+                    return;
+                }
+                
+                _gameManager.RemoveStation();
+                timelineDisplay.value = 0f;
+            }
+            
         }
     }
 }

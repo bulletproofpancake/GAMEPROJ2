@@ -34,7 +34,7 @@ namespace Customer
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             SelectStation();
             GivePayment();
@@ -45,6 +45,7 @@ namespace Customer
             _stationSelected = _gameManager.RandomizeStation();
             _moneyToGive = _stationSelected.Cost + Random.Range(1,paymentCap);
             MoneyToReceive = _moneyToGive - _stationSelected.Cost;
+            print($"{_stationSelected}");
         }
 
         private void GivePayment()
