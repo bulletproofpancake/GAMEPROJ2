@@ -9,7 +9,7 @@ namespace Core
     {
         private GameManager _gameManager;
         [SerializeField] private Slider timelineDisplay;
-
+        [SerializeField] private Image handle;
         private bool _hasReachedStation;
 
         private void Start()
@@ -20,6 +20,8 @@ namespace Core
 
         private void Update()
         {
+            handle.color = _gameManager.stations[0].Indicator;
+            
             timelineDisplay.value += Time.deltaTime;
 
             _hasReachedStation = timelineDisplay.value >= timelineDisplay.maxValue;
