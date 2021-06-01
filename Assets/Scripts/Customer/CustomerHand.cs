@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using Core;
 using Money;
 using Stations;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Customer
 {
@@ -25,6 +27,9 @@ namespace Customer
         private StationData _stationSelected;
 
         private bool _hasReceivedPayment;
+        
+        public CustomerSpawner Spawner { get; set; }
+        public int seatTaken { get; set; }
 
         private void Awake()
         {
@@ -38,6 +43,11 @@ namespace Customer
         {
             SelectStation();
             GivePayment();
+        }
+
+        private void OnDisable()
+        {
+            Spawner.seat[seatTaken].isTaken = false;
         }
 
         private void SelectStation()
