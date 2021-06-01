@@ -28,6 +28,7 @@ namespace Customer
         public void Spawn()
         {
             //TODO: SWITCH TO AN OBJECT POOL
+            //TODO: INDICATE ON TIMELINE WHEN CUSTOMER IS PICKED UP
             if (Index < seat.Length)
             {
                 if (!seat[Index].isTaken)
