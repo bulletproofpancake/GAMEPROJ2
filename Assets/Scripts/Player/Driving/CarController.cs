@@ -7,9 +7,8 @@ public class CarController : MonoBehaviour
 
     #region Parameters
     public float Accel = 15.0f;         // In meters/second2
-    public float Boost = 4f / 3;          // In ratio
+    public float Boost = 4f / 3;          // In ratio // 1 = standard speed
     public float TopSpeed = 30.0f;      // In meters/second
-    //public float Jump = 3.0f;           // In meters/second2
     public float GripX = 12.0f;          // In meters/second2
     public float GripZ = 3.0f;          // In meters/second2
     public float Rotate = 190;       // In degree/second
@@ -87,12 +86,6 @@ public class CarController : MonoBehaviour
         rigidBody.centerOfMass = Vector3.Scale(groupCollider.extents, CoM);
 
         //distToGround = transform.position.y + 1f;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void FixedUpdate()
@@ -178,7 +171,7 @@ public class CarController : MonoBehaviour
 
         // Execute the commands
         Controller();   // pvel assigment in here
-
+        
         #region Passives
         // Get the local-axis velocity after rotation
         vel = transform.InverseTransformDirection(rigidBody.velocity);

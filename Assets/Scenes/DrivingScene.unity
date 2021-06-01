@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Accel: 15
-  Boost: 1.3333334
+  Boost: 2
   TopSpeed: 30
   GripX: 12
   GripZ: 3
