@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d048579899e40538f41b1a7e0a11d82, type: 3}
-  m_Name: Station
+  m_Name: Station 0
   m_EditorClassIdentifier: 
   cost: 10
+  indicator: {r: 0, g: 0, b: 1, a: 1}
