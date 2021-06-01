@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using Core;
 using Money;
 using Stations;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Customer
 {
@@ -25,6 +27,11 @@ namespace Customer
         private StationData _stationSelected;
 
         private bool _hasReceivedPayment;
+        
+        public CustomerSpawner Spawner { get; set; }
+        public int SeatTaken { get; set; }
+        
+        public float TimeSpawned { get; set; }
 
         private void Awake()
         {
@@ -34,10 +41,16 @@ namespace Customer
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             SelectStation();
             GivePayment();
+            print($"{TimeSpawned}");
+        }
+
+        private void OnDisable()
+        {
+            Spawner.seat[SeatTaken].isTaken = false;
         }
 
         private void SelectStation()
@@ -45,6 +58,7 @@ namespace Customer
             _stationSelected = _gameManager.RandomizeStation();
             _moneyToGive = _stationSelected.Cost + Random.Range(1,paymentCap);
             MoneyToReceive = _moneyToGive - _stationSelected.Cost;
+            print($"{_stationSelected}");
         }
 
         private void GivePayment()

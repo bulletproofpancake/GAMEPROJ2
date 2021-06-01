@@ -7,5 +7,8 @@ namespace Stations
     {
         [SerializeField] private float cost;
         public float Cost => cost;
+        
+        [SerializeField] private Color indicator;
+        public Color Indicator => indicator;
     }
 }
