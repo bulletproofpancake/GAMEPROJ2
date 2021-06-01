@@ -29,7 +29,9 @@ namespace Customer
         private bool _hasReceivedPayment;
         
         public CustomerSpawner Spawner { get; set; }
-        public int seatTaken { get; set; }
+        public int SeatTaken { get; set; }
+        
+        public float TimeSpawned { get; set; }
 
         private void Awake()
         {
@@ -43,11 +45,12 @@ namespace Customer
         {
             SelectStation();
             GivePayment();
+            print($"{TimeSpawned}");
         }
 
         private void OnDisable()
         {
-            Spawner.seat[seatTaken].isTaken = false;
+            Spawner.seat[SeatTaken].isTaken = false;
         }
 
         private void SelectStation()

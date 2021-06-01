@@ -11,7 +11,8 @@ namespace Customer
         public Seats[] seat;
         public int Index { get; set; }
 
-        private TimelineManager _timeline;
+        [SerializeField] private TimelineManager _timeline;
+        [SerializeField] private float time;
 
         private void Start()
         {
@@ -23,6 +24,8 @@ namespace Customer
             //TODO: SPAWN CUSTOMERS WHEN JEEP COLLIDES
             if(Input.GetKeyDown(KeyCode.Space))
                 Spawn();
+
+            time = _timeline.Display.value;
         }
 
         public void Spawn()
@@ -36,7 +39,8 @@ namespace Customer
                     var customer = Instantiate(prefab, parent);
                     customer.transform.position = seat[Index].transform.position;
                     customer.GetComponent<CustomerHand>().Spawner = this;
-                    customer.GetComponent<CustomerHand>().seatTaken = Index;
+                    customer.GetComponent<CustomerHand>().SeatTaken = Index;
+                    customer.GetComponent<CustomerHand>().TimeSpawned = _timeline.Display.value;
                     seat[Index].isTaken = true;
                     //index always starts at zero so that all slots can be checked
                     Index = 0;
