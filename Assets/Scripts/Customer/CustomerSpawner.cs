@@ -41,6 +41,7 @@ namespace Customer
                     customer.GetComponent<CustomerHand>().Spawner = this;
                     customer.GetComponent<CustomerHand>().SeatTaken = Index;
                     customer.GetComponent<CustomerHand>().TimeSpawned = _timeline.Display.value;
+                    print($"{customer.GetComponent<CustomerHand>().TimeSpawned}");
                     seat[Index].isTaken = true;
                     //index always starts at zero so that all slots can be checked
                     Index = 0;

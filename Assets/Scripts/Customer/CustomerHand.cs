@@ -45,8 +45,6 @@ namespace Customer
         {
             SelectStation();
             GivePayment();
-            //FIXME: TIME SPAWNED IS 0 EVEN WHEN ACTUAL TIME IS DIFFERENT
-            print($"{TimeSpawned}");
         }
 
         private void OnDisable()
