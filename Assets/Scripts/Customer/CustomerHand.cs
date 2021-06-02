@@ -69,7 +69,7 @@ namespace Customer
         {
             if(!_hasReceivedPayment)
                 //Changes the sprite color if this is selected by the money manager
-                _spriteRenderer.color = _moneyManager.customer == this ? Color.yellow : Color.white;
+                _spriteRenderer.color = _moneyManager.customer == this ? Color.white : _stationSelected.Indicator;
         }
 
         private void OnMouseDown()
