@@ -10,6 +10,7 @@ namespace Money
     public class MoneyManager : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI moneyDisplay;
+        [SerializeField] private TextMeshProUGUI giveMoneyIndicator;
         private float _currentTotal;
         private List<GameObject> _moneyPrefabs;
         private Vector3 _startingPosition;
@@ -33,7 +34,14 @@ namespace Money
         private void Update()
         {
             if (customer != null)
+            {
                 moneyDisplay.text = $"{paymentReceived} - {stationCost} = {_currentTotal}";
+                
+                if (customer.MoneyToReceive == 0)
+                {
+                    giveMoneyIndicator.text = "Receive Money";
+                }
+            }
         }
         
         private void ReturnToStartingPosition()
@@ -55,13 +63,6 @@ namespace Money
                 return;
             }
 
-            if (_currentTotal == 0)
-            {
-                Debug.LogWarning("No money to give to customer");
-                customer = null;
-                return;
-            }
-            
             print($"Gave {_currentTotal} to passenger");
             
             if (_currentTotal == customer.MoneyToReceive)

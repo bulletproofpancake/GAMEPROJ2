@@ -55,7 +55,7 @@ namespace Customer
         private void SelectStation()
         {
             _stationSelected = _gameManager.RandomizeStation();
-            _moneyToGive = _stationSelected.Cost + Random.Range(1,paymentCap);
+            _moneyToGive = _stationSelected.Cost + Random.Range(0,2);
             MoneyToReceive = _moneyToGive - _stationSelected.Cost;
             print($"{_stationSelected}");
         }

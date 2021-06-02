@@ -2103,6 +2103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyDisplay: {fileID: 1988438686}
+  giveMoneyIndicator: {fileID: 516655940}
   customer: {fileID: 0}
   paymentReceived: 0
   stationCost: 0
