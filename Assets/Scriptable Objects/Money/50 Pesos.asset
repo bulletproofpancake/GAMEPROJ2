@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2103f343aae94e4b9451a0c171d99921, type: 3}
   m_Name: 50 Pesos
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: e90b6740fa36e0b40af8bfec5ac42f6e, type: 3}
+  icon: {fileID: 21300000, guid: 77e5f6890fe47fa40841cfecb9b35a84, type: 3}
   value: 50
   prefab: {fileID: 6226722828684060972, guid: f01cf6f3c5d92e44dbc91174941ee396, type: 3}
