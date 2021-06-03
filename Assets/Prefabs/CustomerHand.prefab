@@ -293,8 +293,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf85de17527147459c00dd1751f4abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGivingMoney: 0
   paymentCap: 30
-  moneyToGive: 0
-  moneyToReceive: 0
-  stationSelected: {fileID: 0}

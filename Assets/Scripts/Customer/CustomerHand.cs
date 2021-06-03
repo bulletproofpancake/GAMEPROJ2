@@ -1,11 +1,8 @@
-using System;
 using System.Collections;
-using Core;
 using Money;
 using Stations;
 using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Customer
 {
@@ -55,7 +52,7 @@ namespace Customer
         private void SelectStation()
         {
             _stationSelected = _gameManager.RandomizeStation();
-            _moneyToGive = _stationSelected.Cost + Random.Range(0,2);
+            _moneyToGive = _stationSelected.Cost + Random.Range(0, paymentCap + 1);
             MoneyToReceive = _moneyToGive - _stationSelected.Cost;
             print($"{_stationSelected}");
         }
