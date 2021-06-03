@@ -9,7 +9,7 @@ namespace Money
     {
         [SerializeField] private TextMeshProUGUI moneyDisplay;
         [SerializeField] private TextMeshProUGUI giveMoneyIndicator;
-        private float _currentTotal;
+        private int _currentTotal;
         private List<GameObject> _moneyPrefabs;
         private Vector3 _startingPosition;
         
@@ -47,7 +47,7 @@ namespace Money
             transform.position = _startingPosition;
         }
         
-        public void AddMoney(float moneyToAdd,GameObject moneyObject)
+        public void AddMoney(int moneyToAdd,GameObject moneyObject)
         {
             _currentTotal += moneyToAdd;
             _moneyPrefabs.Add(moneyObject);

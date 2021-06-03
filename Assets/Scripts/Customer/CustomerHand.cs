@@ -18,9 +18,9 @@ namespace Customer
 
         public int paymentCap;
         
-        private float _moneyToGive;
+        private int _moneyToGive;
         
-        public float MoneyToReceive { get; private set; }
+        public int MoneyToReceive { get; private set; }
         
         private StationData _stationSelected;
 
@@ -64,7 +64,7 @@ namespace Customer
 
         private void GivePayment()
         {
-            _moneyDisplay.text = _moneyToGive.ToString();
+            _moneyDisplay.text = $"{_moneyToGive}";
         }
 
         private void Update()

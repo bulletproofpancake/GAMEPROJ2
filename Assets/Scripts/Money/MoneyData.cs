@@ -7,8 +7,8 @@ namespace Money
     {
         [SerializeField] private Sprite icon;
         public Sprite Icon => icon;
-        [SerializeField] private float value;
-        public float Value => value;
+        [SerializeField] private int value;
+        public int Value => value;
         [SerializeField] private GameObject prefab;
         public GameObject Prefab => prefab;
     }

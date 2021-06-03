@@ -10,12 +10,11 @@ namespace Customer
         public Seats[] seat;
         public int Index { get; set; }
 
-        [SerializeField] private TimelineManager _timeline;
-        [SerializeField] private float time;
+        [SerializeField] private TimelineManager timeline;
 
         private void Start()
         {
-            _timeline = FindObjectOfType<TimelineManager>();
+            timeline = FindObjectOfType<TimelineManager>();
         }
 
         private void Update()
@@ -24,7 +23,6 @@ namespace Customer
             if(Input.GetKeyDown(KeyCode.Space))
                 Spawn();
 
-            time = _timeline.Display.value;
         }
 
         public void Spawn()
@@ -39,7 +37,7 @@ namespace Customer
                     customer.transform.position = seat[Index].transform.position;
                     customer.GetComponent<CustomerHand>().Spawner = this;
                     customer.GetComponent<CustomerHand>().SeatTaken = Index;
-                    customer.GetComponent<CustomerHand>().TimeSpawned = _timeline.Display.value;
+                    customer.GetComponent<CustomerHand>().TimeSpawned = timeline.Display.value;
                     print($"{customer.GetComponent<CustomerHand>().TimeSpawned}");
                     seat[Index].isTaken = true;
                     //index always starts at zero so that all slots can be checked

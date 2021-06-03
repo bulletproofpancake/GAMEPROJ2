@@ -5,8 +5,8 @@ namespace Stations
     [CreateAssetMenu(fileName = "Station", menuName = "Data/New Station")]
     public class StationData : ScriptableObject
     {
-        [SerializeField] private float cost;
-        public float Cost => cost;
+        [SerializeField] private int cost;
+        public int Cost => cost;
         
         [SerializeField] private Color indicator;
         public Color Indicator => indicator;
