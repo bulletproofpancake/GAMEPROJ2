@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Station 2
   m_EditorClassIdentifier: 
   cost: 30
-  indicator: {r: 1, g: 0, b: 0, a: 1}
+  indicator: {r: 0.9056604, g: 0.19992878, b: 0.7404894, a: 1}

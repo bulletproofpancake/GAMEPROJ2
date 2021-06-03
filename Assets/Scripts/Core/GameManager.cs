@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public void RemoveStation()
     {
-        //TODO: FIX MONEY COSTS WHEN REMOVING STATIONS
+        //FIXME: FIX MONEY COSTS WHEN REMOVING STATIONS
         if (stations.Count == 1)
         {
             Debug.LogWarning("Game Over");
@@ -25,4 +25,11 @@ public class GameManager : MonoBehaviour
         stations.Remove(stations[0]);
         print(stations[0]);
     }
+
+    public void GameOver()
+    {
+        //TODO: IMPLEMENT GAME OVER SEQUENCE
+        print("Game Over");
+    }
+    
 }

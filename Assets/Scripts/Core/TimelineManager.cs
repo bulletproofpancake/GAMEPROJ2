@@ -1,5 +1,4 @@
-﻿using System;
-using Stations;
+﻿using Stations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,8 @@ namespace Core
         [SerializeField] private Slider display;
         public Slider Display => display;
         [SerializeField] private Image handle;
-        private bool _hasReachedStation;
+        public bool hasReachedStation;
+        public StationData stationReached;
 
         private void Start()
         {
@@ -24,13 +24,15 @@ namespace Core
         {
             display.value += Time.deltaTime;
 
-            _hasReachedStation = display.value >= display.maxValue;
+            hasReachedStation = display.value >= display.maxValue;
 
-            if (!_hasReachedStation) return;
+            if (!hasReachedStation) return;
+
+            stationReached = _gameManager.stations[0];
             
             if (_gameManager.stations.Count == 1)
             {
-                //TODO: CALL GAME OVER FUNCTION HERE
+                _gameManager.GameOver();
                 return;
             }
                 

@@ -1,4 +1,5 @@
 using System.Collections;
+using Core;
 using Money;
 using Stations;
 using TMPro;
@@ -30,12 +31,16 @@ namespace Customer
         
         public float TimeSpawned { get; set; }
 
+        private TimelineManager _timeline;
+        
+
         private void Awake()
         {
             _moneyDisplay = GetComponentInChildren<TextMeshPro>();
             _moneyManager = FindObjectOfType<MoneyManager>();
             _gameManager = FindObjectOfType<GameManager>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _timeline = FindObjectOfType<TimelineManager>();
         }
 
         private void OnEnable()
@@ -64,6 +69,12 @@ namespace Customer
 
         private void Update()
         {
+            if(_timeline.hasReachedStation && _timeline.stationReached == _stationSelected)
+            {
+                print($"{this} left");
+                StartCoroutine(Leave());
+            }
+            
             if(!_hasReceivedPayment)
                 //Changes the sprite color if this is selected by the money manager
                 _spriteRenderer.color = _moneyManager.customer == this ? Color.white : _stationSelected.Indicator;
@@ -87,6 +98,17 @@ namespace Customer
                 _hasReceivedPayment = false;
                 yield break;
             }
+            //TODO: SWITCH TO DISABLE
+            Destroy(gameObject);
+        }
+
+        IEnumerator Leave()
+        {
+            _hasReceivedPayment = true;
+            _spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(1f);
+            _hasReceivedPayment = false;
+            //TODO: SWITCH TO DISABLE
             Destroy(gameObject);
         }
         
