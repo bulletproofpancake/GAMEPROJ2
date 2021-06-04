@@ -442,16 +442,16 @@ RectTransform:
   m_GameObject: {fileID: 250765682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1199932829}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -114.7, y: 0}
+  m_SizeDelta: {x: 1024, y: 1024}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &250765684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 8372d2a39a758d747a927282ed8db8cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a429f4b3a4947347ad667d64e458eaa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ed31395d0ad3bc488f1d4d8fc5f37f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ebce0c0dc6476cf4fad00d13b14f3f04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b01d8e86577a344f8985b45d4a29434, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2460,7 +2460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f5d5daea0ef3bdd4683b19ae8c06a753, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 047a0d7df1c6a59419c0e608e3727e8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2637,8 +2637,7 @@ MonoBehaviour:
   - {fileID: 62320124}
   - {fileID: 455381202}
   - {fileID: 1185215331}
-  _timeline: {fileID: 0}
-  time: 0
+  timeline: {fileID: 0}
 --- !u!1 &1951721017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,7 +2712,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 248275553}
-  handle: {fileID: 250765684}
+  fillImage: {fileID: 820454796}
+  hasReachedStation: 0
+  stationReached: {fileID: 0}
 --- !u!4 &1960260187
 Transform:
   m_ObjectHideFlags: 0

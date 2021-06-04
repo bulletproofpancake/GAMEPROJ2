@@ -9,7 +9,7 @@ namespace Core
         private GameManager _gameManager;
         [SerializeField] private Slider display;
         public Slider Display => display;
-        [SerializeField] private Image handle;
+        [SerializeField] private Image fillImage;
         public bool hasReachedStation;
         public StationData stationReached;
 
@@ -17,7 +17,7 @@ namespace Core
         {
             _gameManager = FindObjectOfType<GameManager>();
             display.maxValue = _gameManager.levelDuration;
-            handle.color = _gameManager.stations[0].Indicator;
+            fillImage.color = _gameManager.stations[0].Indicator;
         }
 
         private void Update()
@@ -38,7 +38,7 @@ namespace Core
                 
             _gameManager.RemoveStation();
             display.value = 0f;
-            handle.color = _gameManager.stations[0].Indicator;
+            fillImage.color = _gameManager.stations[0].Indicator;
         }
 
         public void SetMarker()

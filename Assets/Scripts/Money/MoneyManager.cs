@@ -40,6 +40,8 @@ namespace Money
                     giveMoneyIndicator.text = "Receive Money";
                 }
             }
+            else
+                moneyDisplay.text = _currentTotal == 0 ? string.Empty : $"{_currentTotal}";
         }
         
         private void ReturnToStartingPosition()
