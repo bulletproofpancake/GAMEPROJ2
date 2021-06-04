@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2103f343aae94e4b9451a0c171d99921, type: 3}
   m_Name: 1 Peso
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 1a429f4b3a4947347ad667d64e458eaa, type: 3}
+  icon: {fileID: 21300000, guid: 0ed31395d0ad3bc488f1d4d8fc5f37f4, type: 3}
   value: 1
   prefab: {fileID: 4426199411516057760, guid: d0a3cdf2b0b89e846a28a174475c3665, type: 3}
