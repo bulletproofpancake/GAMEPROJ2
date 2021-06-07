@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Customer
 {
-    public class CustomerManager : MonoBehaviour
+    public class CustomerManagerPayment : MonoBehaviour
     {
         [SerializeField] private GameObject prefab;
         [SerializeField] private Transform parent;

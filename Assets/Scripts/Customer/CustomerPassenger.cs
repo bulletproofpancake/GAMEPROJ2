@@ -5,11 +5,11 @@ namespace Customer
 {
     public class CustomerPassenger : MonoBehaviour
     {
-        [HideInInspector] public CustomerManager customerManager;
+        [HideInInspector] public CustomerManagerPayment customerManager;
 
         private void Start()
         {
-            customerManager = FindObjectOfType<CustomerManager>();
+            customerManager = FindObjectOfType<CustomerManagerPayment>();
         }
 
         private void OnCollisionEnter(Collision other)

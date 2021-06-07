@@ -26,7 +26,7 @@ namespace Customer
 
         private bool _hasReceivedPayment;
 
-        [HideInInspector] public CustomerManager customerManager;
+        [HideInInspector] public CustomerManagerPayment customerManager;
         public int SeatTaken { get; set; }
         
         public float TimeSpawned { get; set; }
