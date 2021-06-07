@@ -25,8 +25,8 @@ namespace Customer
         private StationData _stationSelected;
 
         private bool _hasReceivedPayment;
-        
-        public CustomerSpawner Spawner { get; set; }
+
+        [HideInInspector] public CustomerManagerPayment customerManager;
         public int SeatTaken { get; set; }
         
         public float TimeSpawned { get; set; }
@@ -51,7 +51,7 @@ namespace Customer
 
         private void OnDisable()
         {
-            Spawner.seat[SeatTaken].isTaken = false;
+            customerManager.seat[SeatTaken].isTaken = false;
         }
 
         private void SelectStation()
