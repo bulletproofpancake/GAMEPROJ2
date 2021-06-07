@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Customer
 {
-    public class CustomerSpawner : MonoBehaviour
+    public class CustomerManagerPayment : MonoBehaviour
     {
         [SerializeField] private GameObject prefab;
         [SerializeField] private Transform parent;
@@ -35,7 +35,7 @@ namespace Customer
                 {
                     var customer = Instantiate(prefab, parent);
                     customer.transform.position = seat[Index].transform.position;
-                    customer.GetComponent<CustomerHand>().Spawner = this;
+                    customer.GetComponent<CustomerHand>().customerManager = this;
                     customer.GetComponent<CustomerHand>().SeatTaken = Index;
                     customer.GetComponent<CustomerHand>().TimeSpawned = timeline.Display.value;
                     print($"{customer.GetComponent<CustomerHand>().TimeSpawned}");
