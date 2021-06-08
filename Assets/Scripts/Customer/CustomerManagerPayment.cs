@@ -10,7 +10,7 @@ namespace Customer
         public Seats[] seat;
         public int Index { get; set; }
 
-        [SerializeField] private TimelineManager timeline;
+        private TimelineManager timeline;
 
         private void Start()
         {
