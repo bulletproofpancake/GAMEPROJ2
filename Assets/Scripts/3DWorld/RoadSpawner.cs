@@ -7,7 +7,7 @@ public class RoadSpawner : MonoBehaviour
 {
     public GameObject[] roadPrefabs;
     public float zSpawn = 0;
-    public float roadLength = 10;
+    public float roadLength = 5;
     public int numberofTiles = 2;
     private List<GameObject> activeRoads = new List<GameObject>();
 
@@ -26,7 +26,7 @@ public class RoadSpawner : MonoBehaviour
 
     void Update()
     {
-        if (playerTransform.position.z - 30 > zSpawn - (numberofTiles * roadLength))
+        if (playerTransform.position.z - 90 > zSpawn - (numberofTiles * roadLength))
          {
             SpawnTile(Random.Range(0, roadPrefabs.Length));
             DeleteTile();

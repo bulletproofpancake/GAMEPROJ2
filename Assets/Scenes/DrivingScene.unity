@@ -419,13 +419,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560b8aec41a647e4eba2680970d067ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefabs:
+  roadPrefabs:
   - {fileID: 347039284396249167, guid: 48c6a111373d93c4688f295b066d5ce5, type: 3}
   - {fileID: 1506605862873532906, guid: 7cc7a106e5cc9504a8f4a1ab7ba11d1c, type: 3}
-  tileLength: 30
-  numberOfTiles: 3
-  totalNumOfTiles: 8
   zSpawn: 0
+  roadLength: 5
+  numberofTiles: 5
   playerTransform: {fileID: 336546597}
 --- !u!4 &429722413
 Transform:
@@ -565,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fa2aa7387aa3ca498245340c31cc2a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.972432
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fa2aa7387aa3ca498245340c31cc2a4, type: 3}
       propertyPath: m_LocalPosition.y
