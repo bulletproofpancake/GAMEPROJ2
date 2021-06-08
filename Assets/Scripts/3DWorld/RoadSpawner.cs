@@ -5,24 +5,44 @@ using System.Linq;
 
 public class RoadSpawner : MonoBehaviour
 {
-    public List<GameObject> roads;
-    private float spawnOffset = 60f;
-    // Start is called before the first frame update
+    public GameObject[] roadPrefabs;
+    public float zSpawn = 0;
+    public float roadLength = 10;
+    public int numberofTiles = 2;
+    private List<GameObject> activeRoads = new List<GameObject>();
+
+    public Transform playerTransform;
+
     void Start()
     {
-        if (roads != null && roads.Count > 0)
+        for (int i = 0; i < numberofTiles; i++)
         {
-            roads = roads.OrderBy(r => r.transform.position.z).ToList();
+            if (i == 0)
+                SpawnTile(0);
+            else
+                SpawnTile(Random.Range(0, roadPrefabs.Length));
         }
     }
 
-   public void RoadTransform()
+    void Update()
     {
-        GameObject moveRoad = roads[0];
-        roads.Remove(moveRoad);
-        float newZ = roads[roads.Count - 1].transform.position.z + spawnOffset;
+        if (playerTransform.position.z - 30 > zSpawn - (numberofTiles * roadLength))
+         {
+            SpawnTile(Random.Range(0, roadPrefabs.Length));
+            DeleteTile();
+         }
+    }
 
-        moveRoad.transform.position = new Vector3(0, 0, newZ);
-        roads.Add(moveRoad);
+    public void SpawnTile(int tileIndex)
+    {
+        GameObject go = Instantiate(roadPrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
+        activeRoads.Add(go);
+        zSpawn += roadLength;
+    }
+    
+    private void DeleteTile()
+    {
+        Destroy(activeRoads[0]);
+        activeRoads.RemoveAt(0);
     }
 }
