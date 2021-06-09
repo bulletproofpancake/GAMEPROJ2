@@ -7,46 +7,50 @@ namespace Customer
     {
         [SerializeField] private GameObject prefab;
         [SerializeField] private Transform parent;
-        public Seats[] seat;
-        public int Index { get; set; }
-
-        [SerializeField] private TimelineManager timeline;
+        
+        public Seats[] seats;
+        private int _index;
+        
+        public bool areSeatsFull;
+        public int seatsTaken;
+        
+        private TimelineManager _timeline;
 
         private void Start()
         {
-            timeline = FindObjectOfType<TimelineManager>();
+            _timeline = FindObjectOfType<TimelineManager>();
         }
 
         private void Update()
         {
-            //TODO: SPAWN CUSTOMERS WHEN JEEP COLLIDES
             if(Input.GetKeyDown(KeyCode.Space))
                 Spawn();
 
+            areSeatsFull = seatsTaken == seats.Length;
         }
 
         public void Spawn()
         {
             //TODO: SWITCH TO AN OBJECT POOL
-            //TODO: INDICATE ON TIMELINE WHEN CUSTOMER IS PICKED UP
-            if (Index < seat.Length)
+            if (_index < seats.Length)
             {
-                if (!seat[Index].isTaken)
+                if (!seats[_index].isTaken)
                 {
                     var customer = Instantiate(prefab, parent);
-                    customer.transform.position = seat[Index].transform.position;
+                    customer.transform.position = seats[_index].transform.position;
                     customer.GetComponent<CustomerHand>().customerManager = this;
-                    customer.GetComponent<CustomerHand>().SeatTaken = Index;
-                    customer.GetComponent<CustomerHand>().TimeSpawned = timeline.Display.value;
+                    customer.GetComponent<CustomerHand>().SeatTaken = _index;
+                    customer.GetComponent<CustomerHand>().TimeSpawned = _timeline.Display.value;
                     print($"{customer.GetComponent<CustomerHand>().TimeSpawned}");
-                    seat[Index].isTaken = true;
+                    seats[_index].isTaken = true;
+                    seatsTaken++;
                     //index always starts at zero so that all slots can be checked
-                    Index = 0;
+                    _index = 0;
                 }
                 else
                 {
                     Debug.LogWarning("Seat taken, looking for another");
-                    Index++;
+                    _index++;
                     //recursion is done so that
                     //it will continue to spawn
                     //even if seats are taken
@@ -56,7 +60,7 @@ namespace Customer
             else
             {
                 Debug.LogWarning("No Seats left");
-                Index = 0;
+                _index = 0;
             }
         }
         

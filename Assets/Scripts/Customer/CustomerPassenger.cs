@@ -14,7 +14,9 @@ namespace Customer
 
         private void OnCollisionEnter(Collision other)
         {
-            if (!other.gameObject.CompareTag("Player")) return;
+            if (!other.gameObject.CompareTag("Player")) return; 
+            
+            if (customerManager.areSeatsFull) return;
             
             customerManager.Spawn();
             Destroy(gameObject);
