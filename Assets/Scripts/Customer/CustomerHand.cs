@@ -51,7 +51,8 @@ namespace Customer
 
         private void OnDisable()
         {
-            customerManager.seat[SeatTaken].isTaken = false;
+            customerManager.seats[SeatTaken].isTaken = false;
+            customerManager.seatsTaken--;
         }
 
         private void SelectStation()
@@ -89,7 +90,7 @@ namespace Customer
             _moneyManager.customer = this;
         }
 
-        IEnumerator Respond(bool isCorrect)
+        private IEnumerator Respond(bool isCorrect)
         {
             _spriteRenderer.color = isCorrect ? Color.green : Color.red;
             yield return new WaitForSeconds(1f);
@@ -102,7 +103,7 @@ namespace Customer
             Destroy(gameObject);
         }
 
-        IEnumerator Leave()
+        private IEnumerator Leave()
         {
             _hasReceivedPayment = true;
             _spriteRenderer.color = Color.red;
