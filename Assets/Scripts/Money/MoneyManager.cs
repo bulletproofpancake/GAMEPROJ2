@@ -12,6 +12,7 @@ namespace Money
         private int _currentTotal;
         private List<GameObject> _moneyPrefabs;
         private Vector3 _startingPosition;
+        private Canvas _canvas;
         
         public CustomerHand customer;
         public float paymentReceived;
@@ -21,12 +22,27 @@ namespace Money
         private void Awake()
         {
             _moneyPrefabs = new List<GameObject>();
+            _canvas = GetComponent<Canvas>();
         }
 
         private void Start()
         {
             _startingPosition = transform.position;
             moneyDisplay.text = string.Empty;
+            SetCamera();
+        }
+
+        private void SetCamera()
+        {
+            var cameras = FindObjectsOfType<Camera>();
+
+            foreach (var cam in cameras)
+            {
+                if (cam.CompareTag("2D Camera"))
+                {
+                    _canvas.worldCamera = cam;
+                }
+            }
         }
 
         private void Update()
