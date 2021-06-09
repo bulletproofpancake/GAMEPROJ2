@@ -21,7 +21,7 @@ public class Billboard : MonoBehaviour
     void SetCamera()
     {
         //Goes through all cameras in the scene to look for the 2D camera
-        var cameras = FindObjectsOfType<UnityEngine.Camera>();
+        var cameras = FindObjectsOfType<Camera>();
 
         foreach (var cam in cameras)
         {
