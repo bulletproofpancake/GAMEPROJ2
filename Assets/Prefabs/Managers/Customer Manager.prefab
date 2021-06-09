@@ -47,11 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8362942358679881297, guid: 9d6b8608941193a4091f0d5bea75a0e3, type: 3}
   parent: {fileID: 1273343422886114654}
-  seat:
+  seats:
   - {fileID: 1273343423526901265}
   - {fileID: 1273343422169914838}
   - {fileID: 1273343422028505336}
   - {fileID: 1273343423295161161}
+  areSeatsFull: 0
+  seatsTaken: 0
 --- !u!1 &1273343422028505338
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,11 +400,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dd2015a71d49a790f11440c713c9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 1273343422637402549}
+  parent: {fileID: 5390519478247639421}
   timeToSpawnCap: 10
   passengers:
   - {fileID: 3181922687545194345, guid: 913cec8f7a0d39148b5957d80f0d86d4, type: 3}
   - {fileID: 4197887022987122476, guid: 8804cce836082334492ef8aaeef65b7a, type: 3}
   - {fileID: 698941085800734729, guid: 0dd1ab60aafafc148ad73e886a206a3d, type: 3}
   - {fileID: 4828282997715093296, guid: 0ba101db95d6c8942b4be9af69936823, type: 3}
-  _playerTransform: {fileID: 2838294159336631763, guid: 913cec8f7a0d39148b5957d80f0d86d4, type: 3}

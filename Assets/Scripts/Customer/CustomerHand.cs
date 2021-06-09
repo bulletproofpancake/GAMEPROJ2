@@ -51,7 +51,8 @@ namespace Customer
 
         private void OnDisable()
         {
-            customerManager.seat[SeatTaken].isTaken = false;
+            customerManager.seats[SeatTaken].isTaken = false;
+            customerManager.seatsTaken--;
         }
 
         private void SelectStation()
