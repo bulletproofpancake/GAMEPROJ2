@@ -23,7 +23,6 @@ namespace Customer
 
         private void Update()
         {
-            //TODO: SPAWN CUSTOMERS WHEN JEEP COLLIDES
             if(Input.GetKeyDown(KeyCode.Space))
                 Spawn();
 
@@ -33,7 +32,6 @@ namespace Customer
         public void Spawn()
         {
             //TODO: SWITCH TO AN OBJECT POOL
-            //TODO: INDICATE ON TIMELINE WHEN CUSTOMER IS PICKED UP
             if (_index < seats.Length)
             {
                 if (!seats[_index].isTaken)

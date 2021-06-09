@@ -18,7 +18,6 @@ namespace Customer
             
             if (customerManager.areSeatsFull) return;
             
-            //TODO: DON'T PICK UP CUSTOMERS IF SEATS ARE FULL
             customerManager.Spawn();
             Destroy(gameObject);
         }
