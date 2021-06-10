@@ -22,7 +22,8 @@ namespace Core
 
         private void Update()
         {
-            display.value += Time.deltaTime;
+            if(_gameManager.isJeepActive)
+                display.value += Time.deltaTime;
 
             hasReachedStation = display.value >= display.maxValue;
 
@@ -41,10 +42,5 @@ namespace Core
             fillImage.color = _gameManager.stations[0].Indicator;
         }
 
-        public void SetMarker()
-        {
-            
-        }
-        
     }
 }
