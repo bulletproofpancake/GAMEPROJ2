@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public float levelDuration;
     public List<StationData> stations;
+    public bool isJeepActive;
 
     public StationData RandomizeStation()
     {
