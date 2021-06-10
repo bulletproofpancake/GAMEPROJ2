@@ -5,6 +5,13 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
 
+
+    #region GameManager
+
+    private GameManager _gameManager;
+
+    #endregion
+    
     #region Parameters
     public float Accel = 15.0f;         // In meters/second2
     public float Boost = 4f / 3;          // In ratio // 1 = standard speed
@@ -75,6 +82,9 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
+
+        _gameManager = FindObjectOfType<GameManager>();
+        
         rigidBody = GetComponent<Rigidbody>();
 
         // Store start location & rotation
@@ -214,6 +224,10 @@ public class CarController : MonoBehaviour
         { inGas = true;}
         if (Input.GetKeyDown(KeyCode.S))
         { inGas = false; }
+
+        //Game Manager checks if Jeep is active based on inGas variable
+        //which is connected to Timeline State
+        _gameManager.isJeepActive = inGas;
 
         if (inGas == true)
         { inThrottle = GasStrength;}
