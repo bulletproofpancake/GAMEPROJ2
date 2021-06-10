@@ -10,13 +10,14 @@ namespace Customer
     public class CustomerHand : MonoBehaviour
     {
 
+        #region Hidden In Inspector
+        
         private GameManager _gameManager;
         private MoneyManager _moneyManager;
         
         private TextMeshPro _moneyDisplay;
         private SpriteRenderer _spriteRenderer;
 
-        public int paymentCap;
         
         private int _moneyToGive;
         
@@ -32,6 +33,15 @@ namespace Customer
         public float TimeSpawned { get; set; }
 
         private TimelineManager _timeline;
+
+        #endregion
+
+        #region ShownInInspector
+
+        public int paymentCap;
+        [SerializeField] private Sprite openHand, closedHand;
+
+        #endregion
         
 
         private void Awake()
@@ -86,7 +96,7 @@ namespace Customer
             _moneyManager.paymentReceived = _moneyToGive;
             _moneyManager.stationCost = _stationSelected.Cost;
             _moneyDisplay.text = string.Empty;
-
+            _spriteRenderer.sprite = openHand;
             _moneyManager.customer = this;
         }
 
