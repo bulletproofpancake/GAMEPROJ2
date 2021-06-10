@@ -1,4 +1,4 @@
-using System.Collections;
+///using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,12 +56,14 @@ public class CarController : MonoBehaviour
 
     // Control signals
     float inThrottle = 0f;
+    float GasStrength = 1f;
     [HideInInspector] public float inTurn = 0f;
     bool inReset = false;
     bool isStuck = false;
     bool autoReset = false;
     bool inBoost = false;
     bool inSlip = false;
+    bool inGas = false;
 
     Vector3 spawnP;
     Quaternion spawnR;
@@ -207,7 +209,17 @@ public class CarController : MonoBehaviour
     // Get input values from keyboard
     void InputKeyboard()
     {
-        inThrottle = Input.GetAxisRaw("Vertical");
+        //AutoDrive
+        if (Input.GetKeyDown(KeyCode.W))
+        { inGas = true;}
+        if (Input.GetKeyDown(KeyCode.S))
+        { inGas = false; }
+
+        if (inGas == true)
+        { inThrottle = GasStrength;}
+        if (inGas == false)
+        { inThrottle = 0.5f; }
+
         inBoost = Input.GetAxisRaw("Jump") > 0f;
         inTurn = Input.GetAxisRaw("Horizontal");
 
