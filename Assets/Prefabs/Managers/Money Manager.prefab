@@ -1098,7 +1098,7 @@ Canvas:
   m_GameObject: {fileID: 6964603580413098586}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyDisplay: {fileID: 6964603580631776037}
-  giveMoneyIndicator: {fileID: 0}
+  giveMoneyIndicator: {fileID: 2076908443039509938}
   customer: {fileID: 0}
   paymentReceived: 0
   stationCost: 0

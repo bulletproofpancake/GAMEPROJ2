@@ -29,7 +29,7 @@ namespace Money
         {
             _startingPosition = transform.position;
             moneyDisplay.text = string.Empty;
-            SetCamera();
+            //SetCamera();
         }
 
         private void SetCamera()

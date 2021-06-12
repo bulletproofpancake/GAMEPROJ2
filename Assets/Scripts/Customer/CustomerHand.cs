@@ -4,6 +4,7 @@ using Money;
 using Stations;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Customer
 {
@@ -15,8 +16,8 @@ namespace Customer
         private GameManager _gameManager;
         private MoneyManager _moneyManager;
         
-        private TextMeshPro _moneyDisplay;
-        private SpriteRenderer _spriteRenderer;
+        private TextMeshProUGUI _moneyDisplay;
+        private Image _image;
 
         
         private int _moneyToGive;
@@ -46,10 +47,10 @@ namespace Customer
 
         private void Awake()
         {
-            _moneyDisplay = GetComponentInChildren<TextMeshPro>();
+            _moneyDisplay = GetComponentInChildren<TextMeshProUGUI>();
             _moneyManager = FindObjectOfType<MoneyManager>();
             _gameManager = FindObjectOfType<GameManager>();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _image = GetComponent<Image>();
             _timeline = FindObjectOfType<TimelineManager>();
         }
 
@@ -87,22 +88,24 @@ namespace Customer
             }
             
             if(!_hasReceivedPayment)
+            {
                 //Changes the sprite color if this is selected by the money manager
-                _spriteRenderer.color = _moneyManager.customer == this ? Color.white : _stationSelected.Indicator;
+                _image.color = _moneyManager.customer == this ? Color.white : _stationSelected.Indicator;
+            }
         }
 
-        private void OnMouseDown()
+        public void GetSelected()
         {
             _moneyManager.paymentReceived = _moneyToGive;
             _moneyManager.stationCost = _stationSelected.Cost;
             _moneyDisplay.text = string.Empty;
-            _spriteRenderer.sprite = openHand;
+            _image.sprite = openHand;
             _moneyManager.customer = this;
         }
 
         private IEnumerator Respond(bool isCorrect)
         {
-            _spriteRenderer.color = isCorrect ? Color.green : Color.red;
+            _image.color = isCorrect ? Color.green : Color.red;
             yield return new WaitForSeconds(1f);
             if (!isCorrect)
             {
@@ -116,7 +119,7 @@ namespace Customer
         private IEnumerator Leave()
         {
             _hasReceivedPayment = true;
-            _spriteRenderer.color = Color.red;
+            _image.color = Color.red;
             yield return new WaitForSeconds(1f);
             _hasReceivedPayment = false;
             //TODO: SWITCH TO DISABLE
