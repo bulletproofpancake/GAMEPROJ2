@@ -33,13 +33,13 @@ namespace Customer
         public float TimeSpawned { get; set; }
 
         private TimelineManager _timeline;
-
+        
         #endregion
 
         #region ShownInInspector
 
         public int paymentCap;
-        [SerializeField] private Sprite openHand, closedHand;
+        [SerializeField] private Sprite openHand;
 
         #endregion
         

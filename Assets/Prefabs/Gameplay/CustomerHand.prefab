@@ -294,6 +294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerManager: {fileID: 0}
+  _playerTransform: {fileID: 0}
   paymentCap: 30
   openHand: {fileID: 21300000, guid: 7f9d7b28171c0a8448ed641646b7802e, type: 3}
-  closedHand: {fileID: 21300000, guid: 91889fff49ed61d4b8403cefd987f167, type: 3}

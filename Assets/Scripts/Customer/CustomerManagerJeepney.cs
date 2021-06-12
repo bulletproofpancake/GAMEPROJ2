@@ -11,16 +11,26 @@ namespace Customer
         [SerializeField] private GameObject[] passengers;
         private Transform _playerTransform;
         private Vector3 _playerPosition;
+        private bool _hasPlayer;
 
         private void Start()
         {
-            _playerTransform = GameObject.FindWithTag("Player").transform;
-            StartCoroutine(SpawnCustomers());
+            if (GameObject.FindWithTag("Player"))
+            {
+                _playerTransform = GameObject.FindWithTag("Player").transform;
+                _hasPlayer = true;
+                StartCoroutine(SpawnCustomers());
+            }
+            else
+            {
+                _hasPlayer = false;
+            }
         }
 
         private void Update()
         {
-            _playerPosition = _playerTransform.position;
+            if(_hasPlayer)
+                _playerPosition = _playerTransform.position;
         }
 
         private IEnumerator SpawnCustomers()
