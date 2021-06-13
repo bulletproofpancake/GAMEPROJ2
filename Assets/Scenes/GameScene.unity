@@ -508,7 +508,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -542,7 +542,7 @@ Transform:
   m_LocalScale: {x: 0.96788, y: 0.96788, z: 0.96788}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 24.128, y: 0, z: 0}
 --- !u!114 &296534663
 MonoBehaviour:
@@ -626,7 +626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601753553
 GameObject:
@@ -760,7 +760,7 @@ Transform:
   - {fileID: 152836933}
   - {fileID: 80224474}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1099428155
 PrefabInstance:
@@ -977,7 +977,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &1563859114 stripped
 Transform:
@@ -1178,7 +1178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1926142370194051784, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1926142370194051784, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1239,6 +1239,18 @@ PrefabInstance:
     - target: {fileID: 2103657367032365161, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_Mass
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103657367032365166, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: Accel
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103657367032365166, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: Rotate
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103657367032365166, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: TopSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
