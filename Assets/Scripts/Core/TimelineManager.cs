@@ -20,7 +20,7 @@ namespace Core
             display.maxValue = _gameManager.levelDuration;
             fillImage.color = _gameManager.stations[0].Indicator;
             _canvas = GetComponent<Canvas>();
-            SetCamera();
+            //SetCamera();
         }
         
         private void SetCamera()

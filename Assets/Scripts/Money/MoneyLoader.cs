@@ -8,11 +8,11 @@ namespace Money
     public class MoneyLoader : MonoBehaviour
     {
         [SerializeField] private MoneyData data;
-        private SpriteRenderer _spriteRenderer;
+        private Image _image;
 
         private void Awake()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _image = GetComponent<Image>();
         }
 
         private void Start()
@@ -23,7 +23,7 @@ namespace Money
 
         private void LoadSprite()
         {
-            _spriteRenderer.sprite = data.Icon;
+            _image.sprite = data.Icon;
         }
     }
 }
