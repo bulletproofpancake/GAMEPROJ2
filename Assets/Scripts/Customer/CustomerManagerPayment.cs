@@ -24,7 +24,6 @@ namespace Customer
 
         public void Spawn()
         {
-            //TODO: SWITCH TO AN OBJECT POOL
             if (_index < seats.Length)
             {
                 if (!seats[_index].isTaken)

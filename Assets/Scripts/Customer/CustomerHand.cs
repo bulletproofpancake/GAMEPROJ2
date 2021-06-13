@@ -112,7 +112,6 @@ namespace Customer
                 _hasReceivedPayment = false;
                 yield break;
             }
-            //TODO: SWITCH TO DISABLE
             Destroy(gameObject);
         }
 
@@ -122,7 +121,6 @@ namespace Customer
             _image.color = Color.red;
             yield return new WaitForSeconds(1f);
             _hasReceivedPayment = false;
-            //TODO: SWITCH TO DISABLE
             Destroy(gameObject);
         }
         
