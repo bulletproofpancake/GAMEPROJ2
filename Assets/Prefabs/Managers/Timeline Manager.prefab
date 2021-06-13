@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 7623379067896694766}
   - component: {fileID: 7623379067896694762}
   m_Layer: 5
-  m_Name: Timeline Canvas
+  m_Name: Timeline Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

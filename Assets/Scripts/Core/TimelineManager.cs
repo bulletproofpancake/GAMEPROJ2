@@ -12,12 +12,28 @@ namespace Core
         [SerializeField] private Image fillImage;
         public bool hasReachedStation;
         public StationData stationReached;
+        private Canvas _canvas;
 
         private void Start()
         {
             _gameManager = FindObjectOfType<GameManager>();
             display.maxValue = _gameManager.levelDuration;
             fillImage.color = _gameManager.stations[0].Indicator;
+            _canvas = GetComponent<Canvas>();
+            //SetCamera();
+        }
+        
+        private void SetCamera()
+        {
+            var cameras = FindObjectsOfType<Camera>();
+
+            foreach (var cam in cameras)
+            {
+                if (cam.CompareTag("2D Camera"))
+                {
+                    _canvas.worldCamera = cam;
+                }
+            }
         }
 
         private void Update()
