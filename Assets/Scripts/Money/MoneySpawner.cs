@@ -5,7 +5,8 @@ namespace Money
     public class MoneySpawner : MonoBehaviour
     {
         [SerializeField] private MoneyData data;
-        [SerializeField] private Transform parent;
+        [SerializeField] private Transform spawnPosition;
+        private Transform _parent;
         private MoneyManager _moneyManager;
 
         private void Start()
@@ -15,8 +16,10 @@ namespace Money
 
         public void SpawnMoney()
         {
-            //TODO: SWITCH TO AN OBJECT POOL
-            var money = Instantiate(data.Prefab, parent);
+            if(_moneyManager.customer != null)
+                spawnPosition = _moneyManager.customer.transform;
+            
+            var money = Instantiate(data.Prefab, spawnPosition);
             _moneyManager.AddMoney(data.Value, money);
         }
     }
