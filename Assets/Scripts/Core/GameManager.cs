@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         //TODO: IMPLEMENT GAME OVER SEQUENCE
+        SceneLoader.Instance.LoadNextScene();
         print("Game Over");
     }
     
