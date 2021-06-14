@@ -2,13 +2,14 @@ using System.Collections.Generic;
 using Customer;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Money
 {
     public class MoneyManager : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI moneyDisplay;
-        [SerializeField] private TextMeshProUGUI giveMoneyIndicator;
+        public TextMeshProUGUI giveMoneyIndicator;
         private int _currentTotal;
         private List<GameObject> _moneyPrefabs;
         private Vector3 _startingPosition;
@@ -18,6 +19,8 @@ namespace Money
         public float paymentReceived;
 
         public float stationCost;
+
+        [SerializeField] private Button clearButton;
 
         private void Awake()
         {
@@ -47,6 +50,9 @@ namespace Money
 
         private void Update()
         {
+            
+            clearButton.gameObject.SetActive(customer != null);
+            
             if (customer != null)
             {
                 moneyDisplay.text = $"{paymentReceived} - {stationCost} = {_currentTotal}";
