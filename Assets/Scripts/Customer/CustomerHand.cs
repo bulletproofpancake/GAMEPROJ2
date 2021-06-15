@@ -41,7 +41,8 @@ namespace Customer
 
         public int paymentCap;
         [SerializeField] private Sprite openHand;
-
+        public Button giveMoneyButton;
+        public TextMeshProUGUI giveMoneyText;
         #endregion
         
 
@@ -79,6 +80,11 @@ namespace Customer
             _moneyDisplay.text = $"{_moneyToGive}";
         }
 
+        public void ReceiveChange()
+        {
+            _moneyManager.GiveMoney();
+        }
+        
         private void Update()
         {
             if(_timeline.hasReachedStation && _timeline.stationReached == _stationSelected)
@@ -86,7 +92,10 @@ namespace Customer
                 print($"{this} left");
                 StartCoroutine(Leave());
             }
-            
+
+            //Activates the "Give Money" button when selected by the money manager
+            giveMoneyButton.gameObject.SetActive(_moneyManager.customer == this);
+
             if(!_hasReceivedPayment)
             {
                 //Changes the sprite color if this is selected by the money manager
@@ -101,6 +110,7 @@ namespace Customer
             _moneyDisplay.text = string.Empty;
             _image.sprite = openHand;
             _moneyManager.customer = this;
+            _moneyManager.giveMoneyIndicator = giveMoneyText;
         }
 
         private IEnumerator Respond(bool isCorrect)
