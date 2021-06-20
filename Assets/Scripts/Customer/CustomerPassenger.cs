@@ -8,7 +8,7 @@ namespace Customer
     public class CustomerPassenger : MonoBehaviour
     {
         [HideInInspector] public CustomerManagerPayment customerManager;
-        private float _jumpSpeed = 0.05f;
+        [SerializeField] private float jumpSpeed;
         private bool _isBoarding;
         private GameObject jeepObject;
 
@@ -45,7 +45,7 @@ namespace Customer
         {
             if (_isBoarding)
             {
-                transform.position = Vector3.Lerp(transform.position, jeepObject.transform.position, _jumpSpeed);
+                transform.position = Vector3.Lerp(transform.position, jeepObject.transform.position, jumpSpeed);
             }
         }
     }
