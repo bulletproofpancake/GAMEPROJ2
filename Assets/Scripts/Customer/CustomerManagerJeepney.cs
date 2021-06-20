@@ -8,6 +8,8 @@ namespace Customer
         
         [SerializeField] private Transform parent;
         [SerializeField] private float timeToSpawnCap;
+        [SerializeField] private Transform sideWalk;
+        [SerializeField] private float spawnDistanceFromPlayer;
         [SerializeField] private GameObject[] passengers;
         private Transform _playerTransform;
         private Vector3 _playerPosition;
@@ -45,8 +47,7 @@ namespace Customer
         private void Spawn()
         {
             var passenger = Instantiate(passengers[Random.Range(0, passengers.Length)], parent);
-            //TODO: SET X VALUE TO SIDEWALK
-            passenger.transform.position = new Vector3(_playerPosition.x, _playerPosition.y, _playerPosition.z + 20);
+            passenger.transform.position = new Vector3(sideWalk.position.x, _playerPosition.y, _playerPosition.z + spawnDistanceFromPlayer);
         }
     }
 }
