@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4828282997715093301}
   - component: {fileID: 4828282997715093302}
   - component: {fileID: 4828282997715093303}
+  - component: {fileID: -2430062086664257067}
   m_Layer: 0
   m_Name: NPC_maleKid
   m_TagString: Untagged
@@ -128,4 +129,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerManager: {fileID: 0}
-  moveSpeed: 5
+--- !u!136 &-2430062086664257067
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828282997715093296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4
+  m_Height: 1.8645914
+  m_Direction: 1
+  m_Center: {x: -0.000000074505806, y: 0, z: -0.000000022351742}

@@ -12,7 +12,17 @@ namespace Customer
             customerManager = FindObjectOfType<CustomerManagerPayment>();
         }
 
-        private void OnCollisionEnter(Collision other)
+        // private void OnCollisionEnter(Collision other)
+        // {
+        //     if (!other.gameObject.CompareTag("Player")) return; 
+        //     
+        //     if (customerManager.areSeatsFull) return;
+        //     
+        //     customerManager.Spawn();
+        //     Destroy(gameObject);
+        // }
+
+        private void OnTriggerEnter(Collider other)
         {
             if (!other.gameObject.CompareTag("Player")) return; 
             
