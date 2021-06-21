@@ -11,11 +11,11 @@ namespace Core
         public List<StationData> stations;
         public bool isJeepActive;
 
-        private List<GameObject> _passengersList;
+        public List<GameObject> passengersList;
 
         private void Awake()
         {
-            _passengersList = new List<GameObject>();
+            passengersList = new List<GameObject>();
         }
 
         public StationData RandomizeStation()
@@ -46,12 +46,12 @@ namespace Core
 
         public void AddPassenger(GameObject customer)
         {
-            _passengersList.Add(customer);
+            passengersList.Add(customer);
         }
 
         public void RemovePassenger(GameObject customer)
         {
-            _passengersList.Remove(customer);
+            passengersList.Remove(customer);
         }
     
     }

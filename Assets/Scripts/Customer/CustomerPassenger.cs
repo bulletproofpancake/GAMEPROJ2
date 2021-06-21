@@ -14,7 +14,7 @@ namespace Customer
         private GameObject _jeepObject;
         private GameManager _gameManager;
 
-        private void Start()
+        private void OnEnable()
         {
             _gameManager = FindObjectOfType<GameManager>();
             customerManager = FindObjectOfType<CustomerManagerPayment>();
@@ -27,12 +27,16 @@ namespace Customer
             
             if (customerManager.areSeatsFull) return;
             
-            customerManager.Spawn();
-            
+            SpawnHand();
+        }
+
+        private void SpawnHand()
+        {
             _gameManager.AddPassenger(gameObject);
             
-            Destroy(gameObject);
-            
+            customerManager.Spawn();
+
+            gameObject.SetActive(false);
         }
 
         private void OnTriggerEnter(Collider other)
