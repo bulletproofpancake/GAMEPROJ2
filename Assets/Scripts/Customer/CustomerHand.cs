@@ -34,6 +34,8 @@ namespace Customer
         public float TimeSpawned { get; set; }
 
         private TimelineManager _timeline;
+
+        private CustomerManagerJeepney _customerManagerJeepney;
         
         #endregion
 
@@ -53,6 +55,7 @@ namespace Customer
             _gameManager = FindObjectOfType<GameManager>();
             _image = GetComponent<Image>();
             _timeline = FindObjectOfType<TimelineManager>();
+            _customerManagerJeepney = FindObjectOfType<CustomerManagerJeepney>();
         }
 
         private void OnEnable()
@@ -122,6 +125,7 @@ namespace Customer
                 _hasReceivedPayment = false;
                 yield break;
             }
+            _customerManagerJeepney.Jump();
             Destroy(gameObject);
         }
 
@@ -131,6 +135,7 @@ namespace Customer
             _image.color = Color.red;
             yield return new WaitForSeconds(1f);
             _hasReceivedPayment = false;
+            _customerManagerJeepney.Jump();
             Destroy(gameObject);
         }
         
