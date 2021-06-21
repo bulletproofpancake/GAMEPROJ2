@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using Cinemachine;
+using Core;
 using UnityEngine;
 
 namespace Customer
@@ -9,12 +9,16 @@ namespace Customer
     {
         [HideInInspector] public CustomerManagerPayment customerManager;
         [SerializeField] private float jumpSpeed;
+        [SerializeField] private float lifespan = 10;
         private bool _isBoarding;
-        private GameObject jeepObject;
+        private GameObject _jeepObject;
+        private GameManager _gameManager;
 
         private void Start()
         {
+            _gameManager = FindObjectOfType<GameManager>();
             customerManager = FindObjectOfType<CustomerManagerPayment>();
+            StartCoroutine(Despawn());
         }
 
         private void OnCollisionEnter(Collision other)
@@ -24,6 +28,8 @@ namespace Customer
             if (customerManager.areSeatsFull) return;
             
             customerManager.Spawn();
+            
+            _gameManager.AddPassenger(gameObject);
             
             Destroy(gameObject);
             
@@ -37,7 +43,7 @@ namespace Customer
 
             _isBoarding = true;
 
-            jeepObject = other.gameObject;
+            _jeepObject = other.gameObject;
 
         }
 
@@ -45,8 +51,20 @@ namespace Customer
         {
             if (_isBoarding)
             {
-                transform.position = Vector3.Lerp(transform.position, jeepObject.transform.position, jumpSpeed);
+                transform.position = Vector3.Lerp(transform.position, _jeepObject.transform.position, jumpSpeed);
             }
         }
+
+        private IEnumerator Despawn()
+        {
+            var timer = new float();
+            while (timer < lifespan)
+            {
+                timer += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+            Destroy(gameObject);
+        }
+        
     }
 }
