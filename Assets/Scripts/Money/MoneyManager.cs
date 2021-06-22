@@ -20,6 +20,7 @@ namespace Money
 
         public float stationCost;
 
+        [SerializeField] private Button giveButton;
         [SerializeField] private Button clearButton;
 
         private void Awake()
@@ -50,7 +51,7 @@ namespace Money
 
         private void Update()
         {
-            
+            giveButton.gameObject.SetActive(customer != null);
             clearButton.gameObject.SetActive(customer != null);
             
             if (customer != null)

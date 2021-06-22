@@ -24,7 +24,7 @@ namespace Customer
         
         public int MoneyToReceive { get; private set; }
         
-        private StationData _stationSelected;
+        //private StationData _stationSelected;
 
         private bool _hasReceivedPayment;
 
@@ -37,14 +37,15 @@ namespace Customer
 
         private CustomerManagerJeepney _customerManagerJeepney;
         
+        private int _paymentCap;
+        
+        private int cost;
         #endregion
 
         #region ShownInInspector
-
-        public int paymentCap;
         [SerializeField] private Sprite openHand;
-        public Button giveMoneyButton;
-        public TextMeshProUGUI giveMoneyText;
+        // public Button giveMoneyButton;
+        // public TextMeshProUGUI giveMoneyText;
         #endregion
         
 
@@ -73,13 +74,17 @@ namespace Customer
         // private void SelectStation()
         // {
         //     _stationSelected = _gameManager.RandomizeStation();
-        //     _moneyToGive = _stationSelected.Cost + Random.Range(0, paymentCap + 1);
+        //     _moneyToGive = _stationSelected.Cost + Random.Range(0, _paymentCap + 1);
         //     MoneyToReceive = _moneyToGive - _stationSelected.Cost;
         //     print($"{_stationSelected}");
         // }
 
         private void GivePayment()
         {
+            _paymentCap = _gameManager.customerPaymentCap;
+            cost = Random.Range(0, _paymentCap + 1);
+            _moneyToGive = cost + Random.Range(0, _paymentCap + 1);
+            MoneyToReceive = _moneyToGive - cost;
             _moneyDisplay.text = $"{_moneyToGive}";
         }
 
@@ -90,30 +95,30 @@ namespace Customer
         
         private void Update()
         {
-            if(_timeline.hasReachedStation && _timeline.stationReached == _stationSelected)
-            {
-                print($"{this} left");
-                StartCoroutine(Leave());
-            }
+            // if(_timeline.hasReachedStation && _timeline.stationReached == _stationSelected)
+            // {
+            //     print($"{this} left");
+            //     StartCoroutine(Leave());
+            // }
 
             //Activates the "Give Money" button when selected by the money manager
-            giveMoneyButton.gameObject.SetActive(_moneyManager.customer == this);
+            //giveMoneyButton.gameObject.SetActive(_moneyManager.customer == this);
 
             if(!_hasReceivedPayment)
             {
                 //Changes the sprite color if this is selected by the money manager
-                _image.color = _moneyManager.customer == this ? Color.white : _stationSelected.Indicator;
+                //_image.color = _moneyManager.customer == this ? Color.white : _stationSelected.Indicator;
             }
         }
 
         public void GetSelected()
         {
             _moneyManager.paymentReceived = _moneyToGive;
-            _moneyManager.stationCost = _stationSelected.Cost;
+            _moneyManager.stationCost = cost;
             _moneyDisplay.text = string.Empty;
             _image.sprite = openHand;
             _moneyManager.customer = this;
-            _moneyManager.giveMoneyIndicator = giveMoneyText;
+            //_moneyManager.giveMoneyIndicator = giveMoneyText;
         }
 
         private IEnumerator Respond(bool isCorrect)
