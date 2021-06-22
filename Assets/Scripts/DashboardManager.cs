@@ -13,6 +13,7 @@ public class DashboardManager : MonoBehaviour
 
     public void ToggleDashboard()
     {
+        //if the dashboard is open, it closes when the button is clicked and vice-versa
         dashboardCanvas.SetActive(!dashboardCanvas.activeSelf);
     }
 }

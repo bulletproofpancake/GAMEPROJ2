@@ -7,6 +7,7 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
+        public int stationPaymentMin;
         public int customerPaymentCap;
         public float levelDuration;
         //public List<StationData> stations;

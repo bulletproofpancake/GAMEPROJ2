@@ -14,7 +14,7 @@ namespace Customer
         #region Hidden In Inspector
         
         private GameManager _gameManager;
-        private MoneyManager _moneyManager;
+        [SerializeField] private MoneyManager _moneyManager;
         
         private TextMeshProUGUI _moneyDisplay;
         private Image _image;
@@ -59,13 +59,13 @@ namespace Customer
             _customerManagerJeepney = FindObjectOfType<CustomerManagerJeepney>();
         }
 
-        private void OnEnable()
+        private void Start()
         {
             //SelectStation();
             GivePayment();
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             customerManager.seats[SeatTaken].isTaken = false;
             customerManager.seatsTaken--;
@@ -82,17 +82,13 @@ namespace Customer
         private void GivePayment()
         {
             _paymentCap = _gameManager.customerPaymentCap;
-            cost = Random.Range(0, _paymentCap + 1);
+            print(_paymentCap);
+            cost = Random.Range(_gameManager.stationPaymentMin, _paymentCap + 1);
             _moneyToGive = cost + Random.Range(0, _paymentCap + 1);
             MoneyToReceive = _moneyToGive - cost;
             _moneyDisplay.text = $"{_moneyToGive}";
         }
 
-        public void ReceiveChange()
-        {
-            _moneyManager.GiveMoney();
-        }
-        
         private void Update()
         {
             // if(_timeline.hasReachedStation && _timeline.stationReached == _stationSelected)
