@@ -60,7 +60,7 @@ namespace Customer
 
         private void OnEnable()
         {
-            SelectStation();
+            //SelectStation();
             GivePayment();
         }
 
@@ -70,13 +70,13 @@ namespace Customer
             customerManager.seatsTaken--;
         }
 
-        private void SelectStation()
-        {
-            _stationSelected = _gameManager.RandomizeStation();
-            _moneyToGive = _stationSelected.Cost + Random.Range(0, paymentCap + 1);
-            MoneyToReceive = _moneyToGive - _stationSelected.Cost;
-            print($"{_stationSelected}");
-        }
+        // private void SelectStation()
+        // {
+        //     _stationSelected = _gameManager.RandomizeStation();
+        //     _moneyToGive = _stationSelected.Cost + Random.Range(0, paymentCap + 1);
+        //     MoneyToReceive = _moneyToGive - _stationSelected.Cost;
+        //     print($"{_stationSelected}");
+        // }
 
         private void GivePayment()
         {
