@@ -9,7 +9,8 @@ namespace Core
     {
         public float levelDuration;
         //public List<StationData> stations;
-        public bool isJeepActive;
+        //public bool isJeepActive;
+        public bool hasGameStarted;
 
         public List<GameObject> passengersList;
 

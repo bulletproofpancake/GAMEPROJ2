@@ -38,7 +38,7 @@ namespace Core
 
         private void Update()
         {
-            if(_gameManager.isJeepActive)
+            if(_gameManager.hasGameStarted)
                 display.value += Time.deltaTime;
             if (display.value >= display.maxValue)
             {
