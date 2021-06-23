@@ -16,9 +16,29 @@ namespace Core
 
         public List<GameObject> passengersList;
 
+        public TimelineManager timelineManager;
+
         private void Awake()
         {
             passengersList = new List<GameObject>();
+        }
+
+        private void Start()
+        {
+            timelineManager = FindObjectOfType<TimelineManager>();
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                //Only triggers when the player first moves
+                if (!hasGameStarted)
+                {
+                    hasGameStarted = true;
+                    timelineManager.StartCountDown();
+                }
+            }
         }
 
         // public StationData RandomizeStation()

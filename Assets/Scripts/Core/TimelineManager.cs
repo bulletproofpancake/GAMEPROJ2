@@ -1,4 +1,5 @@
-﻿using Stations;
+﻿using System.Collections;
+using Stations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ namespace Core
         public bool hasReachedStation;
         public StationData stationReached;
         private Canvas _canvas;
+        private float timer;
 
         private void Start()
         {
@@ -21,6 +23,7 @@ namespace Core
             //fillImage.color = _gameManager.stations[0].Indicator;
             _canvas = GetComponent<Canvas>();
             //SetCamera();
+            //StartCountDown();
         }
         
         // private void SetCamera()
@@ -38,12 +41,7 @@ namespace Core
 
         private void Update()
         {
-            if(_gameManager.hasGameStarted)
-                display.value += Time.deltaTime;
-            if (display.value >= display.maxValue)
-            {
-                _gameManager.GameOver();
-            }
+            display.value = timer;
 
             // hasReachedStation = display.value >= display.maxValue;
             //
@@ -62,5 +60,19 @@ namespace Core
             // fillImage.color = _gameManager.stations[0].Indicator;
         }
 
+        public void StartCountDown()
+        {
+            StartCoroutine(CountDown());
+        }
+        
+        private IEnumerator CountDown()
+        {
+            while (timer < _gameManager.levelDuration)
+            {
+                yield return new WaitForEndOfFrame();
+                timer += Time.deltaTime;
+            }
+            _gameManager.GameOver();
+        }
     }
 }

@@ -222,12 +222,7 @@ public class CarController : MonoBehaviour
     {
         //AutoDrive
         if (Input.GetKeyDown(KeyCode.W))
-        {
-            inGas = true;
-            //Only triggers at the start of the game when the player first moves
-            if(!_gameManager.hasGameStarted)
-                _gameManager.hasGameStarted = true;
-        }
+        { inGas = true; }
         if (Input.GetKeyDown(KeyCode.S))
         { inGas = false; }
 
