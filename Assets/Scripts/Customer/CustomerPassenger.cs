@@ -13,6 +13,8 @@ namespace Customer
         private bool _isBoarding;
         private GameObject _jeepObject;
         private GameManager _gameManager;
+        public bool hasJumped;
+        [SerializeField] private Collider magnet;
 
         private void OnEnable()
         {
@@ -56,6 +58,12 @@ namespace Customer
             if (_isBoarding)
             {
                 transform.position = Vector3.Lerp(transform.position, _jeepObject.transform.position, jumpSpeed);
+            }
+
+            if (hasJumped)
+            {
+                _isBoarding = false;
+                magnet.enabled = false;
             }
         }
 

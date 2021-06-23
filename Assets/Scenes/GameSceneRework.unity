@@ -2770,9 +2770,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stationPaymentMin: 10
   customerPaymentCap: 50
-  levelDuration: 60
+  levelDuration: 90
   hasGameStarted: 0
   passengersList: []
+  timelineManager: {fileID: 0}
 --- !u!4 &3176591004548446134
 Transform:
   m_ObjectHideFlags: 0
