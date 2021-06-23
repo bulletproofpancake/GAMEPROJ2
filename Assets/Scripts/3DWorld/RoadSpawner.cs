@@ -36,6 +36,7 @@ public class RoadSpawner : MonoBehaviour
     public void SpawnTile(int tileIndex)
     {
         GameObject go = Instantiate(roadPrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
+        go.transform.parent = transform;
         activeRoads.Add(go);
         zSpawn += roadLength;
     }

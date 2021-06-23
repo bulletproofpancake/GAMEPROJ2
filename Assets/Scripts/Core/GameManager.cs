@@ -7,35 +7,58 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
+        public int stationPaymentMin;
+        public int customerPaymentCap;
         public float levelDuration;
-        public List<StationData> stations;
-        public bool isJeepActive;
+        //public List<StationData> stations;
+        //public bool isJeepActive;
+        public bool hasGameStarted;
 
         public List<GameObject> passengersList;
+
+        public TimelineManager timelineManager;
 
         private void Awake()
         {
             passengersList = new List<GameObject>();
         }
 
-        public StationData RandomizeStation()
+        private void Start()
         {
-            var station = stations[Random.Range(0,stations.Count)];
-            return station;
+            timelineManager = FindObjectOfType<TimelineManager>();
         }
 
-        public void RemoveStation()
+        private void Update()
         {
-            //FIXME: FIX MONEY COSTS WHEN REMOVING STATIONS
-            if (stations.Count == 1)
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                Debug.LogWarning("Game Over");
-                return;
+                //Only triggers when the player first moves
+                if (!hasGameStarted)
+                {
+                    hasGameStarted = true;
+                    timelineManager.StartCountDown();
+                }
             }
-        
-            stations.Remove(stations[0]);
-            print(stations[0]);
         }
+
+        // public StationData RandomizeStation()
+        // {
+        //     var station = stations[Random.Range(0,stations.Count)];
+        //     return station;
+        // }
+        //
+        // public void RemoveStation()
+        // {
+        //     //FIXME: FIX MONEY COSTS WHEN REMOVING STATIONS
+        //     if (stations.Count == 1)
+        //     {
+        //         Debug.LogWarning("Game Over");
+        //         return;
+        //     }
+        //
+        //     stations.Remove(stations[0]);
+        //     print(stations[0]);
+        // }
 
         public void GameOver()
         {

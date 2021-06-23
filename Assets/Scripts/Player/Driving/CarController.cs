@@ -222,13 +222,13 @@ public class CarController : MonoBehaviour
     {
         //AutoDrive
         if (Input.GetKeyDown(KeyCode.W))
-        { inGas = true;}
+        { inGas = true; }
         if (Input.GetKeyDown(KeyCode.S))
         { inGas = false; }
 
         //Game Manager checks if Jeep is active based on inGas variable
         //which is connected to Timeline State
-        _gameManager.isJeepActive = inGas;
+        //_gameManager.isJeepActive = inGas;
 
         if (inGas == true)
         { inThrottle = GasStrength;}
