@@ -101,6 +101,13 @@ public class CarController : MonoBehaviour
         //distToGround = transform.position.y + 1f;
     }
 
+
+    private void Update()
+    {
+        //PlayerControls
+        InputKeyboard();
+    }
+
     void FixedUpdate()
     {
         #region Situational Checks
@@ -178,9 +185,6 @@ public class CarController : MonoBehaviour
          */
 
         #endregion
-
-        //PlayerControls
-        InputKeyboard();
 
         // Execute the commands
         Controller();   // pvel assigment in here
