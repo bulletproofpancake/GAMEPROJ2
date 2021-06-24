@@ -3,6 +3,7 @@ using Customer;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Upgrades;
 
 namespace Money
 {
@@ -16,9 +17,9 @@ namespace Money
         private Canvas _canvas;
         
         public CustomerHand customer;
-        public float paymentReceived;
+        public int paymentReceived;
 
-        public float stationCost;
+        public int stationCost;
 
         [SerializeField] private Button giveButton;
         [SerializeField] private Button clearButton;
@@ -92,6 +93,7 @@ namespace Money
             {
                 Debug.LogWarning("Correct");
                 customer.ReceivePayment(true);
+                UpgradeManager.Instance.AddMoney(stationCost);
             }
             else
             {
