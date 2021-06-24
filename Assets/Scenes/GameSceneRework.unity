@@ -184,7 +184,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roadPrefabs:
   - {fileID: 347039284396249167, guid: 48c6a111373d93c4688f295b066d5ce5, type: 3}
-  - {fileID: 347039284396249167, guid: 0c473fe811c36744da086eee1cda124e, type: 3}
+  - {fileID: 347039284396249167, guid: 0bafb022605a69e49ad9951750a4d3b8, type: 3}
+  - {fileID: 347039284396249167, guid: d7c0fa6202f6db1449ae6d0edcb92fba, type: 3}
+  - {fileID: 347039284396249167, guid: 790de6830a2fbb94dae91de7067d40c5, type: 3}
   zSpawn: 0
   roadLength: 34
   numberofTiles: 10
@@ -290,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1926142370194051784, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.35
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 1926142370194051784, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -814,7 +816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338313642}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 4.93819, z: -5.159259}
+  m_LocalPosition: {x: 0, y: 5.10819, z: -5.159259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488796277}
@@ -900,7 +902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425626658}
   m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 4.93819, z: -5.159259}
+  m_LocalPosition: {x: 0, y: 5.10819, z: -5.159259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

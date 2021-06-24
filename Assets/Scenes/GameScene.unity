@@ -920,7 +920,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roadPrefabs:
   - {fileID: 347039284396249167, guid: 48c6a111373d93c4688f295b066d5ce5, type: 3}
-  - {fileID: 347039284396249167, guid: 0c473fe811c36744da086eee1cda124e, type: 3}
+  - {fileID: 347039284396249167, guid: 0bafb022605a69e49ad9951750a4d3b8, type: 3}
+  - {fileID: 347039284396249167, guid: d7c0fa6202f6db1449ae6d0edcb92fba, type: 3}
+  - {fileID: 347039284396249167, guid: 790de6830a2fbb94dae91de7067d40c5, type: 3}
   zSpawn: 0
   roadLength: 34
   numberofTiles: 10
@@ -3043,6 +3045,7 @@ MonoBehaviour:
   customer: {fileID: 0}
   paymentReceived: 0
   stationCost: 0
+  giveButton: {fileID: 0}
   clearButton: {fileID: 1531590462}
 --- !u!224 &6964603578790664858
 RectTransform:
