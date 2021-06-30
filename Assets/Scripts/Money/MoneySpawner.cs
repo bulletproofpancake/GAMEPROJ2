@@ -16,8 +16,8 @@ namespace Money
 
         public void SpawnMoney()
         {
-            if(_moneyManager.customer != null)
-                spawnPosition = _moneyManager.customer.transform;
+            // if(_moneyManager.customer != null)
+            //     spawnPosition = _moneyManager.customer.transform;
             
             var money = Instantiate(data.Prefab, spawnPosition);
             _moneyManager.AddMoney(data.Value, money);
