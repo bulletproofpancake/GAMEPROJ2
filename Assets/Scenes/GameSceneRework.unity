@@ -892,7 +892,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1560728551}
-  - component: {fileID: 1560728552}
   - component: {fileID: 1560728553}
   m_Layer: 0
   m_Name: Customer Spawner
@@ -916,28 +915,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1560728552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560728550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e7927cfa4530204698a2d1defd3076b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1028406141597559990, guid: 74b58d81a27f59d4ba250914ed2d8e42, type: 3}
-  parent: {fileID: 4669067671490863166}
-  seats:
-  - {fileID: 4669067670925930423}
-  - {fileID: 4669067671461241189}
-  - {fileID: 4669067670986440173}
-  - {fileID: 4669067671260411990}
-  - {fileID: 2020395998}
-  areSeatsFull: 0
-  seatsTaken: 0
 --- !u!114 &1560728553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3008,6 +2985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4669067671671845699}
+  - component: {fileID: 4669067671671845700}
   m_Layer: 5
   m_Name: Payment Portion
   m_TagString: Untagged
@@ -3036,6 +3014,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &4669067671671845700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4669067671671845698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7927cfa4530204698a2d1defd3076b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1028406141597559990, guid: 74b58d81a27f59d4ba250914ed2d8e42, type: 3}
+  parent: {fileID: 4669067671490863166}
+  seats:
+  - {fileID: 4669067670925930423}
+  - {fileID: 4669067671461241189}
+  - {fileID: 4669067670986440173}
+  - {fileID: 4669067671260411990}
+  - {fileID: 2020395998}
+  areSeatsFull: 0
+  seatsTaken: 0
 --- !u!224 &4669067672118089828
 RectTransform:
   m_ObjectHideFlags: 0
