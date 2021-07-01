@@ -2580,6 +2580,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.01538074
       objectReference: {fileID: 0}
+    - target: {fileID: 2103657366328486967, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: modifier
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2103657367032365160, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -2599,6 +2603,10 @@ PrefabInstance:
     - target: {fileID: 2103657367032365166, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: TopSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103657367344210551, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: modifier
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
@@ -2963,6 +2971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1028406141597559990, guid: 74b58d81a27f59d4ba250914ed2d8e42, type: 3}
   parent: {fileID: 4669067671237578951}
+  customers: []
   seats:
   - {fileID: 4669067670741950286}
   - {fileID: 4669067671276114332}

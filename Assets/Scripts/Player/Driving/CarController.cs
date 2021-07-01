@@ -64,7 +64,6 @@ public class CarController : MonoBehaviour
 
     // Control signals
     float inThrottle = 0f;
-    float GasStrength = 1f;
     [HideInInspector] public float inTurn = 0f;
     bool inReset = false;
     bool isStuck = false;
@@ -235,9 +234,9 @@ public class CarController : MonoBehaviour
         //_gameManager.isJeepActive = inGas;
 
         if (inGas == true)
-        { inThrottle = GasStrength;}
+        { inThrottle = 1f;}
         if (inGas == false)
-        { inThrottle = 0.5f; }
+        { inThrottle = 0f; }
 
         inBoost = Input.GetAxisRaw("Jump") > 0f;
         inTurn = Input.GetAxisRaw("Horizontal");
@@ -277,7 +276,9 @@ public class CarController : MonoBehaviour
             float y = transform.eulerAngles.y;
             transform.eulerAngles = new Vector3(0, y, 0);
             rigidBody.velocity = new Vector3(0, -1f, 0);
+            transform.position = new Vector3(0, transform.position.y, transform.position.z);
             transform.position += Vector3.up * 2;
+
             inReset = false;
         }
 
