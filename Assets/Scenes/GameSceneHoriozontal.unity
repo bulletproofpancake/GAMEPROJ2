@@ -16,7 +16,7 @@ RenderSettings:
   serializedVersion: 9
   m_Fog: 1
   m_FogColor: {r: 0.29803923, g: 0.64705884, b: 0.89019614, a: 1}
-  m_FogMode: 3
+  m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -28,8 +28,8 @@ RenderSettings:
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d48a7646f5d0547e889733d84b50cb9f, type: 2}
   m_HaloStrength: 0.5
-  m_FlareStrength: 1
-  m_FlareFadeSpeed: 3
+  m_FlareStrength: 0.5
+  m_FlareFadeSpeed: 1
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
@@ -3081,6 +3081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1028406141597559990, guid: 74b58d81a27f59d4ba250914ed2d8e42, type: 3}
   parent: {fileID: 4669067671490863166}
+  customers: []
   seats:
   - {fileID: 4669067670925930423}
   - {fileID: 4669067671461241189}
