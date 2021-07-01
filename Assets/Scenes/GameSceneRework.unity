@@ -185,13 +185,6 @@ MonoBehaviour:
   roadPrefabs:
   - {fileID: 347039284396249167, guid: 0bafb022605a69e49ad9951750a4d3b8, type: 3}
   - {fileID: 347039284396249167, guid: e351b120ccdd958498c81178b00abed0, type: 3}
-  - {fileID: 347039284396249167, guid: 790de6830a2fbb94dae91de7067d40c5, type: 3}
-  - {fileID: 347039284396249167, guid: 143729701d5ab4945a1a8d0ffab33a64, type: 3}
-  - {fileID: 347039284396249167, guid: 48c6a111373d93c4688f295b066d5ce5, type: 3}
-  - {fileID: 347039284396249167, guid: 8ee580bf9c851e043976e56b873a3cc4, type: 3}
-  - {fileID: 347039284396249167, guid: 723d8ac9b6ebc0b40a8344861218c58d, type: 3}
-  - {fileID: 347039284396249167, guid: 01973e1051e13514f86d0be6209005b4, type: 3}
-  - {fileID: 347039284396249167, guid: d7c0fa6202f6db1449ae6d0edcb92fba, type: 3}
   zSpawn: 0
   roadLength: 34
   numberofTiles: 10
@@ -3076,6 +3069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1028406141597559990, guid: 74b58d81a27f59d4ba250914ed2d8e42, type: 3}
   parent: {fileID: 4669067671490863166}
+  customers: []
   seats:
   - {fileID: 4669067670925930423}
   - {fileID: 4669067671461241189}

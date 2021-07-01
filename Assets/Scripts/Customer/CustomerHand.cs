@@ -126,16 +126,24 @@ namespace Customer
                 _hasReceivedPayment = false;
                 yield break;
             }
+
+            customerManager.customers.Remove(this);
             _customerManagerJeepney.Jump();
             Destroy(gameObject);
         }
 
-        private IEnumerator Leave()
+        public void Leave()
+        {
+            StartCoroutine(LeaveRoutine());
+        }
+        
+        private IEnumerator LeaveRoutine()
         {
             _hasReceivedPayment = true;
             _image.color = Color.red;
             yield return new WaitForSeconds(1f);
             _hasReceivedPayment = false;
+            customerManager.customers.Remove(this);
             _customerManagerJeepney.Jump();
             Destroy(gameObject);
         }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Core;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Customer
     {
         [SerializeField] private GameObject prefab;
         [SerializeField] private Transform parent;
-        
+        public List<CustomerHand> customers;
         public Seats[] seats;
         private int _index;
         
@@ -32,6 +33,7 @@ namespace Customer
                     customer.transform.position = seats[_index].transform.position;
                     customer.GetComponent<CustomerHand>().customerManager = this;
                     customer.GetComponent<CustomerHand>().SeatTaken = _index;
+                    customers.Add(customer.GetComponent<CustomerHand>());
                     seats[_index].isTaken = true;
                     seatsTaken++;
                     //index always starts at zero so that all slots can be checked
