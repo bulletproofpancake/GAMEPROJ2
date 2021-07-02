@@ -103,7 +103,7 @@ namespace Customer
             if(!_hasReceivedPayment)
             {
                 //Changes the sprite color if this is selected by the money manager
-                _image.color = _moneyManager.customer == this ? Color.cyan : Color.white;
+                _image.color = _moneyManager.customer == this ? Color.yellow : Color.white;
             }
         }
 
