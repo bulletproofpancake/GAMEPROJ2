@@ -20,6 +20,8 @@ namespace Core
 
         public TimelineManager timelineManager;
 
+        public bool hasCompletedTutorial;
+
         private void Awake()
         {
             passengersList = new List<GameObject>();
