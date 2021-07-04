@@ -493,7 +493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &332539515
 RectTransform:
   m_ObjectHideFlags: 0
@@ -735,60 +735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &660623627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 660623628}
-  - component: {fileID: 660623629}
-  m_Layer: 5
-  m_Name: Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &660623628
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660623627}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2113325028}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &660623629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660623627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19afc00c28f76154397acd8e78169124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overlay: {fileID: 332539514}
-  titleDisplay: {fileID: 86572609}
-  bodyDisplay: {fileID: 2036909543}
-  imageDisplay: {fileID: 1356595462}
-  tutorialInfos:
-  - {fileID: 11400000, guid: 7cf0b61ce5e316d4990d1e6c35ec35b1, type: 2}
 --- !u!1 &821297750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1517,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 660623629}
+      - m_Target: {fileID: 1625874716}
         m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
         m_MethodName: Continue
         m_Mode: 1
@@ -1679,6 +1625,63 @@ MonoBehaviour:
   - {fileID: 4197887022987122476, guid: 8804cce836082334492ef8aaeef65b7a, type: 3}
   - {fileID: 698941085800734729, guid: 0dd1ab60aafafc148ad73e886a206a3d, type: 3}
   - {fileID: 4828282997715093296, guid: 0ba101db95d6c8942b4be9af69936823, type: 3}
+--- !u!1 &1625874715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625874717}
+  - component: {fileID: 1625874716}
+  m_Layer: 5
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1625874716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625874715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19afc00c28f76154397acd8e78169124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlay: {fileID: 332539514}
+  titleDisplay: {fileID: 86572609}
+  bodyDisplay: {fileID: 2036909543}
+  imageDisplay: {fileID: 1356595462}
+  tutorialInfos:
+  - {fileID: 11400000, guid: 7cf0b61ce5e316d4990d1e6c35ec35b1, type: 2}
+  - {fileID: 11400000, guid: dd1746083c812f847b4e562c182843e6, type: 2}
+  _tutorialIndex: 0
+  info: {fileID: 0}
+--- !u!224 &1625874717
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625874715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2113325028}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2020395996
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +2033,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 660623628}
+  - {fileID: 1625874717}
   - {fileID: 332539515}
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -3401,6 +3404,7 @@ MonoBehaviour:
   passengersList: []
   timelineManager: {fileID: 0}
   hasCompletedTutorial: 0
+  tutorialManager: {fileID: 0}
 --- !u!4 &3176591004548446134
 Transform:
   m_ObjectHideFlags: 0

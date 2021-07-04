@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] private GameObject overlay;
+    public GameObject overlay;
     [SerializeField] private TextMeshProUGUI titleDisplay, bodyDisplay;
     [SerializeField] private Image imageDisplay;
     [SerializeField] private TutorialInfo[] tutorialInfos;
-    private int _tutorialIndex;
-
+    [SerializeField] private int _tutorialIndex;
+    [SerializeField] private TutorialInfo info;
     private GameManager _gameManager;
     
     private void Start()
@@ -20,9 +20,10 @@ public class TutorialManager : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
     }
 
-    private void OnEnable()
+    public void ShowTutorial()
     {
-        var info = tutorialInfos[_tutorialIndex];
+        overlay.SetActive(true);
+        info = tutorialInfos[_tutorialIndex];
         titleDisplay.text = info.Title;
         bodyDisplay.text = info.Body;
         imageDisplay.sprite = info.Display;
@@ -30,20 +31,17 @@ public class TutorialManager : MonoBehaviour
 
     public void Continue()
     {
-        if(_gameManager.hasCompletedTutorial)
-            overlay.SetActive(false);
+        if (_tutorialIndex < tutorialInfos.Length)
+        {
+            _tutorialIndex++;
+        }
         else
         {
-            if(_tutorialIndex< tutorialInfos.Length)
-                _tutorialIndex++;
-            else
-            {
-                _gameManager.hasCompletedTutorial = true;
-            }
-
-            overlay.SetActive(false);
+            _gameManager.hasCompletedTutorial = true;
         }
 
+        overlay.SetActive(false); 
     }
+    
     
 }

@@ -22,6 +22,8 @@ namespace Core
 
         public bool hasCompletedTutorial;
 
+        public TutorialManager tutorialManager;
+
         private void Awake()
         {
             passengersList = new List<GameObject>();
@@ -30,6 +32,12 @@ namespace Core
         private void Start()
         {
             timelineManager = FindObjectOfType<TimelineManager>();
+            tutorialManager = FindObjectOfType<TutorialManager>();
+            if (tutorialManager == null) hasCompletedTutorial = true;
+            else
+            {
+                CallTutorial();
+            }
         }
 
         private void Update()
@@ -96,6 +104,11 @@ namespace Core
         {
             passengersList.Remove(customer);
         }
-    
+
+        public void CallTutorial()
+        {
+            tutorialManager.ShowTutorial();
+        }
+
     }
 }
