@@ -1,7 +1,6 @@
 using System.Collections;
 using Core;
 using Money;
-using Stations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +15,7 @@ namespace Customer
         private GameManager _gameManager;
         [SerializeField] private MoneyManager _moneyManager;
         
-        private TextMeshProUGUI _moneyDisplay;
+        //private TextMeshProUGUI _moneyDisplay;
         private Image _image;
 
         
@@ -43,6 +42,7 @@ namespace Customer
         #endregion
 
         #region ShownInInspector
+        [SerializeField] private float patience;
         [SerializeField] private Sprite openHand;
         // public Button giveMoneyButton;
         // public TextMeshProUGUI giveMoneyText;
@@ -51,7 +51,7 @@ namespace Customer
 
         private void Awake()
         {
-            _moneyDisplay = GetComponentInChildren<TextMeshProUGUI>();
+            //_moneyDisplay = GetComponentInChildren<TextMeshProUGUI>();
             _moneyManager = FindObjectOfType<MoneyManager>();
             _gameManager = FindObjectOfType<GameManager>();
             _image = GetComponent<Image>();
@@ -81,12 +81,13 @@ namespace Customer
 
         private void GivePayment()
         {
-            _paymentCap = _gameManager.customerPaymentCap;
+            _paymentCap = _gameManager.CustomerPaymentCap;
             print(_paymentCap);
-            cost = Random.Range(_gameManager.stationPaymentMin, _paymentCap + 1);
-            _moneyToGive = cost + Random.Range(0, _paymentCap + 1);
+            //cost = Random.Range(_gameManager.StationPayment, _paymentCap + 1);
+            cost = Random.Range(_gameManager.StationCost, _paymentCap);
+            _moneyToGive = cost + _paymentCap;
             MoneyToReceive = _moneyToGive - cost;
-            _moneyDisplay.text = $"{_moneyToGive}";
+            //_moneyDisplay.text = $"{_moneyToGive}";
         }
 
         private void Update()
@@ -111,7 +112,7 @@ namespace Customer
         {
             _moneyManager.paymentReceived = _moneyToGive;
             _moneyManager.stationCost = cost;
-            _moneyDisplay.text = string.Empty;
+            //_moneyDisplay.text = string.Empty;
             _image.sprite = openHand;
             _moneyManager.customer = this;
             //_moneyManager.giveMoneyIndicator = giveMoneyText;

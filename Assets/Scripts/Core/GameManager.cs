@@ -7,8 +7,10 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
-        public int stationPaymentMin;
-        public int customerPaymentCap;
+        [SerializeField] private float stationCostMin;
+        public int StationCost => (int) stationCostMin;
+        [SerializeField] private float customerPaymentCap;
+        public int CustomerPaymentCap => (int) customerPaymentCap;
         public float levelDuration;
         //public List<StationData> stations;
         //public bool isJeepActive;
@@ -30,11 +32,26 @@ namespace Core
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            // if (Input.GetKeyDown(KeyCode.W))
+            // {
+            //     //Only triggers when the player first moves
+            //     if (!hasGameStarted)
+            //     {
+            //         hasGameStarted = true;
+            //         timelineManager.StartCountDown();
+            //     }
+            // }
+
+            if (hasGameStarted)
             {
-                //Only triggers when the player first moves
-                if (!hasGameStarted)
+                customerPaymentCap += Time.deltaTime / 3f;
+                stationCostMin += Time.deltaTime / 2f;
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.W))
                 {
+                    
                     hasGameStarted = true;
                     timelineManager.StartCountDown();
                 }
@@ -65,6 +82,7 @@ namespace Core
             //TODO: IMPLEMENT GAME OVER SEQUENCE
             SceneLoader.Instance.LoadNextScene();
             print("Game Over");
+            print($"{(int) stationCostMin}");
         }
 
         public void AddPassenger(GameObject customer)
