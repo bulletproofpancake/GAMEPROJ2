@@ -107,6 +107,7 @@ namespace Core
 
         public void CallTutorial()
         {
+            hasGameStarted = false;
             tutorialManager.ShowTutorial();
         }
 

@@ -14,6 +14,12 @@ namespace Customer
         
         public bool areSeatsFull;
         public int seatsTaken;
+        private GameManager _gameManager;
+
+        private void Start()
+        {
+            _gameManager = FindObjectOfType<GameManager>();
+        }
 
         private void Update()
         {
@@ -53,6 +59,10 @@ namespace Customer
             {
                 Debug.LogWarning("No Seats left");
                 _index = 0;
+            }
+            if (!_gameManager.hasCompletedTutorial)
+            {
+                _gameManager.CallTutorial();
             }
         }
         

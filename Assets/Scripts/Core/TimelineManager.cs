@@ -69,6 +69,7 @@ namespace Core
         {
             while (timer < _gameManager.levelDuration)
             {
+                if (!_gameManager.hasGameStarted) continue;
                 yield return new WaitForEndOfFrame();
                 timer += Time.deltaTime;
             }

@@ -116,6 +116,10 @@ namespace Customer
             _image.sprite = openHand;
             _moneyManager.customer = this;
             //_moneyManager.giveMoneyIndicator = giveMoneyText;
+            if (!_gameManager.hasCompletedTutorial)
+            {
+                _gameManager.CallTutorial();
+            }
         }
 
         private IEnumerator Respond(bool isCorrect)

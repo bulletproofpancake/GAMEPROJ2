@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Core;
 using Customer;
 using TMPro;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace Money
 
         [SerializeField] private Button giveButton;
         [SerializeField] private Button clearButton;
+        private GameManager _gameManager;
 
         private void Awake()
         {
@@ -31,6 +33,7 @@ namespace Money
 
         private void Start()
         {
+            _gameManager = FindObjectOfType<GameManager>();
             _startingPosition = transform.position;
             moneyDisplay.text = string.Empty;
             //SetCamera();
@@ -80,6 +83,11 @@ namespace Money
         
         public void GiveMoney()
         {
+            if (!_gameManager.hasCompletedTutorial)
+            {
+                _gameManager.CallTutorial();
+            }
+            
             if (customer == null)
             {
                 Debug.LogWarning("No Customer Found");

@@ -53,6 +53,11 @@ namespace Customer
         {
             var passenger = Instantiate(passengers[Random.Range(0, passengers.Length)], parent);
             passenger.transform.position = new Vector3(sideWalk.position.x, _playerPosition.y, _playerPosition.z + spawnDistanceFromPlayer);
+            
+            if (!_gameManager.hasCompletedTutorial)
+            {
+                _gameManager.CallTutorial();
+            }
         }
 
         public void Jump()

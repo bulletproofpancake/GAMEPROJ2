@@ -31,7 +31,7 @@ public class TutorialManager : MonoBehaviour
 
     public void Continue()
     {
-        if (_tutorialIndex < tutorialInfos.Length)
+        if (_tutorialIndex < tutorialInfos.Length-1)
         {
             _tutorialIndex++;
         }
@@ -40,6 +40,7 @@ public class TutorialManager : MonoBehaviour
             _gameManager.hasCompletedTutorial = true;
         }
 
+        _gameManager.hasGameStarted = true;
         overlay.SetActive(false); 
     }
     

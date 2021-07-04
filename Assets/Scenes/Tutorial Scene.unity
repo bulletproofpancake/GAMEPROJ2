@@ -1661,6 +1661,9 @@ MonoBehaviour:
   tutorialInfos:
   - {fileID: 11400000, guid: 7cf0b61ce5e316d4990d1e6c35ec35b1, type: 2}
   - {fileID: 11400000, guid: dd1746083c812f847b4e562c182843e6, type: 2}
+  - {fileID: 11400000, guid: d3f42e65ccda851469b9cbde625184e2, type: 2}
+  - {fileID: 11400000, guid: d0a68020c3720f840ae7b2caa042b739, type: 2}
+  - {fileID: 11400000, guid: 1e465852d69e0274b8a84798901b8332, type: 2}
   _tutorialIndex: 0
   info: {fileID: 0}
 --- !u!224 &1625874717
