@@ -22,6 +22,7 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowTutorial()
     {
+        Time.timeScale = 0f;
         overlay.SetActive(true);
         info = tutorialInfos[_tutorialIndex];
         titleDisplay.text = info.Title;
@@ -31,16 +32,18 @@ public class TutorialManager : MonoBehaviour
 
     public void Continue()
     {
-        if (_tutorialIndex < tutorialInfos.Length-1)
+        if (_tutorialIndex < tutorialInfos.Length - 1)
         {
             _tutorialIndex++;
         }
         else
         {
             _gameManager.hasCompletedTutorial = true;
+            SceneLoader.Instance.isTutorialDone = true;
         }
 
-        _gameManager.hasGameStarted = true;
+        Time.timeScale = 1f;
+        //_gameManager.hasGameStarted = true;
         overlay.SetActive(false); 
     }
     

@@ -47,7 +47,8 @@ namespace Customer
         // public Button giveMoneyButton;
         // public TextMeshProUGUI giveMoneyText;
         #endregion
-        
+        private bool _isTutorialDone;
+
 
         private void Awake()
         {
@@ -116,9 +117,10 @@ namespace Customer
             _image.sprite = openHand;
             _moneyManager.customer = this;
             //_moneyManager.giveMoneyIndicator = giveMoneyText;
-            if (!_gameManager.hasCompletedTutorial)
+            if (!_isTutorialDone)
             {
                 _gameManager.CallTutorial();
+                _isTutorialDone = true;
             }
         }
 

@@ -24,6 +24,7 @@ namespace Money
         [SerializeField] private Button giveButton;
         [SerializeField] private Button clearButton;
         private GameManager _gameManager;
+        private bool _isTutorialDone;
 
         private void Awake()
         {
@@ -83,9 +84,10 @@ namespace Money
         
         public void GiveMoney()
         {
-            if (!_gameManager.hasCompletedTutorial)
+            if (!_isTutorialDone)
             {
                 _gameManager.CallTutorial();
+                _isTutorialDone = true;
             }
             
             if (customer == null)

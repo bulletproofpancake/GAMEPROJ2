@@ -18,6 +18,7 @@ namespace Customer
         private bool _hasPlayer;
         private GameManager _gameManager;
         private float _jumpHeight = 2.0f;
+        private bool _isTutorialDone;
 
         private void Start()
         {
@@ -54,9 +55,10 @@ namespace Customer
             var passenger = Instantiate(passengers[Random.Range(0, passengers.Length)], parent);
             passenger.transform.position = new Vector3(sideWalk.position.x, _playerPosition.y, _playerPosition.z + spawnDistanceFromPlayer);
             
-            if (!_gameManager.hasCompletedTutorial)
+            if (!_isTutorialDone)
             {
                 _gameManager.CallTutorial();
+                _isTutorialDone = true;
             }
         }
 
