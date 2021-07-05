@@ -9,9 +9,11 @@ public class AICarBehavior : MonoBehaviour
     private RaycastHit view;
     [SerializeField]
     private float minimumAvoidanceDistance;
+
+
+    private Rigidbody rb;
     [SerializeField]
     private float TopSpeed;
-
     private float currentSpeed;
 
 
@@ -19,6 +21,7 @@ public class AICarBehavior : MonoBehaviour
     void Start()
     {
         currentSpeed = TopSpeed;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -29,7 +32,11 @@ public class AICarBehavior : MonoBehaviour
     }
 
     private void Move()
-    { transform.position += transform.forward * currentSpeed; }
+    {
+        Vector3 tempVect = new Vector3(0, 0, 1);
+        tempVect = tempVect.normalized * currentSpeed * Time.deltaTime;
+        rb.MovePosition(transform.position + tempVect);
+    }
 
     private void ApplyAvoidance()
     {
@@ -39,12 +46,12 @@ public class AICarBehavior : MonoBehaviour
         //RC
         if (Physics.Raycast(RaycastOffsetLeft, transform.forward, out view, minimumAvoidanceDistance) || Physics.Raycast(RaycastOffsetRight, transform.forward, out view, minimumAvoidanceDistance))
         {
-            if(view.transform.tag == "Player")
+            if (view.transform.tag == "Player")
             {
                 Debug.Log("Hit");
                 currentSpeed = 0f;
             }
-            
+
         }
 
 
@@ -55,4 +62,19 @@ public class AICarBehavior : MonoBehaviour
             currentSpeed = TopSpeed;
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        { StartCoroutine("destroyTimer"); }
+    }
+
+    public IEnumerator destroyTimer()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+    }
 }
+
+
+    
