@@ -66,6 +66,16 @@ namespace Customer
         {
             Debug.LogWarning("Jump");
             var passenger = _gameManager.passengersList[0];
+            if (_gameManager.passengersList.Count == 0)
+            {
+                passenger = Instantiate(passengers[0], parent);
+            }
+            if (passenger == null)
+            {
+                passenger = _gameManager.passengersList[1];
+                _gameManager.passengersList.Remove(_gameManager.passengersList[0]);
+            }
+
             passenger.GetComponent<CustomerPassenger>().hasJumped = true;
             passenger.transform.position = new Vector3(_playerPosition.x, _playerPosition.y + _jumpHeight, _playerPosition.z - 5);
             passenger.SetActive(true);

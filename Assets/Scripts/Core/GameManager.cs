@@ -17,7 +17,7 @@ namespace Core
         //public bool isJeepActive;
         [HideInInspector] public bool hasGameStarted;
 
-        [HideInInspector] public List<GameObject> passengersList;
+        public List<GameObject> passengersList;
 
         [HideInInspector] public TimelineManager timelineManager;
 
