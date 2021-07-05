@@ -1,4 +1,4 @@
-///using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Core;
 using UnityEngine;
@@ -273,13 +273,11 @@ public class CarController : MonoBehaviour
 
         if (inReset)
         {  // Reset
-            float y = transform.eulerAngles.y;
-            transform.eulerAngles = new Vector3(0, y, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
             rigidBody.velocity = new Vector3(0, -1f, 0);
-            transform.position = new Vector3(0, transform.position.y, transform.position.z);
-            transform.position += Vector3.up * 2;
-
-            inReset = false;
+            transform.position = new Vector3(0, transform.position.y -1f, transform.position.z);
+            transform.position += Vector3.up;
+            StartCoroutine("resetTimer");
         }
 
         isRotating = false;
@@ -424,6 +422,12 @@ public class CarController : MonoBehaviour
             }
         }
         return bounds;
+    }
+
+    public IEnumerator resetTimer()
+    {
+        yield return new WaitForSeconds(2f);
+        inReset = false;
     }
     #endregion
 }
