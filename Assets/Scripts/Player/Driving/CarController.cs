@@ -276,9 +276,10 @@ public class CarController : MonoBehaviour
             
             transform.eulerAngles = new Vector3(0, 0, 0);
             rigidBody.velocity = new Vector3(0, -1f, 0);
-            float z = transform.position.z / 10;
-            z = Mathf.RoundToInt(z) * 10;
-            transform.position = new Vector3(0, transform.position.y, z);
+            //float z = transform.position.z / 10;
+            //z = Mathf.RoundToInt(z) * 10;
+            //transform.position = new Vector3(0, transform.position.y, z);
+            transform.position = new Vector3(0, transform.position.y, 5f);
             StartCoroutine("resetTimer");
         }
 
