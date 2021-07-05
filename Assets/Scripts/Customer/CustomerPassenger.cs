@@ -15,6 +15,7 @@ namespace Customer
         private GameManager _gameManager;
         public bool hasJumped;
         [SerializeField] private Collider magnet;
+        [SerializeField] private Collider collider;
 
         private void OnEnable()
         {
@@ -64,6 +65,7 @@ namespace Customer
             {
                 _isBoarding = false;
                 magnet.enabled = false;
+                collider.enabled = false;
             }
         }
 

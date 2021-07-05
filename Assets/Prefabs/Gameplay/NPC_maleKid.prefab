@@ -304,6 +304,7 @@ MonoBehaviour:
   lifespan: 10
   hasJumped: 0
   magnet: {fileID: -2430062086664257067}
+  collider: {fileID: 4828282997715093302}
 --- !u!136 &-2430062086664257067
 CapsuleCollider:
   m_ObjectHideFlags: 0
