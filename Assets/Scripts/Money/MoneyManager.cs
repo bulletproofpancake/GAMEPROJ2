@@ -9,7 +9,7 @@ namespace Money
 {
     public class MoneyManager : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI moneyDisplay;
+        [SerializeField] private TextMeshProUGUI moneyDisplay, roundMoneyDisplay;
         public TextMeshProUGUI giveMoneyIndicator;
         private int _currentTotal;
         private List<GameObject> _moneyPrefabs;
@@ -69,6 +69,8 @@ namespace Money
             }
             else
                 moneyDisplay.text = _currentTotal == 0 ? string.Empty : $"{_currentTotal}";
+
+            roundMoneyDisplay.text = $"PHP: {RoundStatManager.Instance.moneyEarned}";
         }
         
         private void ReturnToStartingPosition()

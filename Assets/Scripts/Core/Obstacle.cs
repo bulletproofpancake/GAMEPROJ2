@@ -18,11 +18,14 @@ namespace Core
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
-            if (!_gameManager.tutorialManager.isObstacleTutorialDone)
+            if(_gameManager.tutorialManager != null)
             {
-                _gameManager.CallTutorial(tutorial);
-                _gameManager.tutorialManager.isObstacleTutorialDone = true;
-                
+                if (!_gameManager.tutorialManager.isObstacleTutorialDone)
+                {
+                    _gameManager.CallTutorial(tutorial);
+                    _gameManager.tutorialManager.isObstacleTutorialDone = true;
+
+                }
             }
             print("ouch");
             if (_customerManager.customers.Count > 0)
