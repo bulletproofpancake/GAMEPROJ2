@@ -22,6 +22,8 @@ public class AICarBehavior : MonoBehaviour
     {
         currentSpeed = TopSpeed;
         rb = GetComponent<Rigidbody>();
+
+        StartCoroutine("lifeTimer");
     }
 
     // Update is called once per frame
@@ -72,6 +74,12 @@ public class AICarBehavior : MonoBehaviour
     public IEnumerator destroyTimer()
     {
         yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+    }
+
+    public IEnumerator lifeTimer()
+    {
+        yield return new WaitForSeconds(20f);
         Destroy(gameObject);
     }
 }
