@@ -3634,7 +3634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990fda44bd10d504c934bd6fbcfcd989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelDuration: 60
+  levelDuration: 120
   hasGameStarted: 0
   passengersList: []
   timelineManager: {fileID: 0}
