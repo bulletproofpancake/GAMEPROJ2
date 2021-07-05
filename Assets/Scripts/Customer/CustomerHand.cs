@@ -134,6 +134,8 @@ namespace Customer
                 yield break;
             }
 
+            RoundStatManager.Instance.CollectPayment(cost);
+            RoundStatManager.Instance.CompleteCustomer();
             customerManager.customers.Remove(this);
             _customerManagerJeepney.Jump();
             Destroy(gameObject);
