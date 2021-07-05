@@ -20,6 +20,7 @@ namespace Core
             {
                 _customerManager.customers[0].Leave();
             }
+            RoundStatManager.Instance.HitObstacle();
             Destroy(gameObject);
         }
     }

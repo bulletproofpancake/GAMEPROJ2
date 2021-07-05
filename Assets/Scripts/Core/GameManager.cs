@@ -100,6 +100,7 @@ namespace Core
 
         IEnumerator GameOverSequence()
         {
+            RoundStatManager.Instance.Earn();
             gameOverDisplay.SetActive(true);
             Time.timeScale = 0f;
             yield return new WaitForSecondsRealtime(3f);

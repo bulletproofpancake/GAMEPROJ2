@@ -14,4 +14,19 @@ public class SummaryManager : Singleton<SummaryManager>
         obstaclesHitDisplay.text = $"Obstacles Hit: {RoundStatManager.Instance.obstaclesHit}";
         totalPassengersDisplay.text = $"Total Passengers: {RoundStatManager.Instance.totalPassengers}";
     }
+
+    public void LoadMainMenu()
+    {
+        print(RoundStatManager.Instance.totalMoney);
+        RoundStatManager.Instance.EndRound();
+        SceneLoader.Instance.LoadScene("Main Menu");
+    }
+
+    public void LoadGame()
+    {
+        print(RoundStatManager.Instance.totalMoney);
+        RoundStatManager.Instance.EndRound();
+        SceneLoader.Instance.LoadGame();
+    }
+    
 }
