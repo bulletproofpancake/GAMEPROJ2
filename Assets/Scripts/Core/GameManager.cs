@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Customer;
 using Stations;
@@ -7,22 +8,23 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private float stationCostMin;
+        private float stationCostMin;
         public int StationCost => (int) stationCostMin;
-        [SerializeField] private float customerPaymentCap;
+        private float customerPaymentCap;
         public int CustomerPaymentCap => (int) customerPaymentCap;
         public float levelDuration;
         //public List<StationData> stations;
         //public bool isJeepActive;
-        public bool hasGameStarted;
+        [HideInInspector] public bool hasGameStarted;
 
-        public List<GameObject> passengersList;
+        [HideInInspector] public List<GameObject> passengersList;
 
-        public TimelineManager timelineManager;
+        [HideInInspector] public TimelineManager timelineManager;
 
-        public bool hasCompletedTutorial;
+        [HideInInspector] public bool hasCompletedTutorial;
 
-        public TutorialManager tutorialManager;
+        [HideInInspector] public TutorialManager tutorialManager;
+        [SerializeField] private GameObject gameOverDisplay;
 
         private void Awake()
         {
@@ -31,6 +33,7 @@ namespace Core
 
         private void Start()
         {
+            gameOverDisplay.SetActive(false);
             timelineManager = FindObjectOfType<TimelineManager>();
             tutorialManager = FindObjectOfType<TutorialManager>();
             if (tutorialManager == null) hasCompletedTutorial = true;
@@ -90,11 +93,19 @@ namespace Core
         public void GameOver()
         {
             //TODO: IMPLEMENT GAME OVER SEQUENCE
-            SceneLoader.Instance.LoadNextScene();
+            StartCoroutine(GameOverSequence());
             print("Game Over");
             print($"{(int) stationCostMin}");
         }
 
+        IEnumerator GameOverSequence()
+        {
+            gameOverDisplay.SetActive(true);
+            Time.timeScale = 0f;
+            yield return new WaitForSecondsRealtime(3f);
+            Time.timeScale = 1f;
+            SceneLoader.Instance.LoadScene("EndScreen");
+        }
         public void AddPassenger(GameObject customer)
         {
             passengersList.Add(customer);
