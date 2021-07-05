@@ -6,15 +6,24 @@ namespace Core
     public class Obstacle : MonoBehaviour
     {
         private CustomerManagerPayment _customerManager;
+        [SerializeField] private TutorialInfo tutorial;
+        private GameManager _gameManager;
 
         private void Start()
         {
             _customerManager = FindObjectOfType<CustomerManagerPayment>();
+            _gameManager = FindObjectOfType<GameManager>();
         }
 
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
+            if (!_gameManager.tutorialManager.isObstacleTutorialDone)
+            {
+                _gameManager.CallTutorial(tutorial);
+                _gameManager.tutorialManager.isObstacleTutorialDone = true;
+                
+            }
             print("ouch");
             if (_customerManager.customers.Count > 0)
             {

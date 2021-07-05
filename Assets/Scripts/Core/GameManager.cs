@@ -121,7 +121,16 @@ namespace Core
         {
             //hasGameStarted = false;
             if (hasCompletedTutorial) return;
+            tutorialManager.fromSpecific = false;
             tutorialManager.ShowTutorial();
+        }
+        
+        public void CallTutorial(TutorialInfo tutorialInfo)
+        {
+            //hasGameStarted = false;
+            if (hasCompletedTutorial) return;
+            tutorialManager.fromSpecific = true;
+            tutorialManager.ShowTutorial(tutorialInfo);
         }
 
     }

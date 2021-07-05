@@ -14,6 +14,8 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private int _tutorialIndex;
     [SerializeField] private TutorialInfo info;
     private GameManager _gameManager;
+    public bool fromSpecific;
+    public bool isObstacleTutorialDone;
     
     private void Start()
     {
@@ -29,17 +31,29 @@ public class TutorialManager : MonoBehaviour
         bodyDisplay.text = info.Body;
         imageDisplay.sprite = info.Display;
     }
+    
+    public void ShowTutorial(TutorialInfo tutorialInfo)
+    {
+        Time.timeScale = 0f;
+        overlay.SetActive(true);
+        titleDisplay.text = tutorialInfo.Title;
+        bodyDisplay.text = tutorialInfo.Body;
+        imageDisplay.sprite = tutorialInfo.Display;
+    }
 
     public void Continue()
     {
-        if (_tutorialIndex < tutorialInfos.Length - 1)
+        if(!fromSpecific)
         {
-            _tutorialIndex++;
-        }
-        else
-        {
-            _gameManager.hasCompletedTutorial = true;
-            SceneLoader.Instance.isTutorialDone = true;
+            if (_tutorialIndex < tutorialInfos.Length - 1)
+            {
+                _tutorialIndex++;
+            }
+            else
+            {
+                _gameManager.hasCompletedTutorial = true;
+                SceneLoader.Instance.isTutorialDone = true;
+            }
         }
 
         Time.timeScale = 1f;
