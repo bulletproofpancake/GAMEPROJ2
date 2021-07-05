@@ -3402,7 +3402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stationCostMin: 1
   customerPaymentCap: 1
-  levelDuration: 90
+  levelDuration: 60
   hasGameStarted: 0
   passengersList: []
   timelineManager: {fileID: 0}
