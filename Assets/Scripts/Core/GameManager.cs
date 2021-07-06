@@ -104,9 +104,9 @@ namespace Core
         {
             RoundStatManager.Instance.Earn();
             gameOverDisplay.SetActive(true);
-            Time.timeScale = 0f;
+            pause.TogglePause(false);
             yield return new WaitForSecondsRealtime(3f);
-            Time.timeScale = 1f;
+            pause.TogglePause(false);
             SceneLoader.Instance.LoadScene("EndScreen");
         }
         public void AddPassenger(GameObject customer)

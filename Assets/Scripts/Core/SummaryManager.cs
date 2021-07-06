@@ -10,6 +10,7 @@ public class SummaryManager : Singleton<SummaryManager>
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         moneyEarnedDisplay.text = $"Money Earned: {RoundStatManager.Instance.moneyEarned}";
         obstaclesHitDisplay.text = $"Obstacles Hit: {RoundStatManager.Instance.obstaclesHit}";
         totalPassengersDisplay.text = $"Total Passengers: {RoundStatManager.Instance.totalPassengers}";

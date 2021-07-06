@@ -20,4 +20,10 @@ public class PauseGame : MonoBehaviour
         _isPaused = !_isPaused;
         print(Time.timeScale);
     }
+
+    public void ExitRound()
+    {
+        RoundStatManager.Instance.EndRound();
+        SceneLoader.Instance.LoadScene("Main Menu");
+    }
 }
