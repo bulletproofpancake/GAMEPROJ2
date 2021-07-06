@@ -22,7 +22,7 @@ public class StartGame : MonoBehaviour
 
     void Start() 
     {
-      
+      SceneLoader.Instance.Play("BlackToFade");
        anim = thing.GetComponent<Animator>();
     }
 
@@ -38,11 +38,11 @@ public class StartGame : MonoBehaviour
         anim.SetBool("isStart", true);
 
         //Ilagay mo dun sa animation duration yung haba nung animation na gagawin mo para saka lang magloload kapag tapos na yung animation
-        yield return new WaitForSeconds(animationDuration);
-        
+        yield return new WaitForSeconds(animationDuration * 0.5f);
+        SceneLoader.Instance.Play("FadeToBlack");
+        yield return new WaitForSeconds(1f);
         //Comment out mo to pag meron ka nang duration
         //yield return null;
-        
         SceneLoader.Instance.LoadGame();
     }
 }

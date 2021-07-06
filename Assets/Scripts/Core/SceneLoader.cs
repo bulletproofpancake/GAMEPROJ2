@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : Singleton<SceneLoader>
 {
+    [SerializeField] private Animator animator;
     public bool isTutorialDone;
     public void LoadNextScene()
     {
+        Play("FadeToBlack");
         if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCount)
             SceneManager.LoadScene(0);
         else
@@ -16,6 +19,7 @@ public class SceneLoader : Singleton<SceneLoader>
 
     public void LoadGame()
     {
+        //Play("FadeToBlack");
         if (isTutorialDone)
         {
             SceneManager.LoadScene("GameSceneRework");
@@ -28,6 +32,7 @@ public class SceneLoader : Singleton<SceneLoader>
     
     public void LoadScene(string sceneName)
     {
+        //Play("FadeToBlack");
         SceneManager.LoadScene(sceneName);
     }
     
@@ -35,5 +40,10 @@ public class SceneLoader : Singleton<SceneLoader>
     {
         Application.Quit();
     }
-    
+
+    public void Play(string animationName)
+    {
+        animator.Play(animationName);
+    }
+
 }

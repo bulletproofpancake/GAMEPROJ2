@@ -34,6 +34,7 @@ namespace Core
 
         private void Start()
         {
+            SceneLoader.Instance.Play("BlackToFade");
             gameOverDisplay.SetActive(false);
             timelineManager = FindObjectOfType<TimelineManager>();
             tutorialManager = FindObjectOfType<TutorialManager>();
@@ -105,8 +106,10 @@ namespace Core
             RoundStatManager.Instance.Earn();
             gameOverDisplay.SetActive(true);
             pause.TogglePause(false);
-            yield return new WaitForSecondsRealtime(3f);
+            yield return new WaitForSecondsRealtime(2f);
             pause.TogglePause(false);
+            SceneLoader.Instance.Play("FadeToBlack");
+            yield return new WaitForSeconds(1f);
             SceneLoader.Instance.LoadScene("EndScreen");
         }
         public void AddPassenger(GameObject customer)

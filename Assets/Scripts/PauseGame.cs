@@ -23,6 +23,14 @@ public class PauseGame : MonoBehaviour
 
     public void ExitRound()
     {
+        StartCoroutine(ExitRoutine());
+    }
+
+    IEnumerator ExitRoutine()
+    {
+        _isPaused = false;
+        SceneLoader.Instance.Play("FadeToBlack");
+        yield return new WaitForSeconds(1f);
         RoundStatManager.Instance.EndRound();
         SceneLoader.Instance.LoadScene("Main Menu");
     }
