@@ -49,6 +49,7 @@ namespace Customer
         #endregion
         private bool _isTutorialDone;
 
+        [SerializeField] private Color skinTone;
 
         private void Awake()
         {
@@ -58,6 +59,7 @@ namespace Customer
             _image = GetComponent<Image>();
             _timeline = FindObjectOfType<TimelineManager>();
             _customerManagerJeepney = FindObjectOfType<CustomerManagerJeepney>();
+            //skinTone = new Color(255, 223, 175);
         }
 
         private void Start()
@@ -105,7 +107,7 @@ namespace Customer
             if(!_hasReceivedPayment)
             {
                 //Changes the sprite color if this is selected by the money manager
-                _image.color = _moneyManager.customer == this ? Color.yellow : Color.white;
+                _image.color = _moneyManager.customer == this ? Color.yellow : skinTone;
             }
         }
 
