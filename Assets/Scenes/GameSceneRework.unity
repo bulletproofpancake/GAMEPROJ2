@@ -1108,7 +1108,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Over
+  m_text: TIME'S UP!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e29fefbca9e44414397dbcaea4c967fe, type: 2}
   m_sharedMaterial: {fileID: -3430290944213075432, guid: e29fefbca9e44414397dbcaea4c967fe, type: 2}
@@ -1269,6 +1269,7 @@ MonoBehaviour:
   hasCompletedTutorial: 0
   tutorialManager: {fileID: 0}
   gameOverDisplay: {fileID: 474898679}
+  pause: {fileID: 0}
 --- !u!4 &3176591004548446134
 Transform:
   m_ObjectHideFlags: 0
