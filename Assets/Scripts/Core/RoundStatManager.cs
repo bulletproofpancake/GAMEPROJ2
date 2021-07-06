@@ -2,6 +2,7 @@ public class RoundStatManager : Singleton<RoundStatManager>
 {
     public int moneyEarned, obstaclesHit, totalPassengers, totalMoney;
 
+    public int net;
     // public void Collect(int payment)
     // {
     //     currentMoney += payment;
@@ -38,10 +39,20 @@ public class RoundStatManager : Singleton<RoundStatManager>
     {
         totalPassengers++;
     }
-
+    
+    private void CalculateNet()
+    {
+        net = moneyEarned - obstaclesHit * 10;
+        if (net <= 0)
+        {
+            net = 0;
+        }
+    }
+    
     public void Earn()
     {
-        totalMoney += moneyEarned;
+        CalculateNet();
+        totalMoney += net;
     }
 
     public void EndRound()

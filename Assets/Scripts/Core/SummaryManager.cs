@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class SummaryManager : Singleton<SummaryManager>
 {
-    [SerializeField] private TextMeshProUGUI moneyEarnedDisplay, obstaclesHitDisplay, totalPassengersDisplay;
+    [SerializeField] private TextMeshProUGUI moneyEarnedDisplay, obstaclesHitDisplay, totalEarningsDisplay;
     
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1f;
-        moneyEarnedDisplay.text = $"Money Earned: {RoundStatManager.Instance.moneyEarned}";
-        obstaclesHitDisplay.text = $"Obstacles Hit: {RoundStatManager.Instance.obstaclesHit}";
-        totalPassengersDisplay.text = $"Total Passengers: {RoundStatManager.Instance.totalPassengers}";
+        moneyEarnedDisplay.text = $"Money Earned: PHP {RoundStatManager.Instance.moneyEarned}";
+        obstaclesHitDisplay.text = $"Obstacles Hit: {RoundStatManager.Instance.obstaclesHit} (-PHP {RoundStatManager.Instance.obstaclesHit*10})";
+        totalEarningsDisplay.text = $"Total Earnings: PHP {RoundStatManager.Instance.net}";
     }
 
     public void LoadMainMenu()
