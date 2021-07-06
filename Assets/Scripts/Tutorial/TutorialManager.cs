@@ -24,7 +24,7 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowTutorial()
     {
-        Time.timeScale = 0f;
+        _gameManager.pause.TogglePause(false);
         overlay.SetActive(true);
         info = tutorialInfos[_tutorialIndex];
         titleDisplay.text = info.Title;
@@ -34,7 +34,7 @@ public class TutorialManager : MonoBehaviour
     
     public void ShowTutorial(TutorialInfo tutorialInfo)
     {
-        Time.timeScale = 0f;
+        _gameManager.pause.TogglePause(false);
         overlay.SetActive(true);
         titleDisplay.text = tutorialInfo.Title;
         bodyDisplay.text = tutorialInfo.Body;
@@ -56,7 +56,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        Time.timeScale = 1f;
+        _gameManager.pause.TogglePause(false);
         //_gameManager.hasGameStarted = true;
         overlay.SetActive(false); 
     }

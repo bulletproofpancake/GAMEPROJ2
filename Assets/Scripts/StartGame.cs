@@ -15,6 +15,11 @@ public class StartGame : MonoBehaviour
     [SerializeField]
     private float animationDuration;
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
     void Start() 
     {
       

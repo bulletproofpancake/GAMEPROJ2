@@ -25,6 +25,7 @@ namespace Core
 
         [HideInInspector] public TutorialManager tutorialManager;
         [SerializeField] private GameObject gameOverDisplay;
+        public PauseGame pause;
 
         private void Awake()
         {
@@ -36,6 +37,7 @@ namespace Core
             gameOverDisplay.SetActive(false);
             timelineManager = FindObjectOfType<TimelineManager>();
             tutorialManager = FindObjectOfType<TutorialManager>();
+            pause = FindObjectOfType<PauseGame>();
             if (tutorialManager == null) hasCompletedTutorial = true;
             else
             {
