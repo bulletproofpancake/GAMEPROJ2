@@ -16,6 +16,11 @@ public class AICarBehavior : MonoBehaviour
     private float TopSpeed;
     private float currentSpeed;
 
+    [SerializeField]
+    private float destroyTime = 3f;
+
+    [SerializeField]
+    private float lifeTime = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -73,13 +78,13 @@ public class AICarBehavior : MonoBehaviour
 
     public IEnumerator destroyTimer()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(destroyTime);
         Destroy(gameObject);
     }
 
     public IEnumerator lifeTimer()
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(lifeTime);
         Destroy(gameObject);
     }
 }
