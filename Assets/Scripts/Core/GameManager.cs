@@ -41,7 +41,7 @@ namespace Core
             if (tutorialManager == null) hasCompletedTutorial = true;
             else
             {
-                CallTutorial();
+                Invoke("CallTutorial",1f);
             }
         }
 
