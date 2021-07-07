@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - 2D Camera
+  - Stoplight
+  - Obstacle
   layers:
   - Default
   - TransparentFX

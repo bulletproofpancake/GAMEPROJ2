@@ -1,9 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
-using System.Collections;
-using System.Collections.Generic;
 using Core;
 using UnityEngine;
 
@@ -144,10 +140,10 @@ public class CarControllerSnap : MonoBehaviour
         // Forward Movement
         if (inGas == true)
         {
-            if (speed < TopSpeed)
+            if (speed < topspeed)
                 speed = speed + (accel * Time.deltaTime);
 
-            else if (speed > -TopSpeed)
+            else if (speed > -topspeed)
                 speed = speed - (accel * Time.deltaTime); 
 
             rigidBody.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime));
@@ -197,20 +193,6 @@ public class CarControllerSnap : MonoBehaviour
 
     #region Utilities
 
-    float Angle2Points(Vector3 a, Vector3 b)
-    {
-        //return Mathf.Atan2(b.y - a.y, b.x - a.x) * Mathf.Rad2Deg;
-        return Mathf.Atan2(b.x - a.x, b.z - a.z) * Mathf.Rad2Deg;
-    }
-
-    float AngleOffset(float raw, float offset)
-    {
-        raw = (raw + offset) % 360;             // Mod by 360, to not exceed 360
-        if (raw > 180.0f) raw -= 360.0f;
-        if (raw < -180.0f) raw += 360.0f;
-        return raw;
-    }
-
     // Get bound of a large 
     public static Bounds GetBounds(GameObject obj)
     {
@@ -245,10 +227,37 @@ public class CarControllerSnap : MonoBehaviour
         return bounds;
     }
 
-    public IEnumerator resetTimer()
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        { StartCoroutine("slowTimer"); }    
+    }
+
+    private void OnTriggerEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Stoplight"))
+        { StartCoroutine("stopTimer"); }
+    }
+
+
+        public IEnumerator resetTimer()
     {
         yield return new WaitForSeconds(2f);
         inReset = false;
+    }
+
+    public IEnumerator slowTimer()
+    {
+        topspeed = TopSpeed / 2;
+        yield return new WaitForSeconds(2f);
+        topspeed = TopSpeed * 2;
+    }
+
+    public IEnumerator stopTimer()
+    {
+        topspeed = 0;
+        yield return new WaitForSeconds(2f);
+        topspeed = TopSpeed;
     }
     #endregion
 }
