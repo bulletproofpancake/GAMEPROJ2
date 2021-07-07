@@ -152,10 +152,10 @@ public class CarControllerSnap : MonoBehaviour
         if (inGas == false)
         {
             if (speed < 0)
-                speed = speed + (accel * Time.deltaTime);
+                speed = speed + (decel * Time.deltaTime);
 
             else if (speed > 0)
-                speed = speed - (accel * Time.deltaTime);
+                speed = speed - (decel * Time.deltaTime);
 
             rigidBody.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime));
         }
