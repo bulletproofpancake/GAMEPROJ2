@@ -16,6 +16,7 @@ public class PauseGame : MonoBehaviour
 
     public void TogglePause(bool showMenu)
     {
+        AudioManager.Instance.Play("Click");
         _showMenu = showMenu;
         _isPaused = !_isPaused;
         print(Time.timeScale);

@@ -29,6 +29,7 @@ public class StartGame : MonoBehaviour
 
     public void Load()
     {
+        AudioManager.Instance.Play("Click");
         anim.SetBool("isStart", false);
         StartCoroutine(LoadRoutine());
     }
@@ -46,6 +47,10 @@ public class StartGame : MonoBehaviour
         yield return new WaitForSeconds(1f);
         //Comment out mo to pag meron ka nang duration
         //yield return null;
+        //AudioManager.Instance.Stop("StartIdle");
+        //AudioManager.Instance.Fade("Ignition");
+        //AudioManager.Instance.Stop("Ignition");
+        //AudioManager.Instance.StopAll();
         SceneLoader.Instance.LoadGame();
     }
 }

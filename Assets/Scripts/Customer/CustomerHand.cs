@@ -113,6 +113,7 @@ namespace Customer
 
         public void GetSelected()
         {
+            AudioManager.Instance.Play("CoinsPicked");
             _moneyManager.paymentReceived = _moneyToGive;
             _moneyManager.stationCost = cost;
             //_moneyDisplay.text = string.Empty;
