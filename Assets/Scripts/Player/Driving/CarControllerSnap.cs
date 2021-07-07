@@ -44,9 +44,8 @@ public class CarControllerSnap : MonoBehaviour
     [HideInInspector] public float Turn = 0f;
     private float speed = 0f;
     bool inReset = false;
-    bool autoReset = false;
-    bool inGas = false;
-    bool inTurn = false;
+    public bool inGas = false;
+    public bool inTurn = false;
 
     Vector3 spawnP;
     Quaternion spawnR;
@@ -56,9 +55,8 @@ public class CarControllerSnap : MonoBehaviour
 
     void Start()
     {
-
+        //Connections
         _gameManager = FindObjectOfType<GameManager>();
-
         rigidBody = GetComponent<Rigidbody>();
 
         // Store start location & rotation
@@ -70,7 +68,9 @@ public class CarControllerSnap : MonoBehaviour
 
         // Move the CoM to a fraction of colliders boundaries
         rigidBody.centerOfMass = Vector3.Scale(groupCollider.extents, CoM);
-
+        
+        //Speed Set
+        topspeed = TopSpeed;
     }
 
 
@@ -85,9 +85,6 @@ public class CarControllerSnap : MonoBehaviour
         #region Situational Checks
         accel = Accel;
         decel = Decel;
-        topspeed = TopSpeed;
-        
-        //Speed Up
         
 
         rigidBody.angularDrag = AngDragG;
@@ -125,11 +122,6 @@ public class CarControllerSnap : MonoBehaviour
         //Game Manager checks if Jeep is active based on inGas variable
         //which is connected to Timeline State
         //_gameManager.isJeepActive = inGas;
-
-
-
-
-
        // Reset will turn false after the respawn is successful
        inReset = inReset || Input.GetKeyDown(KeyCode.R);
     }
@@ -143,8 +135,8 @@ public class CarControllerSnap : MonoBehaviour
             if (speed < topspeed)
                 speed = speed + (accel * Time.deltaTime);
 
-            else if (speed > -topspeed)
-                speed = speed - (accel * Time.deltaTime); 
+            else if (speed > topspeed)
+                speed = speed - (decel * Time.deltaTime); 
 
             rigidBody.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime));
         }
@@ -155,7 +147,7 @@ public class CarControllerSnap : MonoBehaviour
                 speed = speed + (accel * Time.deltaTime);
 
             else if (speed > 0)
-                speed = speed - (accel * Time.deltaTime);
+                speed = speed - (decel * Time.deltaTime);
 
             rigidBody.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime));
         }
@@ -233,10 +225,13 @@ public class CarControllerSnap : MonoBehaviour
         { StartCoroutine("slowTimer"); }    
     }
 
-    private void OnTriggerEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Stoplight"))
-        { StartCoroutine("stopTimer"); }
+        if (other.CompareTag("Stoplight"))
+        {
+            Debug.Log("Stoplight");
+            StartCoroutine("stopTimer");
+        }
     }
 
 
@@ -248,13 +243,14 @@ public class CarControllerSnap : MonoBehaviour
 
     public IEnumerator slowTimer()
     {
-        topspeed = TopSpeed / 2;
+        topspeed = topspeed / 2;
         yield return new WaitForSeconds(2f);
-        topspeed = TopSpeed * 2;
+        topspeed = TopSpeed;
     }
 
     public IEnumerator stopTimer()
     {
+
         topspeed = 0;
         yield return new WaitForSeconds(2f);
         topspeed = TopSpeed;
