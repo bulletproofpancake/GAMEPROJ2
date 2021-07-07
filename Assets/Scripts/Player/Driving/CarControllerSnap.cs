@@ -44,9 +44,8 @@ public class CarControllerSnap : MonoBehaviour
     [HideInInspector] public float Turn = 0f;
     private float speed = 0f;
     bool inReset = false;
-    bool autoReset = false;
-    bool inGas = false;
-    bool inTurn = false;
+    public bool inGas = false;
+    public bool inTurn = false;
 
     Vector3 spawnP;
     Quaternion spawnR;
@@ -123,11 +122,6 @@ public class CarControllerSnap : MonoBehaviour
         //Game Manager checks if Jeep is active based on inGas variable
         //which is connected to Timeline State
         //_gameManager.isJeepActive = inGas;
-
-
-
-
-
        // Reset will turn false after the respawn is successful
        inReset = inReset || Input.GetKeyDown(KeyCode.R);
     }
