@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 1435735429643437477}
   - component: {fileID: 4372408407899677915}
   - component: {fileID: 2554889521381940653}
-  - component: {fileID: 2103657366328486967}
   m_Layer: 0
   m_Name: tire_R_front
   m_TagString: Untagged
@@ -229,19 +228,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2103657366328486967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873077131378299374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747ee9b702d1c3349b02dc4e47bb4a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modifier: 0.1
 --- !u!1 &2315859867573169883
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +334,6 @@ GameObject:
   - component: {fileID: 8923021958437396546}
   - component: {fileID: 3689344308805670799}
   - component: {fileID: 2630009657688712744}
-  - component: {fileID: 2103657367344210551}
   m_Layer: 0
   m_Name: tire_L_front
   m_TagString: Untagged
@@ -419,19 +404,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2103657367344210551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3898381991605830671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747ee9b702d1c3349b02dc4e47bb4a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modifier: 0.1
 --- !u!1 &8673777072853621049
 GameObject:
   m_ObjectHideFlags: 0
