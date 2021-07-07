@@ -257,20 +257,6 @@ public class CarController : MonoBehaviour
             gripZ = 0f;     // Remove straight grip if wheel is rotating
         }
 
-        if (autoReset)
-        {
-            // If stuck, check next frame too then reset
-            if (pvel.magnitude <= 0.01f)
-            {
-                inReset = isStuck;  // So, true on next frame
-                isStuck = true;
-            }
-            else
-            {
-                isStuck = false;
-            }
-        }
-
         if (inReset)
         {  // Reset
             
