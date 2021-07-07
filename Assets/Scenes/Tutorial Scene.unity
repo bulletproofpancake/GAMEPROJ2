@@ -508,9 +508,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb4bfb7abb97594c8568269fcc82ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Accel: 15
+  Accel: 5
   Decel: 15
-  TopSpeed: 30
+  TopSpeed: 20
   CoM: {x: 0, y: 0.5, z: 0}
   Turn: 0
   inGas: 0
