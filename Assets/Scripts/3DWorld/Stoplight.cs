@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Core;
 using UnityEngine;
 
 public class Stoplight : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // [SerializeField] private TutorialInfo _tutorialInfo;
+    // private GameManager _gameManager;
+    //
+    // private void Start()
+    // {
+    //     _gameManager = FindObjectOfType<GameManager>();
+    // }
+    //
+    // private void OnCollisionEnter(Collision other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //     {
+    //         // if (!_gameManager.tutorialManager.isObstacleTutorialDone)
+    //         
+    //         _gameManager.CallTutorial(_tutorialInfo);
+    //         
+    //         //ibang code ni stoplight pag nadetect si player
+    //     }
+    // }
 }
