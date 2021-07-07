@@ -97,7 +97,7 @@ namespace Money
                 Debug.LogWarning("No Customer Found");
                 return;
             }
-
+            AudioManager.Instance.Play("CoinsReturned");
             print($"Gave {_currentTotal} to passenger");
             
             if (_currentTotal == customer.MoneyToReceive)

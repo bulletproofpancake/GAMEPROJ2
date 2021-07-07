@@ -1,5 +1,6 @@
 using UnityEngine.Audio;
 using System;
+using System.Collections;
 using Core;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class AudioManager : Singleton<AudioManager>
 
     private void Start()
     {
-        Play("bgm");
+        //Play("bgm");
     }
 
     public void Play(string name)
@@ -36,4 +37,45 @@ public class AudioManager : Singleton<AudioManager>
         }
         s.source.Play();
     }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found");
+            return;
+        }
+        s.source.Stop();
+    }
+
+    public void StopAll()
+    {
+        foreach (var s in sounds)
+        {
+            s.source.Stop();
+        }
+    }
+
+    // public void Fade(string name)
+    // {
+    //     StartCoroutine(FadeRoutine(name));
+    // }
+    //
+    // private IEnumerator FadeRoutine(string name)
+    // {
+    //     Sound s = Array.Find(sounds, sound => sound.name == name);
+    //     if (s == null)
+    //     {
+    //         Debug.LogWarning("Sound: " + name + " not found");
+    //         yield break;
+    //     }
+    //
+    //     while (s.pitch > 0)
+    //     {
+    //         yield return new WaitForEndOfFrame();
+    //         s.pitch -= Time.deltaTime;   
+    //     }
+    // }
+    
 }

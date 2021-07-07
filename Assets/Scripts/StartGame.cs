@@ -22,18 +22,22 @@ public class StartGame : MonoBehaviour
 
     void Start() 
     {
-      SceneLoader.Instance.Play("BlackToFade");
+       SceneLoader.Instance.Play("BlackToFade");
+       AudioManager.Instance.Play("StartIdle");
        anim = thing.GetComponent<Animator>();
     }
 
     public void Load()
     {
-         anim.SetBool("isStart", false);
+        AudioManager.Instance.Play("Click");
+        anim.SetBool("isStart", false);
         StartCoroutine(LoadRoutine());
     }
 
     private IEnumerator LoadRoutine()
     {
+        AudioManager.Instance.Play("Ignition");
+        yield return new WaitForSeconds(1.25f);
         //Lahat ng animations mo ilagay mo dito
         anim.SetBool("isStart", true);
 
@@ -43,6 +47,10 @@ public class StartGame : MonoBehaviour
         yield return new WaitForSeconds(1f);
         //Comment out mo to pag meron ka nang duration
         //yield return null;
+        //AudioManager.Instance.Stop("StartIdle");
+        //AudioManager.Instance.Fade("Ignition");
+        //AudioManager.Instance.Stop("Ignition");
+        //AudioManager.Instance.StopAll();
         SceneLoader.Instance.LoadGame();
     }
 }

@@ -18,6 +18,7 @@ namespace Core
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
+            AudioManager.Instance.Play("Crash");
             if(_gameManager.tutorialManager != null)
             {
                 if (!_gameManager.tutorialManager.isObstacleTutorialDone)
