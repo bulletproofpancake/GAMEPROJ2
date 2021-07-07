@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819334fa690940adb214756a552ef414, type: 3}
   m_Name: Selecting Customers
   m_EditorClassIdentifier: 
-  title: Selecting Customers
+  title: Right Screen - Selecting Customers
   body: Picking up customers spawns a hand on the right side of the screen. Click
     on one to select it.
   sprite: {fileID: 21300000, guid: 12485b3b88e0a294c96f0aa7e5eb57ba, type: 3}

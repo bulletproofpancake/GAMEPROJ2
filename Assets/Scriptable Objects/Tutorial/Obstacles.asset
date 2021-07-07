@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819334fa690940adb214756a552ef414, type: 3}
   m_Name: Obstacles
   m_EditorClassIdentifier: 
-  title: Obstacles
-  body: Hitting obstacles will cause your customers to leave.
-  sprite: {fileID: 0}
+  title: Left Screen - Obstacles
+  body: Hitting cars will cause your customers to leave. While hitting barriers will
+    slow you down.
+  sprite: {fileID: 21300000, guid: 7ad7adf3040fb2c4b8617572933f74af, type: 3}

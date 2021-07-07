@@ -1183,7 +1183,7 @@ RectTransform:
   m_GameObject: {fileID: 1356595460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.91080123, y: 1.25375, z: 1.18}
+  m_LocalScale: {x: 0.91080123, y: 1.1753906, z: 1.18}
   m_Children: []
   m_Father: {fileID: 332539515}
   m_RootOrder: 4
@@ -2240,11 +2240,23 @@ PrefabInstance:
       value: Vertical Dashboard
       objectReference: {fileID: 0}
     - target: {fileID: 6693589679160303191, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693589679160303191, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6693589679327369903, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693589679327369903, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693589679327369903, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
