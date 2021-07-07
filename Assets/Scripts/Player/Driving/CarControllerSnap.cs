@@ -56,9 +56,8 @@ public class CarControllerSnap : MonoBehaviour
 
     void Start()
     {
-
+        //Connections
         _gameManager = FindObjectOfType<GameManager>();
-
         rigidBody = GetComponent<Rigidbody>();
 
         // Store start location & rotation
@@ -70,7 +69,9 @@ public class CarControllerSnap : MonoBehaviour
 
         // Move the CoM to a fraction of colliders boundaries
         rigidBody.centerOfMass = Vector3.Scale(groupCollider.extents, CoM);
-
+        
+        //Speed Set
+        topspeed = TopSpeed;
     }
 
 
@@ -85,9 +86,6 @@ public class CarControllerSnap : MonoBehaviour
         #region Situational Checks
         accel = Accel;
         decel = Decel;
-        topspeed = TopSpeed;
-        
-        //Speed Up
         
 
         rigidBody.angularDrag = AngDragG;
@@ -143,8 +141,8 @@ public class CarControllerSnap : MonoBehaviour
             if (speed < topspeed)
                 speed = speed + (accel * Time.deltaTime);
 
-            else if (speed > -topspeed)
-                speed = speed - (accel * Time.deltaTime); 
+            else if (speed > topspeed)
+                speed = speed - (decel * Time.deltaTime); 
 
             rigidBody.MovePosition(transform.position + (transform.forward * speed * Time.deltaTime));
         }
@@ -152,7 +150,7 @@ public class CarControllerSnap : MonoBehaviour
         if (inGas == false)
         {
             if (speed < 0)
-                speed = speed + (decel * Time.deltaTime);
+                speed = speed + (accel * Time.deltaTime);
 
             else if (speed > 0)
                 speed = speed - (decel * Time.deltaTime);
@@ -251,18 +249,17 @@ public class CarControllerSnap : MonoBehaviour
 
     public IEnumerator slowTimer()
     {
-        float tempSpeed = TopSpeed;
-        TopSpeed = TopSpeed / 2;
+        topspeed = topspeed / 2;
         yield return new WaitForSeconds(2f);
-        TopSpeed = tempSpeed * 2;
+        topspeed = TopSpeed;
     }
 
     public IEnumerator stopTimer()
     {
-        float tempSpeed = TopSpeed;
-        TopSpeed = 0;
+
+        topspeed = 0;
         yield return new WaitForSeconds(2f);
-        TopSpeed = tempSpeed;
+        topspeed = TopSpeed;
     }
     #endregion
 }
