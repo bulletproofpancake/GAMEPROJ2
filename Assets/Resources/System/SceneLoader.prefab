@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPersist: 1
   animator: {fileID: 3255749647456543774}
-  isTutorialDone: 0
+  isTutorialDone: 1
 --- !u!1 &8302146776319903351
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,4 +44,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPersist: 1
-  sounds: []
+  sounds:
+  - name: Ambiance
+    clip: {fileID: 8300000, guid: e0fa264c6c98e8648b08577da2a4c8b7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 80e6b6e37cc3f7a43badd8a394f02b28, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CoinsPicked
+    clip: {fileID: 8300000, guid: 2da4b694db7a13745837c348439bf997, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CoinsReturned
+    clip: {fileID: 8300000, guid: a2d74071c13f59545ab97a37daa07bc1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CorrectCompute
+    clip: {fileID: 8300000, guid: 79e7763556ec83b4db0c2a757d0052e4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Crash
+    clip: {fileID: 8300000, guid: 189d92233bb057043adfae167cc9ed71, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ignition
+    clip: {fileID: 8300000, guid: 96a8c18c087cf3041adc3247036129ef, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StartIdle
+    clip: {fileID: 8300000, guid: 51b5cea2e69755345a3e056ad965c59b, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: WrongCompute
+    clip: {fileID: 8300000, guid: 0f646ad51913eb0489a0df11e02aba59, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

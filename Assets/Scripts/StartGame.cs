@@ -22,18 +22,21 @@ public class StartGame : MonoBehaviour
 
     void Start() 
     {
-      SceneLoader.Instance.Play("BlackToFade");
+       SceneLoader.Instance.Play("BlackToFade");
+       AudioManager.Instance.Play("StartIdle");
        anim = thing.GetComponent<Animator>();
     }
 
     public void Load()
     {
-         anim.SetBool("isStart", false);
+        anim.SetBool("isStart", false);
         StartCoroutine(LoadRoutine());
     }
 
     private IEnumerator LoadRoutine()
     {
+        AudioManager.Instance.Play("Ignition");
+        yield return new WaitForSeconds(1.25f);
         //Lahat ng animations mo ilagay mo dito
         anim.SetBool("isStart", true);
 
