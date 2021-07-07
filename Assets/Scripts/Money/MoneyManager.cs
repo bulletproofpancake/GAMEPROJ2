@@ -103,10 +103,12 @@ namespace Money
             if (_currentTotal == customer.MoneyToReceive)
             {
                 Debug.LogWarning("Correct");
+                AudioManager.Instance.Play("CorrectCompute");
                 customer.ReceivePayment(true);
             }
             else
             {
+                AudioManager.Instance.Play("WrongCompute");
                 Debug.LogWarning("Wrong");
                 customer.ReceivePayment(false);
             }

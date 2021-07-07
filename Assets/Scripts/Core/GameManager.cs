@@ -67,7 +67,6 @@ namespace Core
             {
                 if (Input.GetKeyDown(KeyCode.W))
                 {
-                    
                     hasGameStarted = true;
                     timelineManager.StartCountDown();
                 }

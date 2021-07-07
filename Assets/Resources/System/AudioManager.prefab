@@ -81,6 +81,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Gas
+    clip: {fileID: 8300000, guid: 30c61533d7c87b44093ef605489da63c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: Ignition
     clip: {fileID: 8300000, guid: 96a8c18c087cf3041adc3247036129ef, type: 3}
     volume: 1

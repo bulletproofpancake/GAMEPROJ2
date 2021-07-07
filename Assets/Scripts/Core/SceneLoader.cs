@@ -20,6 +20,7 @@ public class SceneLoader : Singleton<SceneLoader>
     public void LoadGame()
     {
         //Play("FadeToBlack");
+        AudioManager.Instance.Play("Click");
         if (isTutorialDone)
         {
             SceneManager.LoadScene("GameSceneRework");
@@ -38,6 +39,7 @@ public class SceneLoader : Singleton<SceneLoader>
     
     public void Exit()
     {
+        AudioManager.Instance.Play("Click");
         Application.Quit();
     }
 

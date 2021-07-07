@@ -30,6 +30,7 @@ public class PauseGame : MonoBehaviour
     IEnumerator ExitRoutine()
     {
         _isPaused = false;
+        AudioManager.Instance.Play("Click");
         SceneLoader.Instance.Play("FadeToBlack");
         yield return new WaitForSeconds(1f);
         RoundStatManager.Instance.EndRound();
