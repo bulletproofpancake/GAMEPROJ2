@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1926142370194051784}
   - component: {fileID: 2103657367032365161}
   - component: {fileID: 2103657367032365160}
-  - component: {fileID: 2103657367032365166}
   m_Layer: 0
   m_Name: Jeep_Player
   m_TagString: Player
@@ -67,76 +66,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3992596, y: 2.1933608, z: 6.720948}
   m_Center: {x: 0.022111893, y: 0.2359097, z: -0.037974358}
---- !u!114 &2103657367032365166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292771598101547122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e00d9129f8fed74398044163a67ab83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Accel: 15
-  Boost: 2
-  TopSpeed: 30
-  GripX: 12
-  GripZ: 3
-  Rotate: 190
-  RotVel: 0.8
-  CoM: {x: 0, y: 0.5, z: 0}
-  SlipL:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  SlipU:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  SlipMod: 20
-  inTurn: 0
 --- !u!1 &1781740358282737795
 GameObject:
   m_ObjectHideFlags: 0
