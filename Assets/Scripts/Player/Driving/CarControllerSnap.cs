@@ -233,10 +233,13 @@ public class CarControllerSnap : MonoBehaviour
         { StartCoroutine("slowTimer"); }    
     }
 
-    private void OnTriggerEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Stoplight"))
-        { StartCoroutine("stopTimer"); }
+        if (other.CompareTag("Stoplight"))
+        {
+            Debug.Log("Stoplight");
+            StartCoroutine("stopTimer");
+        }
     }
 
 
@@ -248,16 +251,18 @@ public class CarControllerSnap : MonoBehaviour
 
     public IEnumerator slowTimer()
     {
-        topspeed = TopSpeed / 2;
+        float tempSpeed = TopSpeed;
+        TopSpeed = TopSpeed / 2;
         yield return new WaitForSeconds(2f);
-        topspeed = TopSpeed * 2;
+        TopSpeed = tempSpeed * 2;
     }
 
     public IEnumerator stopTimer()
     {
-        topspeed = 0;
+        float tempSpeed = TopSpeed;
+        TopSpeed = 0;
         yield return new WaitForSeconds(2f);
-        topspeed = TopSpeed;
+        TopSpeed = tempSpeed;
     }
     #endregion
 }
