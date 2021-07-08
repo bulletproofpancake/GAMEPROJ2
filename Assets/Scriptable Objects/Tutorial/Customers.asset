@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Left Screen - Customers
   body: Pick up customers by driving close to them.
-  sprite: {fileID: 21300000, guid: 6b4c310585ec9e7469c1b250bb3f628a, type: 3}
+  sprite: {fileID: 21300000, guid: 96c04db12c294cb4a98747061b32a92e, type: 3}

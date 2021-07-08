@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Giving Payment
   m_EditorClassIdentifier: 
   title: Right Screen - Giving Payment
-  body: Selecting a customer shows how much they paid. Click on the money icons to
-    give their change.
-  sprite: {fileID: 21300000, guid: 0603547f7dba2f1438c9e0b4a82f4664, type: 3}
+  body: Selecting a customer shows how much they paid. Click on the money icons and
+    give their change based on the equation given.
+  sprite: {fileID: 21300000, guid: 555de17b72dd5b2479efc10aa5920402, type: 3}

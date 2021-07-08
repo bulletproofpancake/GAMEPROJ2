@@ -15,4 +15,4 @@ MonoBehaviour:
   title: Right Screen - Selecting Customers
   body: Picking up customers spawns a hand on the right side of the screen. Click
     on one to select it.
-  sprite: {fileID: 21300000, guid: 12485b3b88e0a294c96f0aa7e5eb57ba, type: 3}
+  sprite: {fileID: 21300000, guid: 0f74be32cfa4c9c458b3993d3e5a6749, type: 3}

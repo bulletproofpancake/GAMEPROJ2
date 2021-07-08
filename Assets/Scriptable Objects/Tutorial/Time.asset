@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819334fa690940adb214756a552ef414, type: 3}
   m_Name: Time
   m_EditorClassIdentifier: 
-  title: 
-  body: 
-  sprite: {fileID: 0}
+  title: End - Progress Bar
+  body: 'When the progress bar reaches the end, the game is over.
+
+    Stopping or
+    slowing down the jeep does not slow down the progress bar.'
+  sprite: {fileID: 21300000, guid: 515daba48da2c5748862b5b16f565037, type: 3}
