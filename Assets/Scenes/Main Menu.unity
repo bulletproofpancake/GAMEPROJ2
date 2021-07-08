@@ -5861,6 +5861,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   animationDuration: 3
   difficultyMenuCanvas: {fileID: 475817988}
+  startButton: {fileID: 1124603291}
 --- !u!1 &1130739873
 GameObject:
   m_ObjectHideFlags: 0
