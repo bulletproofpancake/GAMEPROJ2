@@ -12,6 +12,8 @@ public class SummaryManager : Singleton<SummaryManager>
     {
         Time.timeScale = 1f;
         SceneLoader.Instance.Play("BlackToFade");
+        AudioManager.Instance.Play("Gas");
+        AudioManager.Instance.Play("Ambiance");
         moneyEarnedDisplay.text = $"Money Earned: PHP {RoundStatManager.Instance.moneyEarned}";
         obstaclesHitDisplay.text = $"Obstacles Hit: {RoundStatManager.Instance.obstaclesHit} (-PHP {RoundStatManager.Instance.obstaclesHit*10})";
         totalEarningsDisplay.text = $"Total Earnings: PHP {RoundStatManager.Instance.net}";

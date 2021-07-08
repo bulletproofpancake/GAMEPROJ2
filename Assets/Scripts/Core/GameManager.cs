@@ -84,6 +84,7 @@ namespace Core
                 if (Input.GetKeyDown(KeyCode.W))
                 {
                     hasGameStarted = true;
+                    AudioManager.Instance.Play("Gas");
                     timelineManager.StartCountDown();
                 }
             }
