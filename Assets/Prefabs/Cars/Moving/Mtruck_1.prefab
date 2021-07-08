@@ -976,8 +976,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 3, z: 8.755428}
-  m_Center: {x: 0, y: 0, z: -0.73}
+  m_Size: {x: 3.5, y: 3.2653663, z: 8.755428}
+  m_Center: {x: 0, y: -0.13268316, z: -0.73}
 --- !u!54 &4965030747621363711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1007,7 +1007,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimumAvoidanceDistance: 10
-  TopSpeed: 10
+  TopSpeed: 3
+  destroyTime: 3
+  lifeTime: 50
 --- !u!1 &3461200638393444514
 GameObject:
   m_ObjectHideFlags: 0
