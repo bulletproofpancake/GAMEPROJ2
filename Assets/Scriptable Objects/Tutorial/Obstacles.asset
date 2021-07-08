@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Obstacles
   m_EditorClassIdentifier: 
   title: Left Screen - Avoid Obstacles
-  body: Hitting barriers will slow you down, while hitting cars will cause your passengers
-    to leave.
+  body: Hitting barriers and cones will slow you down, while hitting cars will cause
+    your passengers to leave.
   sprite: {fileID: 21300000, guid: 4ace705319d6f7f47bcf46fc8157b1e2, type: 3}
