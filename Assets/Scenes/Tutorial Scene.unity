@@ -508,6 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb4bfb7abb97594c8568269fcc82ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialInfo: {fileID: 11400000, guid: 261c5dde7a3e0d548bfa45f63bf6aaa1, type: 2}
   Accel: 5
   Decel: 15
   TopSpeed: 20
@@ -2004,6 +2005,7 @@ MonoBehaviour:
   info: {fileID: 0}
   fromSpecific: 0
   isObstacleTutorialDone: 0
+  isStoplightTutorialDone: 0
 --- !u!224 &1625874717
 RectTransform:
   m_ObjectHideFlags: 0

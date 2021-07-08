@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core;
+using Customer;
 using UnityEngine;
 
 public class CarControllerSnap : MonoBehaviour
 {
 
+    [SerializeField] private TutorialInfo tutorialInfo;
 
     #region GameManager
 
     private GameManager _gameManager;
+    private CustomerManagerPayment _customerManager;
 
     #endregion
 
@@ -58,6 +61,7 @@ public class CarControllerSnap : MonoBehaviour
         //Connections
         _gameManager = FindObjectOfType<GameManager>();
         rigidBody = GetComponent<Rigidbody>();
+        _customerManager = FindObjectOfType<CustomerManagerPayment>();
 
         // Store start location & rotation
         spawnP = transform.position;
@@ -230,7 +234,17 @@ public class CarControllerSnap : MonoBehaviour
         if (other.CompareTag("Stoplight"))
         {
             Debug.Log("Stoplight");
-            StartCoroutine("stopTimer");
+            if(_gameManager.tutorialManager != null)
+            {
+                if (!_gameManager.tutorialManager.isStoplightTutorialDone)
+                {
+                    _gameManager.CallTutorial(tutorialInfo);
+                    _gameManager.tutorialManager.isStoplightTutorialDone = true;
+
+                }
+            }
+            if(_customerManager.areSeatsFull)
+                StartCoroutine("stopTimer");
         }
     }
 

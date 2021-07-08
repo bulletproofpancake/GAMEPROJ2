@@ -16,6 +16,7 @@ public class TutorialManager : MonoBehaviour
     private GameManager _gameManager;
     public bool fromSpecific;
     public bool isObstacleTutorialDone;
+    public bool isStoplightTutorialDone;
     
     private void Start()
     {

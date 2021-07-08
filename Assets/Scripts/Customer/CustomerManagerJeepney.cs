@@ -65,21 +65,40 @@ namespace Customer
         public void Jump()
         {
             Debug.LogWarning("Jump");
-            var passenger = _gameManager.passengersList[0];
-            if (_gameManager.passengersList.Count == 0)
+            // var passenger = _gameManager.passengersList[0];
+            // if (_gameManager.passengersList == null)
+            // {
+            //     passenger = Instantiate(passengers[Random.Range(0, passengers.Length)], parent);
+            //     _gameManager.passengersList.Add(passenger);
+            // }
+            // if (passenger == null)
+            // {
+            //     passenger = _gameManager.passengersList[1];
+            //     _gameManager.passengersList.Remove(_gameManager.passengersList[0]);
+            // }
+            if (_gameManager.passengersList.Count > 0)
             {
-                passenger = Instantiate(passengers[Random.Range(0, passengers.Length)], parent);
+                GameObject passenger = _gameManager.passengersList[0];
+                if (passenger == null)
+                {
+                    passenger = _gameManager.passengersList[1];
+                    _gameManager.passengersList.Remove(_gameManager.passengersList[0]);
+                }
+                passenger.GetComponent<CustomerPassenger>().hasJumped = true;
+                passenger.transform.position = new Vector3(_playerPosition.x, _playerPosition.y + _jumpHeight, _playerPosition.z - 5);
+                passenger.SetActive(true);
+                _gameManager.RemovePassenger(_gameManager.passengersList[0]);
             }
-            if (passenger == null)
+            else
             {
-                passenger = _gameManager.passengersList[1];
-                _gameManager.passengersList.Remove(_gameManager.passengersList[0]);
+                var passenger = Instantiate(passengers[Random.Range(0, passengers.Length)], parent);
+                _gameManager.passengersList.Add(passenger);
+                passenger.GetComponent<CustomerPassenger>().hasJumped = true;
+                passenger.transform.position = new Vector3(_playerPosition.x, _playerPosition.y + _jumpHeight, _playerPosition.z - 5);
+                passenger.SetActive(true);
+                _gameManager.RemovePassenger(_gameManager.passengersList[0]);
             }
-
-            passenger.GetComponent<CustomerPassenger>().hasJumped = true;
-            passenger.transform.position = new Vector3(_playerPosition.x, _playerPosition.y + _jumpHeight, _playerPosition.z - 5);
-            passenger.SetActive(true);
-            _gameManager.RemovePassenger(_gameManager.passengersList[0]);
+            
         }
         
     }
