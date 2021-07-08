@@ -9,6 +9,8 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
+        public int FPStarget = 60;
+
         private float stationCostMin;
         public int StationCost => (int) stationCostMin;
         private float customerPaymentCap;
@@ -31,6 +33,9 @@ namespace Core
         private void Awake()
         {
             passengersList = new List<GameObject>();
+
+            QualitySettings,vSyncCount = 0;
+            Application.targetFrameRate = FPStarget;
         }
 
         private void Start()
@@ -49,6 +54,10 @@ namespace Core
 
         private void Update()
         {
+            //FPSLimiter
+            if (Application.targetFrameRate != FPStarget)
+                Application.targetFrameRate = FPStarget;
+
             // if (Input.GetKeyDown(KeyCode.W))
             // {
             //     //Only triggers when the player first moves
