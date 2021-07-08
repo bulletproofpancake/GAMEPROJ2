@@ -282,9 +282,9 @@ public class CarControllerSnap : MonoBehaviour
     public IEnumerator stopTimer()
     {
 
-        topspeed = 0;
+        inGas = false;
         yield return new WaitForSeconds(2f);
-        topspeed = TopSpeed;
+        inGas = true;
     }
     #endregion
 }
