@@ -103,12 +103,14 @@ public class CarControllerSnap : MonoBehaviour
             if (gear < 2)
             {gear++;}
             inGas = true;
+            GearSet();
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             if (gear > 0)
             {gear = 0;}
             inGas = false;
+            GearSet();
         }
 
         if (Input.GetKeyDown(KeyCode.D))
@@ -121,22 +123,6 @@ public class CarControllerSnap : MonoBehaviour
         {
             inTurn = true;
             Turn = -1f;
-        }
-
-        switch (gear)
-        {
-            case 0:
-                Debug.Log("Stop");
-                break;
-            case 1: //Slow
-                Debug.Log("Slow");
-                topspeed = TopSpeed / 2;
-                break;
-            case 2: //Normal
-                Debug.Log("Normal");
-                topspeed = TopSpeed;
-                break;
-            
         }
 
 
@@ -238,6 +224,25 @@ public class CarControllerSnap : MonoBehaviour
             }
         }
         return bounds;
+    }
+
+    void GearSet()
+    {
+        switch (gear)
+        {
+            case 0:
+                Debug.Log("Stop");
+                break;
+            case 1: //Slow
+                Debug.Log("Slow");
+                topspeed = TopSpeed / 2;
+                break;
+            case 2: //Normal
+                Debug.Log("Normal");
+                topspeed = TopSpeed;
+                break;
+
+        }
     }
 
     private void OnCollisionEnter(Collision other)
