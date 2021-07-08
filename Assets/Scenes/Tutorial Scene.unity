@@ -493,7 +493,8 @@ PrefabInstance:
       propertyPath: TopSpeed
       value: 20
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5212254881192569740, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
 --- !u!1 &314606528 stripped
 GameObject:
@@ -516,7 +517,6 @@ MonoBehaviour:
   Accel: 5
   Decel: 15
   TopSpeed: 20
-  CoM: {x: 0, y: 0.5, z: 0}
   Turn: 0
   inGas: 0
   inTurn: 0

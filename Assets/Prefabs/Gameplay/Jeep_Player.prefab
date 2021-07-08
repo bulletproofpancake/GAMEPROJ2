@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1926142370194051784}
   - component: {fileID: 2103657367032365161}
   - component: {fileID: 2103657367032365160}
+  - component: {fileID: 5212254881192569740}
   m_Layer: 0
   m_Name: Jeep_Player
   m_TagString: Player
@@ -66,6 +67,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3992596, y: 2.1933608, z: 6.720948}
   m_Center: {x: 0.022111893, y: 0.2359097, z: -0.037974358}
+--- !u!114 &5212254881192569740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292771598101547122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb4bfb7abb97594c8568269fcc82ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialInfo: {fileID: 0}
+  Accel: 5
+  Decel: 15
+  TopSpeed: 20
+  Turn: 0
+  inGas: 0
+  inTurn: 0
 --- !u!1 &1781740358282737795
 GameObject:
   m_ObjectHideFlags: 0
