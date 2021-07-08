@@ -11,10 +11,12 @@ namespace Core
         [SerializeField] private TutorialInfo tutorial;
         private GameManager _gameManager;
 
+        private Rigidbody rb;
         private void Start()
         {
             _customerManager = FindObjectOfType<CustomerManagerPayment>();
             _gameManager = FindObjectOfType<GameManager>();
+            rb = GetComponent<Rigidbody>();
         }
 
         private void OnCollisionEnter(Collision other)
@@ -35,7 +37,14 @@ namespace Core
             {
                 _customerManager.customers[0].Leave();
             }
+            // RigidbodyBehavior
+            rb.AddForce(transform.up * 30f);
+            rb.AddForce(transform.forward * 30f);
+
+            // Detection
             RoundStatManager.Instance.HitObstacle();
+
+            // Destroy
             StartCoroutine("destroyTimer");
         }
 
