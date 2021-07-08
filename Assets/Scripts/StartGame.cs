@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class StartGame : MonoBehaviour
     private float animationDuration;
 
     [SerializeField] private GameObject difficultyMenuCanvas;
+
+    [SerializeField] private Button startButton;
     
     private void Awake()
     {
@@ -53,6 +56,7 @@ public class StartGame : MonoBehaviour
 
     private IEnumerator LoadRoutine()
     {
+        startButton.interactable = !startButton.interactable; //make start button not repeatable press
         difficultyMenuCanvas.SetActive(false);
         AudioManager.Instance.Play("Ignition");
         yield return new WaitForSeconds(1.25f);
