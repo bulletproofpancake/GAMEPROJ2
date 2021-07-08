@@ -7,9 +7,10 @@ public class DifficultyManager : Singleton<DifficultyManager>
     [SerializeField] private DifficultySelection difficulty;
     public DifficultySelection Difficulty => difficulty;
 
-    public void SetDifficulty(DifficultySelection selection)
+    public void SetDifficulty(int selection)
     {
-        difficulty = selection;
+        difficulty = (DifficultySelection) selection;
+        print(difficulty);
     }
     
 }
