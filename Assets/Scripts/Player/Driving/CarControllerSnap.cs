@@ -225,7 +225,7 @@ public class CarControllerSnap : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Obstacle"))
-        { StartCoroutine("slowTimer"); }    
+        { StartCoroutine("stopTimer"); }    
     }
 
     private void OnTriggerEnter(Collider other)
