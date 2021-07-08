@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 932454047112029139}
   - component: {fileID: 1959395288302911313}
   - component: {fileID: 5835068383128387010}
+  - component: {fileID: 2207267547896313477}
   m_Layer: 0
   m_Name: trafficCone
   m_TagString: Obstacle
@@ -112,3 +113,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2207267547896313477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724951722223419910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92ee5904619d044291a1cad46a8d0c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 11400000, guid: 35516cc7f4b2d324c995e07a7f85aa7d, type: 2}
