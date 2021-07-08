@@ -31,7 +31,6 @@ public class CarControllerSnap : MonoBehaviour
 
     #region Intermediate
     Rigidbody rigidBody;
-    Bounds groupCollider;
     float distToGround;
     float accel;
     float decel;
@@ -46,8 +45,6 @@ public class CarControllerSnap : MonoBehaviour
     public bool inGas = false;
     public bool inTurn = false;
 
-    Vector3 spawnP;
-    Quaternion spawnR;
 
     #endregion
 
@@ -64,13 +61,14 @@ public class CarControllerSnap : MonoBehaviour
         spawnR = transform.rotation;
 
         groupCollider = GetBounds(gameObject);     // Get the full collider boundary of group
-        distToGround = groupCollider.extents.y;    // Pivot to the outermost collider
 
         // Move the CoM to a fraction of colliders boundaries
         rigidBody.centerOfMass = Vector3.Scale(groupCollider.extents, CoM);
         
         //Speed Set
         topspeed = TopSpeed;
+        accel = Accel;
+        decel = Decel;
     }
 
 
@@ -82,15 +80,9 @@ public class CarControllerSnap : MonoBehaviour
 
     void FixedUpdate()
     {
-        #region Situational Checks
-        accel = Accel;
-        decel = Decel;
-        #endregion
 
         // Execute the commands
         Controller();  
-
-
     }
 
     #region Controllers
@@ -151,7 +143,7 @@ public class CarControllerSnap : MonoBehaviour
         if (inGas == false)
         {
             if (speed < 0)
-                speed = speed + (accel * Time.deltaTime);
+                speed = 0;
 
             else if (speed > 0)
                 speed = speed - (decel * Time.deltaTime);
