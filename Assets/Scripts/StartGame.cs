@@ -26,6 +26,7 @@ public class StartGame : MonoBehaviour
     {
        SceneLoader.Instance.Play("BlackToFade");
        AudioManager.Instance.Play("StartIdle");
+       difficultyMenuCanvas.SetActive(false);
        anim = thing.GetComponent<Animator>();
     }
 
