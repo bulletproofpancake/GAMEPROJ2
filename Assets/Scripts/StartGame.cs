@@ -32,8 +32,15 @@ public class StartGame : MonoBehaviour
 
     public void OpenDifficultyMenu()
     {
-        AudioManager.Instance.Play("Click");
-        difficultyMenuCanvas.SetActive(true);
+        if(SceneLoader.Instance.isTutorialDone)
+        {
+            AudioManager.Instance.Play("Click");
+            difficultyMenuCanvas.SetActive(true);
+        }
+        else
+        {
+            Load();
+        }
     }
     
     public void Load()
