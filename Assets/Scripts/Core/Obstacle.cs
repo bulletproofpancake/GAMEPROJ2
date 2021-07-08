@@ -40,7 +40,13 @@ namespace Core
             }
 
             // RigidbodyBehavior
-            rb.AddForce(transform.up * 200f );
+            int side;
+            side = Random.Range(0, 1);
+            if (side == 0)
+            { rb.AddForce(transform.right * 1000f); }
+            if (side == 1)
+            { rb.AddForce(transform.right * -1000f); }
+            rb.AddForce(transform.up * 200f);
             rb.AddForce(transform.forward * 100f);
 
             // Detection
