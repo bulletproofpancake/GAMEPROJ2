@@ -26,11 +26,6 @@ public class CarControllerSnap : MonoBehaviour
     // 0 = center, and +/-1 = edge in the pos/neg direction.
     public Vector3 CoM = new Vector3(0f, .5f, 0f);
 
-    // Ground & air angular drag
-    // reduce stumbling time on ground but maintain on-air one
-    float AngDragG = 5.0f;
-    float AngDragA = 0.05f;
-
 
     #endregion
 
@@ -46,6 +41,7 @@ public class CarControllerSnap : MonoBehaviour
     // Control signals
     [HideInInspector] public float Turn = 0f;
     private float speed = 0f;
+    private float gear = 0;
     bool inReset = false;
     public bool inGas = false;
     public bool inTurn = false;
@@ -89,9 +85,6 @@ public class CarControllerSnap : MonoBehaviour
         #region Situational Checks
         accel = Accel;
         decel = Decel;
-        
-
-        rigidBody.angularDrag = AngDragG;
         #endregion
 
         // Execute the commands
@@ -106,9 +99,17 @@ public class CarControllerSnap : MonoBehaviour
     {
         //AutoDrive
         if (Input.GetKeyDown(KeyCode.W))
-        { inGas = true; }
+        { 
+            if (gear < 2)
+            {gear++;}
+            inGas = true;
+        }
         if (Input.GetKeyDown(KeyCode.S))
-        { inGas = false; }
+        {
+            if (gear > 0)
+            {gear = 0;}
+            inGas = false;
+        }
 
         if (Input.GetKeyDown(KeyCode.D))
         { 
@@ -122,12 +123,28 @@ public class CarControllerSnap : MonoBehaviour
             Turn = -1f;
         }
 
+        switch (gear)
+        {
+            case 0:
+                Debug.Log("Stop");
+                break;
+            case 1: //Slow
+                Debug.Log("Slow");
+                topspeed = TopSpeed / 2;
+                break;
+            case 2: //Normal
+                Debug.Log("Normal");
+                topspeed = TopSpeed;
+                break;
+            
+        }
+
 
         //Game Manager checks if Jeep is active based on inGas variable
         //which is connected to Timeline State
         //_gameManager.isJeepActive = inGas;
-       // Reset will turn false after the respawn is successful
-       inReset = inReset || Input.GetKeyDown(KeyCode.R);
+        // Reset will turn false after the respawn is successful
+        inReset = inReset || Input.GetKeyDown(KeyCode.R);
     }
 
     // Executing the queued inputs
