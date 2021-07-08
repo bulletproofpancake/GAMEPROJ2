@@ -475,11 +475,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2103657367032365161, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2103657367032365161, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103657367032365161, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2103657367032365166, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: Accel

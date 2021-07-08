@@ -141,7 +141,7 @@ public class CarControllerSnap : MonoBehaviour
         if (inTurn == true && Turn == 1f && transform.position.x < 5)
         {
             rigidBody.MovePosition(transform.position + (transform.right * 3.5f));
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.localEulerAngles = new Vector3(0, 0, 0);
             inTurn = false;
         }
 
@@ -149,7 +149,7 @@ public class CarControllerSnap : MonoBehaviour
         if (inTurn == true && Turn == -1 && transform.position.x > -5)
         {
             rigidBody.MovePosition(transform.position + (transform.right * -3.5f));
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.localEulerAngles = new Vector3(0, 0, 0);
             inTurn = false;
         }
 

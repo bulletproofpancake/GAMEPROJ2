@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Customer;
 using UnityEngine;
 
@@ -34,6 +36,12 @@ namespace Core
                 _customerManager.customers[0].Leave();
             }
             RoundStatManager.Instance.HitObstacle();
+            StartCoroutine("destroyTimer");
+        }
+
+        public IEnumerator destroyTimer()
+        {
+            yield return new WaitForSeconds(5f);
             Destroy(gameObject);
         }
     }
