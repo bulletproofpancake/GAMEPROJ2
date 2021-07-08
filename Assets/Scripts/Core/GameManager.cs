@@ -9,7 +9,6 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
-        public int FPStarget = 60;
 
         private float stationCostMin;
         public int StationCost => (int) stationCostMin;
@@ -34,8 +33,6 @@ namespace Core
         {
             passengersList = new List<GameObject>();
 
-            QualitySettings,vSyncCount = 0;
-            Application.targetFrameRate = FPStarget;
         }
 
         private void Start()
@@ -54,9 +51,6 @@ namespace Core
 
         private void Update()
         {
-            //FPSLimiter
-            if (Application.targetFrameRate != FPStarget)
-                Application.targetFrameRate = FPStarget;
 
             // if (Input.GetKeyDown(KeyCode.W))
             // {
