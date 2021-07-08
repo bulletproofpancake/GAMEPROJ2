@@ -183,23 +183,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roadPrefabs:
-  - {fileID: 347039284396249167, guid: 0bafb022605a69e49ad9951750a4d3b8, type: 3}
-  - {fileID: 347039284396249167, guid: e351b120ccdd958498c81178b00abed0, type: 3}
-  - {fileID: 347039284396249167, guid: 790de6830a2fbb94dae91de7067d40c5, type: 3}
-  - {fileID: 347039284396249167, guid: 143729701d5ab4945a1a8d0ffab33a64, type: 3}
-  - {fileID: 347039284396249167, guid: 48c6a111373d93c4688f295b066d5ce5, type: 3}
-  - {fileID: 347039284396249167, guid: 8ee580bf9c851e043976e56b873a3cc4, type: 3}
-  - {fileID: 347039284396249167, guid: 723d8ac9b6ebc0b40a8344861218c58d, type: 3}
-  - {fileID: 347039284396249167, guid: 01973e1051e13514f86d0be6209005b4, type: 3}
-  - {fileID: 347039284396249167, guid: 0e7e5ee9f2bc48f4cae786d7ef4fed1a, type: 3}
-  - {fileID: 347039284396249167, guid: b32f44f6f01488b45b6ca2c62b542730, type: 3}
-  - {fileID: 347039284396249167, guid: f510b7000b1e2de43ba55dae23c27f96, type: 3}
-  - {fileID: 347039284396249167, guid: a775cbcf0fbea1f4080b376db178e1da, type: 3}
-  - {fileID: 347039284396249167, guid: d944b04a6ab7c594a9ef00c4e281ef2a, type: 3}
-  - {fileID: 347039284396249167, guid: edbd4ac60d2112443a12bb5a3a595e93, type: 3}
-  - {fileID: 347039284396249167, guid: 655c951720088534b854c8c7e0d2f286, type: 3}
-  - {fileID: 347039284396249167, guid: f5fa05b484249df42863e5f83ca6575e, type: 3}
-  - {fileID: 347039284396249167, guid: d7c0fa6202f6db1449ae6d0edcb92fba, type: 3}
+  - {fileID: 347039284396249167, guid: d3294714faf948447bbb9d03b347c0bc, type: 3}
+  - {fileID: 347039284396249167, guid: 2751ea6de6470fe48b03e2371fad2003, type: 3}
+  - {fileID: 347039284396249167, guid: 3d567dca7b755db48bc01fb98f547611, type: 3}
+  - {fileID: 347039284396249167, guid: 70620a06dd2953243af421ed5dfc5e2f, type: 3}
   zSpawn: 0
   roadLength: 34
   numberofTiles: 10
@@ -341,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2103657367032365161, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2103657367032365166, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: Accel
@@ -1937,6 +1924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyDisplay: {fileID: 2665643578983865958}
+  roundMoneyDisplay: {fileID: 0}
   giveMoneyIndicator: {fileID: 6380425851824703729}
   customer: {fileID: 0}
   paymentReceived: 0
@@ -2568,12 +2556,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990fda44bd10d504c934bd6fbcfcd989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationPaymentMin: 10
-  customerPaymentCap: 50
   levelDuration: 90
   hasGameStarted: 0
   passengersList: []
   timelineManager: {fileID: 0}
+  hasCompletedTutorial: 0
+  tutorialManager: {fileID: 0}
+  gameOverDisplay: {fileID: 0}
+  pause: {fileID: 0}
 --- !u!4 &3176591004548446134
 Transform:
   m_ObjectHideFlags: 0
