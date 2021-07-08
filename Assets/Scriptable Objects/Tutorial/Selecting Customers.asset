@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Right Screen - Selecting Customers
   body: Picking up customers spawns a hand on the right side of the screen. Click
-    on one to select it.
+    on one to select it. Don't take too long on answering them or they will leave.
   sprite: {fileID: 21300000, guid: 0f74be32cfa4c9c458b3993d3e5a6749, type: 3}

@@ -43,6 +43,7 @@ namespace Customer
 
         #region ShownInInspector
         [SerializeField] private float patience;
+        private float currentPatience;
         [SerializeField] private Sprite openHand;
         // public Button giveMoneyButton;
         // public TextMeshProUGUI giveMoneyText;
@@ -50,6 +51,7 @@ namespace Customer
         private bool _isTutorialDone;
 
         [SerializeField] private Color skinTone;
+        [SerializeField] private Image patienceIndicator;
 
         private void Awake()
         {
@@ -66,6 +68,7 @@ namespace Customer
         {
             //SelectStation();
             GivePayment();
+            currentPatience = patience;
         }
 
         private void OnDestroy()
@@ -108,6 +111,13 @@ namespace Customer
             {
                 //Changes the sprite color if this is selected by the money manager
                 _image.color = _moneyManager.customer == this ? Color.yellow : skinTone;
+                //skinTone = new Color(skinTone.r, skinTone.g, skinTone.b, -currentPatience);
+                currentPatience -= Time.deltaTime;
+                patienceIndicator.fillAmount -= Time.deltaTime / patience;
+                if (currentPatience <= 0)
+                {
+                    Leave();
+                }
             }
         }
 
