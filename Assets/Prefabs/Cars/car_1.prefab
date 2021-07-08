@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 7657107426546416645}
   - component: {fileID: 8058474850115459985}
   - component: {fileID: 3142812951634546238}
+  - component: {fileID: 8229579114952162579}
   m_Layer: 0
   m_Name: tire_car1
   m_TagString: Untagged
@@ -162,6 +163,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &8229579114952162579
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169193382900307313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.43834257
+  m_Center: {x: -0.000000044703484, y: -0.000000044703484, z: -0.000000074505806}
 --- !u!1 &2501292710206071689
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,8 +320,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 1, z: 4.5}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 2.5, y: 1.8094782, z: 5.539118}
+  m_Center: {x: 0, y: 0.8391996, z: 0.17571461}
 --- !u!54 &-8596905419426479645
 Rigidbody:
   m_ObjectHideFlags: 0

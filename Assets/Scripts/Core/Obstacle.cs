@@ -19,6 +19,7 @@ namespace Core
             rb = GetComponent<Rigidbody>();
         }
 
+
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
@@ -37,9 +38,10 @@ namespace Core
             {
                 _customerManager.customers[0].Leave();
             }
+
             // RigidbodyBehavior
-            rb.AddForce(transform.up * 30f);
-            rb.AddForce(transform.forward * 30f);
+            rb.AddForce(transform.up * 200f );
+            rb.AddForce(transform.forward * 100f);
 
             // Detection
             RoundStatManager.Instance.HitObstacle();
