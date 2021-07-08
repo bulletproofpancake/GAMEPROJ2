@@ -15,6 +15,8 @@ public class StartGame : MonoBehaviour
     [SerializeField]
     private float animationDuration;
 
+    [SerializeField] private GameObject difficultyMenuCanvas;
+    
     private void Awake()
     {
         Time.timeScale = 1f;
@@ -27,6 +29,13 @@ public class StartGame : MonoBehaviour
        anim = thing.GetComponent<Animator>();
     }
 
+
+    public void OpenDifficultyMenu()
+    {
+        AudioManager.Instance.Play("Click");
+        difficultyMenuCanvas.SetActive(true);
+    }
+    
     public void Load()
     {
         AudioManager.Instance.Play("Click");
@@ -36,6 +45,7 @@ public class StartGame : MonoBehaviour
 
     private IEnumerator LoadRoutine()
     {
+        difficultyMenuCanvas.SetActive(false);
         AudioManager.Instance.Play("Ignition");
         yield return new WaitForSeconds(1.25f);
         //Lahat ng animations mo ilagay mo dito
