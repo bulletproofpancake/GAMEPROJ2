@@ -21,12 +21,6 @@ public class CarControllerSnap : MonoBehaviour
     public float Decel = 15.0f;         // In meters/second2
     public float TopSpeed = 30.0f;      // In meters/second
 
-
-    // Center of mass, fraction of collider boundaries (= half of size)
-    // 0 = center, and +/-1 = edge in the pos/neg direction.
-    public Vector3 CoM = new Vector3(0f, .5f, 0f);
-
-
     #endregion
 
     #region Intermediate
@@ -55,15 +49,6 @@ public class CarControllerSnap : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
         rigidBody = GetComponent<Rigidbody>();
         _customerManager = FindObjectOfType<CustomerManagerPayment>();
-
-        // Store start location & rotation
-        spawnP = transform.position;
-        spawnR = transform.rotation;
-
-        groupCollider = GetBounds(gameObject);     // Get the full collider boundary of group
-
-        // Move the CoM to a fraction of colliders boundaries
-        rigidBody.centerOfMass = Vector3.Scale(groupCollider.extents, CoM);
         
         //Speed Set
         topspeed = TopSpeed;
