@@ -21335,6 +21335,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: truck_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8895637640370915662, guid: 28bd26310c607fe4693992923cde8c7a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ed7967ce47285f4b896d9f569baaf7c, type: 2}
+    - target: {fileID: 8899330246973368584, guid: 28bd26310c607fe4693992923cde8c7a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d3ae57a25152d7d4780fa6637a281401, type: 2}
+    - target: {fileID: 8899330246973368584, guid: 28bd26310c607fe4693992923cde8c7a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ed7967ce47285f4b896d9f569baaf7c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28bd26310c607fe4693992923cde8c7a, type: 3}
 --- !u!4 &5255435126560177827 stripped
