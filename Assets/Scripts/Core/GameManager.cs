@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Customer;
@@ -60,8 +61,23 @@ namespace Core
 
             if (hasGameStarted)
             {
-                customerPaymentCap += Time.deltaTime / 3f;
-                stationCostMin += Time.deltaTime / 2f;
+                switch (DifficultyManager.Instance.Difficulty)
+                {
+                    case DifficultySelection.Easy:
+                        customerPaymentCap += Time.deltaTime / 3f;
+                        stationCostMin += Time.deltaTime / 2f;
+                        break;
+                    case DifficultySelection.Medium:
+                        customerPaymentCap += Time.deltaTime / 1.5f;
+                        stationCostMin += Time.deltaTime / 0.5f;
+                        break;
+                    case DifficultySelection.Hard:
+                        customerPaymentCap += Time.deltaTime * 1.5f;
+                        stationCostMin += Time.deltaTime;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
             else
             {
@@ -97,7 +113,6 @@ namespace Core
             //TODO: IMPLEMENT GAME OVER SEQUENCE
             StartCoroutine(GameOverSequence());
             print("Game Over");
-            print($"{(int) stationCostMin}");
         }
 
         IEnumerator GameOverSequence()

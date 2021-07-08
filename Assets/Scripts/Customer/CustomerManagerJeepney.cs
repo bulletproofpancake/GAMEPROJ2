@@ -68,7 +68,7 @@ namespace Customer
             var passenger = _gameManager.passengersList[0];
             if (_gameManager.passengersList.Count == 0)
             {
-                passenger = Instantiate(passengers[0], parent);
+                passenger = Instantiate(passengers[Random.Range(0, passengers.Length)], parent);
             }
             if (passenger == null)
             {
