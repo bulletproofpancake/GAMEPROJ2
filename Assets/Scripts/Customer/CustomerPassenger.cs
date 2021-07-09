@@ -16,12 +16,22 @@ namespace Customer
         public bool hasJumped;
         [SerializeField] private Collider magnet;
         [SerializeField] private Collider collider;
+        [SerializeField] private GameObject speechBubble;
 
         private void OnEnable()
         {
             _gameManager = FindObjectOfType<GameManager>();
             customerManager = FindObjectOfType<CustomerManagerPayment>();
             StartCoroutine(Despawn());
+            
+            if (hasJumped)
+            {
+                speechBubble.SetActive(false);
+                _isBoarding = false;
+                magnet.enabled = false;
+                collider.enabled = false;
+            }
+            
         }
 
         private void OnCollisionEnter(Collision other)
@@ -59,13 +69,6 @@ namespace Customer
             if (_isBoarding)
             {
                 transform.position = Vector3.Lerp(transform.position, _jeepObject.transform.position, jumpSpeed);
-            }
-
-            if (hasJumped)
-            {
-                _isBoarding = false;
-                magnet.enabled = false;
-                collider.enabled = false;
             }
         }
 

@@ -300,11 +300,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerManager: {fileID: 0}
-  jumpSpeed: 0.01
+  jumpSpeed: 0.015
   lifespan: 15
   hasJumped: 0
   magnet: {fileID: -2430062086664257067}
   collider: {fileID: 4828282997715093302}
+  speechBubble: {fileID: 5988514173468672131}
 --- !u!136 &-2430062086664257067
 CapsuleCollider:
   m_ObjectHideFlags: 0
