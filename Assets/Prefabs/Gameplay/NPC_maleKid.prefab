@@ -301,7 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerManager: {fileID: 0}
   jumpSpeed: 0.01
-  lifespan: 10
+  lifespan: 15
   hasJumped: 0
   magnet: {fileID: -2430062086664257067}
   collider: {fileID: 4828282997715093302}

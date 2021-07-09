@@ -7,6 +7,7 @@ TagManager:
   - 2D Camera
   - Stoplight
   - Obstacle
+  - Barrier
   layers:
   - Default
   - TransparentFX

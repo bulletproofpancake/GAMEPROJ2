@@ -105,3 +105,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: BGM
+    clip: {fileID: 8300000, guid: 6bcf8186512ecb54bb498960e17e6121, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_Faded
+    clip: {fileID: 8300000, guid: 90556f8114ffd80469f92b738c8dc80f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BarrierCrash
+    clip: {fileID: 8300000, guid: f994bd033b92bf04a8959c52e9cd09bf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

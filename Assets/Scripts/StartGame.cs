@@ -23,11 +23,13 @@ public class StartGame : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1f;
+        AudioManager.Instance.StopAll();
     }
 
     void Start() 
     {
        SceneLoader.Instance.Play("BlackToFade");
+       AudioManager.Instance.Play("BGM_Faded");
        AudioManager.Instance.Play("StartIdle");
        difficultyMenuCanvas.SetActive(false);
        anim = thing.GetComponent<Animator>();
