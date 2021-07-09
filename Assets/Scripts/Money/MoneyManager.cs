@@ -57,12 +57,27 @@ namespace Money
 
         private void Update()
         {
-            giveButton.gameObject.SetActive(customer != null);
-            clearButton.gameObject.SetActive(customer != null);
-            
+
+            if (customer == null )
+            {
+                if(_currentTotal != 0)
+                {
+                    giveButton.gameObject.SetActive(true);
+                    clearButton.gameObject.SetActive(true);
+                }
+                else
+                {
+                    giveButton.gameObject.SetActive(false);
+                    clearButton.gameObject.SetActive(false);
+                }
+            }
+
             if (customer != null)
             {
                 moneyDisplay.text = $"{paymentReceived} - {stationCost} = {_currentTotal}";
+             
+                giveButton.gameObject.SetActive(true);
+                clearButton.gameObject.SetActive(true);
                 
                 if (customer.MoneyToReceive == 0)
                 {
