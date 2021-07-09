@@ -114,7 +114,6 @@ namespace Core
 
         public void GameOver()
         {
-            //TODO: IMPLEMENT GAME OVER SEQUENCE
             StartCoroutine(GameOverSequence());
             print("Game Over");
         }

@@ -1988,6 +1988,7 @@ MonoBehaviour:
   stationCost: 0
   giveButton: {fileID: 1282218511925505774}
   clearButton: {fileID: 3550383121202711654}
+  moneyFloor: -100
 --- !u!1 &2817780664899823779
 GameObject:
   m_ObjectHideFlags: 0

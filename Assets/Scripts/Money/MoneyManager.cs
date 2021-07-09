@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Core;
 using Customer;
@@ -25,7 +26,7 @@ namespace Money
         [SerializeField] private Button clearButton;
         private GameManager _gameManager;
         private bool _isTutorialDone;
-
+        [SerializeField] private int moneyFloor;
         private void Awake()
         {
             _moneyPrefabs = new List<GameObject>();
@@ -38,6 +39,7 @@ namespace Money
             _startingPosition = transform.position;
             moneyDisplay.text = string.Empty;
             //SetCamera();
+            StartCoroutine(MoneyFloor());
         }
 
         private void SetCamera()
@@ -70,7 +72,16 @@ namespace Money
             else
                 moneyDisplay.text = _currentTotal == 0 ? string.Empty : $"{_currentTotal}";
 
-            roundMoneyDisplay.text = $"PHP: {RoundStatManager.Instance.moneyEarned}";
+            roundMoneyDisplay.text = $"PHP: {RoundStatManager.Instance.CalculateNet()}";
+        }
+
+        IEnumerator MoneyFloor()
+        {
+            while (RoundStatManager.Instance.net > moneyFloor)
+            {
+                yield return null;
+            }
+            _gameManager.GameOver();
         }
         
         private void ReturnToStartingPosition()
