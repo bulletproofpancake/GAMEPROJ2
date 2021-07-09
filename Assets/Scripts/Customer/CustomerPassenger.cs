@@ -23,16 +23,12 @@ namespace Customer
             _gameManager = FindObjectOfType<GameManager>();
             customerManager = FindObjectOfType<CustomerManagerPayment>();
             StartCoroutine(Despawn());
-            
-            if (hasJumped)
-            {
-                speechBubble.SetActive(false);
-            }
-            
         }
 
         private void OnCollisionEnter(Collision other)
         {
+            if(other.gameObject.CompareTag("Passenger")) Destroy(gameObject);
+            
             if (!other.gameObject.CompareTag("Player")) return; 
             
             if (customerManager.areSeatsFull) return;
@@ -70,6 +66,7 @@ namespace Customer
 
             if (hasJumped)
             {
+                speechBubble.SetActive(false);
                 _isBoarding = false;
                 magnet.enabled = false;
                 collider.enabled = false;

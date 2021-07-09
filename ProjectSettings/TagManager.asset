@@ -8,6 +8,7 @@ TagManager:
   - Stoplight
   - Obstacle
   - Barrier
+  - Passenger
   layers:
   - Default
   - TransparentFX
