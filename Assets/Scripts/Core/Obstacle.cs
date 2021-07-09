@@ -23,10 +23,11 @@ namespace Core
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag("Player")) return;
-            if(gameObject.CompareTag("Obstacle"))
+            if(gameObject.CompareTag("Obstacle") || gameObject.CompareTag("MovingObstacle"))
                 AudioManager.Instance.Play("Crash");
             else if (gameObject.CompareTag("Barrier"))
                 AudioManager.Instance.Play("BarrierCrash");
+            
             if(_gameManager.tutorialManager != null)
             {
                 if (!_gameManager.tutorialManager.isObstacleTutorialDone)

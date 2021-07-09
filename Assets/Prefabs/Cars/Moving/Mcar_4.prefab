@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 4305616463826018305}
   m_Layer: 0
   m_Name: Mcar_4
-  m_TagString: Untagged
+  m_TagString: MovingObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
