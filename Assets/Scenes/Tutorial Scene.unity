@@ -200,6 +200,10 @@ MonoBehaviour:
   - {fileID: 347039284396249167, guid: 655c951720088534b854c8c7e0d2f286, type: 3}
   - {fileID: 347039284396249167, guid: f5fa05b484249df42863e5f83ca6575e, type: 3}
   - {fileID: 347039284396249167, guid: d7c0fa6202f6db1449ae6d0edcb92fba, type: 3}
+  - {fileID: 347039284396249167, guid: d3294714faf948447bbb9d03b347c0bc, type: 3}
+  - {fileID: 347039284396249167, guid: 2751ea6de6470fe48b03e2371fad2003, type: 3}
+  - {fileID: 347039284396249167, guid: 3d567dca7b755db48bc01fb98f547611, type: 3}
+  - {fileID: 347039284396249167, guid: 70620a06dd2953243af421ed5dfc5e2f, type: 3}
   zSpawn: 0
   roadLength: 34
   numberofTiles: 10
