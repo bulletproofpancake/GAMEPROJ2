@@ -255,9 +255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d356b0ad50fff842932ed0b2acf69f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumAvoidanceDistance: 10
-  TopSpeed: 3
-  destroyTime: 3
+  minimumAvoidanceDistance: 20
+  TopSpeed: 2
+  destroyTime: 1
   lifeTime: 50
 --- !u!1 &6227088651903769327
 GameObject:
