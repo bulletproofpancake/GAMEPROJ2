@@ -53,7 +53,7 @@ public class AICarBehavior : MonoBehaviour
         //RC
         if (Physics.Raycast(RaycastOffsetLeft, transform.forward, out view, minimumAvoidanceDistance) || Physics.Raycast(RaycastOffsetRight, transform.forward, out view, minimumAvoidanceDistance))
         {
-            if (view.transform.tag == "Player")
+            if (view.transform.tag == "Player" || view.transform.tag == "Obstacle" || view.transform.tag == "Barrier" )
             {
                 Debug.Log("Hit");
                 currentSpeed = 0f;
@@ -72,7 +72,7 @@ public class AICarBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Barrier"))
         { StartCoroutine("destroyTimer"); }
     }
 
