@@ -760,7 +760,7 @@ MonoBehaviour:
   minimumAvoidanceDistance: 20
   TopSpeed: 2
   destroyTime: 1
-  lifeTime: 50
+  lifeTime: 40
 --- !u!1 &5279744626254529073
 GameObject:
   m_ObjectHideFlags: 0

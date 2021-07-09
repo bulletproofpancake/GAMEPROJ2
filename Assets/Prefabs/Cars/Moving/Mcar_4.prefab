@@ -502,4 +502,4 @@ MonoBehaviour:
   minimumAvoidanceDistance: 20
   TopSpeed: 2
   destroyTime: 1
-  lifeTime: 50
+  lifeTime: 40
