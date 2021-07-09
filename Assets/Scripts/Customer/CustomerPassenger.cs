@@ -27,9 +27,6 @@ namespace Customer
             if (hasJumped)
             {
                 speechBubble.SetActive(false);
-                _isBoarding = false;
-                magnet.enabled = false;
-                collider.enabled = false;
             }
             
         }
@@ -70,6 +67,14 @@ namespace Customer
             {
                 transform.position = Vector3.Lerp(transform.position, _jeepObject.transform.position, jumpSpeed);
             }
+
+            if (hasJumped)
+            {
+                _isBoarding = false;
+                magnet.enabled = false;
+                collider.enabled = false;
+            }
+            
         }
 
         private IEnumerator Despawn()
