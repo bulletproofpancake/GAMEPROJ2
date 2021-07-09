@@ -91,13 +91,15 @@ public class CarControllerSnap : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.D))
-        { 
+        {
+            if (_gameManager.pause._isPaused) return;
             inTurn = true;
             Turn = 1f;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
+            if (_gameManager.pause._isPaused) return;
             inTurn = true;
             Turn = -1f;
         }

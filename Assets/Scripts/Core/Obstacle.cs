@@ -56,7 +56,10 @@ namespace Core
             RoundStatManager.Instance.HitObstacle();
 
             // Destroy
-            StartCoroutine("destroyTimer");
+            if(gameObject.CompareTag("Obstacle"))
+                Destroy(gameObject);
+            else if (gameObject.CompareTag("Barrier"))
+                StartCoroutine(destroyTimer());
         }
 
         public IEnumerator destroyTimer()
