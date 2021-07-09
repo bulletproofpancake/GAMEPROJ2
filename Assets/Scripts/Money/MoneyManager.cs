@@ -148,6 +148,7 @@ namespace Money
 
         public void ClearMoney()
         {
+            AudioManager.Instance.Play("CoinsReturned");
             moneyDisplay.text = string.Empty;
             print($"Cleared {_currentTotal} pesos");
             _currentTotal = 0;
