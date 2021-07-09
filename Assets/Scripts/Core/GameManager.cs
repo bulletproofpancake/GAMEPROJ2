@@ -28,6 +28,7 @@ namespace Core
         [HideInInspector] public TutorialManager tutorialManager;
         [SerializeField] private GameObject gameOverDisplay;
         public PauseGame pause;
+        [SerializeField] private TutorialInfo completeTutorial;
 
         private void Awake()
         {
@@ -120,6 +121,13 @@ namespace Core
 
         IEnumerator GameOverSequence()
         {
+            if (tutorialManager != null)
+            {
+                print("completed tutorial");
+                CallTutorial(completeTutorial);
+                yield return new WaitForSeconds(0.25f);
+            }
+
             RoundStatManager.Instance.Earn();
             gameOverDisplay.SetActive(true);
             pause.TogglePause(false);
