@@ -125,7 +125,7 @@ namespace Core
             {
                 print("completed tutorial");
                 CallTutorial(completeTutorial);
-                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(1f);
             }
 
             RoundStatManager.Instance.Earn();
