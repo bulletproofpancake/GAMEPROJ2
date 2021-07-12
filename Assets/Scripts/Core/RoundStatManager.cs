@@ -61,5 +61,11 @@ public class RoundStatManager : Singleton<RoundStatManager>
         obstaclesHit = 0;
         totalPassengers = 0;
     }
+
+    public void Spend(int cost)
+    {
+        totalMoney -= cost;
+    }
+    
     
 }

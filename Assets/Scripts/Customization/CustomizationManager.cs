@@ -14,5 +14,10 @@ namespace Customization
                 meshRenderer.material = activeCustomization.MaterialItem;
             }
         }
+
+        public void SetInfo(CustomizationInfo customizationInfo)
+        {
+            activeCustomization = customizationInfo;
+        }
     }
 }
