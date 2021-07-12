@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 7981779636096508397}
   - component: {fileID: 747024420991450378}
   - component: {fileID: 2103657366227908888}
+  - component: {fileID: 8053204924921674135}
   m_Layer: 0
   m_Name: jeep_body
   m_TagString: Untagged
@@ -343,6 +344,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.69741, y: 2.7998302, z: 7.3581624}
   m_Center: {x: 0.35411596, y: 1.599378, z: 0.033824682}
+--- !u!114 &8053204924921674135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315859867573169883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3b5625ae054593842dc666026ed05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3898381991605830671
 GameObject:
   m_ObjectHideFlags: 0

@@ -44386,6 +44386,7 @@ GameObject:
   - component: {fileID: 7981779636174536979}
   - component: {fileID: 747024421447228916}
   - component: {fileID: 2103657365881362918}
+  - component: {fileID: 2315859867385187878}
   m_Layer: 0
   m_Name: jeep_body
   m_TagString: Untagged
@@ -44393,6 +44394,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2315859867385187878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315859867385187877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3b5625ae054593842dc666026ed05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &2316318373953457460
 MeshFilter:
   m_ObjectHideFlags: 0
