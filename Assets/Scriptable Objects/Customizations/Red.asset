@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 10
   materialItem: {fileID: 2100000, guid: 9eb71b4a0ae28f44c87c63e6979842a2, type: 2}
+  display: {fileID: 21300000, guid: 8372d2a39a758d747a927282ed8db8cf, type: 3}
+  hasBeenBought: 0

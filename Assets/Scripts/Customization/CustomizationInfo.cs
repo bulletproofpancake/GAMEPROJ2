@@ -9,5 +9,10 @@ namespace Customization
         public int Cost => cost;
         [SerializeField] private Material materialItem;
         public Material MaterialItem => materialItem;
+        [SerializeField] private Sprite display;
+        public Sprite Display => display;
+
+        public bool hasBeenBought;
+
     }
 }
