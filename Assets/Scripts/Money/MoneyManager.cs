@@ -27,6 +27,7 @@ namespace Money
         private GameManager _gameManager;
         private bool _isTutorialDone;
         [SerializeField] private int moneyFloor;
+        public bool hitFloor;
         private void Awake()
         {
             _moneyPrefabs = new List<GameObject>();
@@ -88,12 +89,15 @@ namespace Money
                 moneyDisplay.text = _currentTotal == 0 ? string.Empty : $"{_currentTotal}";
 
             roundMoneyDisplay.text = $"PHP: {RoundStatManager.Instance.CalculateNet()}";
+            if (RoundStatManager.Instance.CalculateNet() <= moneyFloor)
+            {
+                hitFloor = true;
+            }
         }
 
         IEnumerator MoneyFloor()
         {
-            while (RoundStatManager.Instance.net > moneyFloor)
-            {
+            while(!hitFloor){
                 yield return null;
             }
             _gameManager.GameOver();

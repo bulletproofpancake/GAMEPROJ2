@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Customer;
+using Money;
 using Stations;
+using TMPro;
 using UnityEngine;
 
 namespace Core
@@ -27,8 +29,12 @@ namespace Core
 
         [HideInInspector] public TutorialManager tutorialManager;
         [SerializeField] private GameObject gameOverDisplay;
+        private TextMeshProUGUI gameOverText;
         public PauseGame pause;
         [SerializeField] private TutorialInfo completeTutorial;
+        [SerializeField] private TutorialInfo moneyFail;
+
+        public MoneyManager moneyManager;
 
         private void Awake()
         {
@@ -40,8 +46,10 @@ namespace Core
         {
             SceneLoader.Instance.Play("BlackToFade");
             gameOverDisplay.SetActive(false);
+            gameOverText = gameOverDisplay.GetComponentInChildren<TextMeshProUGUI>();
             timelineManager = FindObjectOfType<TimelineManager>();
             tutorialManager = FindObjectOfType<TutorialManager>();
+            moneyManager = FindObjectOfType<MoneyManager>();
             pause = FindObjectOfType<PauseGame>();
             if (tutorialManager == null) hasCompletedTutorial = true;
             else
@@ -123,11 +131,22 @@ namespace Core
         {
             if (tutorialManager != null)
             {
-                print("completed tutorial");
-                CallTutorial(completeTutorial);
+                if(!moneyManager.hitFloor)
+                {
+                    CallTutorial(completeTutorial);
+                    gameOverText.text = "Time's Up!";
+                }
+                else
+                {
+                    CallTutorial(moneyFail);
+                    gameOverText.text = "Game Over!";
+                }
+                
                 yield return new WaitForSeconds(1f);
             }
-
+            
+            gameOverText.text = !moneyManager.hitFloor ? "Time's Up!" : "Game Over!";
+            
             RoundStatManager.Instance.Earn();
             gameOverDisplay.SetActive(true);
             pause.TogglePause(false);
