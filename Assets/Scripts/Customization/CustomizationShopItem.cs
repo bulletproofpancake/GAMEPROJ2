@@ -19,7 +19,7 @@ namespace Customization
 
         private void Start()
         {
-            _shopManager.shopItems.Add(this);
+            //_shopManager.shopItems.Add(this);
         }
 
         private void Update()

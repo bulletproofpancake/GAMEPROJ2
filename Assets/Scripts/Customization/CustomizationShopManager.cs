@@ -8,12 +8,12 @@ namespace Customization
     {
         [SerializeField] private GameObject shopDisplay;
         [SerializeField] private TextMeshProUGUI moneyDisplay;
-        public List<CustomizationShopItem> shopItems;
+        //public List<CustomizationShopItem> shopItems;
         private bool _isOpen;
-
+        
         private void Awake()
         {
-            shopItems = new List<CustomizationShopItem>();
+            //shopItems = new List<CustomizationShopItem>();
             shopDisplay.SetActive(_isOpen);
         }
 
@@ -28,6 +28,5 @@ namespace Customization
             _isOpen = !_isOpen;
             shopDisplay.SetActive(_isOpen);
         }
-        
     }
 }
