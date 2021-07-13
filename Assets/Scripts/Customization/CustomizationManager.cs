@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Customization
@@ -6,6 +7,9 @@ namespace Customization
     {
         [SerializeField] private CustomizationInfo activeCustomization;
         public MeshRenderer meshRenderer;
+        
+        // Add references of the customizations here so that the player does not need to buy purchased skins again
+        public List<CustomizationInfo> availableCustomizations;
 
         private void Update()
         {

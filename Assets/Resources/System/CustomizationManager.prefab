@@ -45,4 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPersist: 1
   activeCustomization: {fileID: 11400000, guid: 3e61be9462fe330439f3888297674323, type: 2}
+  availableCustomizations:
+  - {fileID: 11400000, guid: 3e61be9462fe330439f3888297674323, type: 2}
+  - {fileID: 11400000, guid: 3fb2b764410a3254dbb19c03260291dc, type: 2}
+  - {fileID: 11400000, guid: 885568279676bd942b2948a191059d97, type: 2}
   meshRenderer: {fileID: 0}
