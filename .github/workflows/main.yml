@@ -17,7 +17,7 @@ env:
     with:
     projectPath: GAMEPROJ2
     githubToken: ${{ secrets.GITHUB_TOKEN }}
-        - name: upload
+    - name: upload
     - uses: actions/upload-artifact@v2
   if: always()
   with:
