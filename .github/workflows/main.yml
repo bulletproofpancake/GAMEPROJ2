@@ -8,6 +8,7 @@ test:
     strategy:
     fail-fast: false
     steps:
+    -name: test
     - uses: game-ci/unity-test-runner@v2
   env:
     UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
