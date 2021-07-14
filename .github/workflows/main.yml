@@ -5,7 +5,8 @@ on:
 jobs:
 test:
     runs-on: ubuntu-latest
-    
+    strategy:
+    fail-fast: false
     steps:
     - uses: game-ci/unity-test-runner@v2
   env:
