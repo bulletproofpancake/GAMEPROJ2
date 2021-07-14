@@ -2,7 +2,8 @@ name: Unity Actions
 on:
     push:
         branches: [releases]
-jobs: test
+jobs:
+test:
     runs-on: ubuntu-latest
     
     steps:
