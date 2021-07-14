@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 jobs:
   Activate:
+    runs-on: ubuntu-latest
     name: Activate Unity
     uses: game-ci/unity-activate@v1.3
     with: 2020.3.5f1
