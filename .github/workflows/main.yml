@@ -14,9 +14,10 @@ env:
     UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
     UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
     UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
-  with:
+    with:
     projectPath: GAMEPROJ2
     githubToken: ${{ secrets.GITHUB_TOKEN }}
+        - name: upload
     - uses: actions/upload-artifact@v2
   if: always()
   with:
