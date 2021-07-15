@@ -61,6 +61,10 @@ public class CarControllerSnap : MonoBehaviour
     {
         //PlayerControls
         InputKeyboard();
+
+        if (_gameManager.isGameOver)
+            inGas = false;
+
     }
 
     void FixedUpdate()
