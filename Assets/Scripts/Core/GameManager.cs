@@ -35,7 +35,7 @@ namespace Core
         [SerializeField] private TutorialInfo moneyFail;
 
         public MoneyManager moneyManager;
-
+        public bool isGameOver;
         private void Awake()
         {
             passengersList = new List<GameObject>();
@@ -44,6 +44,7 @@ namespace Core
 
         private void Start()
         {
+            isGameOver = false;
             SceneLoader.Instance.Play("BlackToFade");
             gameOverDisplay.SetActive(false);
             gameOverText = gameOverDisplay.GetComponentInChildren<TextMeshProUGUI>();
@@ -110,7 +111,7 @@ namespace Core
         //
         // public void RemoveStation()
         // {
-        //     //FIXME: FIX MONEY COSTS WHEN REMOVING STATIONS
+        //     //FIX MONEY COSTS WHEN REMOVING STATIONS
         //     if (stations.Count == 1)
         //     {
         //         Debug.LogWarning("Game Over");
@@ -123,6 +124,7 @@ namespace Core
 
         public void GameOver()
         {
+            isGameOver = true;
             StartCoroutine(GameOverSequence());
             print("Game Over");
         }

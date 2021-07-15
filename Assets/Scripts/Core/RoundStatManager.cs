@@ -62,9 +62,20 @@ public class RoundStatManager : Singleton<RoundStatManager>
         totalPassengers = 0;
     }
 
-    public void Spend(int cost)
+    public bool Spend(int cost)
     {
-        totalMoney -= cost;
+        var transactionComplete = false;
+        if(totalMoney >= cost)
+        {
+            totalMoney -= cost;
+            transactionComplete = true;
+        }
+        else
+        {
+            transactionComplete = false;
+        }
+
+        return transactionComplete;
     }
     
     
