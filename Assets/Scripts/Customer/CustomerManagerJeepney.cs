@@ -87,6 +87,16 @@ namespace Customer
                 passenger.GetComponent<CustomerPassenger>().hasJumped = true;
                 passenger.transform.position = new Vector3(_playerPosition.x, _playerPosition.y + _jumpHeight, _playerPosition.z - 5);
                 passenger.SetActive(true);
+                //
+                // RigidbodyBehavior
+                int side;
+                side = Random.Range(1, 2);
+                if (side == 1)
+                { passenger.GetComponent<Rigidbody>().AddForce(transform.right * 100f); }
+                if (side == 2)
+                { passenger.GetComponent<Rigidbody>().AddForce(transform.right * -100f); }
+
+                
                 _gameManager.RemovePassenger(_gameManager.passengersList[0]);
             }
             else

@@ -45,11 +45,11 @@ namespace Core
 
             // RigidbodyBehavior
             int side;
-            side = Random.Range(0, 1);
-            if (side == 0)
-            { rb.AddForce(transform.right * 1000f); }
+            side = Random.Range(1, 2);
             if (side == 1)
-            { rb.AddForce(transform.right * -1000f); }
+            { rb.AddForce(transform.right * 100f); }
+            if (side == 2)
+            { rb.AddForce(transform.right * -100f); }
             rb.AddForce(transform.up * 200f);
             rb.AddForce(transform.forward * 100f);
 
