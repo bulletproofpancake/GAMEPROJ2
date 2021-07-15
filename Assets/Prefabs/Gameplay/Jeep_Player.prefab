@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2103657367032365161}
   - component: {fileID: 2103657367032365160}
   - component: {fileID: 5212254881192569740}
+  - component: {fileID: 6348964215171430657}
   m_Layer: 0
   m_Name: Jeep_Player
   m_TagString: Player
@@ -86,6 +87,25 @@ MonoBehaviour:
   Turn: 0
   inGas: 0
   inTurn: 0
+--- !u!95 &6348964215171430657
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292771598101547122}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9155082e07ada1b4387960f3ea295958, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1781740358282737795
 GameObject:
   m_ObjectHideFlags: 0
