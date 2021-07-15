@@ -34,5 +34,5 @@ jobs:
           buildName: Bayad Po!
       - uses: actions/upload-artifact@v2
         with:
-          name: Build-${{ matrix.targetPlatform }}
+          name: Bayad Po!
           path: build/${{ matrix.targetPlatform }}
