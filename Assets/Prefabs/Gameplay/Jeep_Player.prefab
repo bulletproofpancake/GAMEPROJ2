@@ -84,6 +84,8 @@ MonoBehaviour:
   Accel: 5
   Decel: 15
   TopSpeed: 20
+  snapLocations: []
+  currentSnap: 0
   Turn: 0
   inGas: 0
   inTurn: 0
