@@ -45,7 +45,7 @@ jobs:
         with:
           name: Test results for ${{ matrix.testMode }}
           path: ${{ steps.tests.outputs.artifactsPath }}
-        - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
           lfs: true
