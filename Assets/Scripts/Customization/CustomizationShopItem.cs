@@ -10,6 +10,8 @@ namespace Customization
         [SerializeField] private Image preview;
         [SerializeField] private TextMeshProUGUI buyDisplay;
 
+        public bool bypassCosts;
+
         private CustomizationShopManager _shopManager;
 
         private void Awake()
@@ -46,9 +48,20 @@ namespace Customization
 
         private void BuyCustomization()
         {
-            //TODO: REJECT IF THE PLAYED DOES NOT HAVE ENOUGH FUNDS
-            RoundStatManager.Instance.Spend(customizationInfo.Cost);
-            customizationInfo.hasBeenBought = true;
+            if (bypassCosts)
+            {
+                customizationInfo.hasBeenBought = true;
+                return;
+            }
+            if (RoundStatManager.Instance.Spend(customizationInfo.Cost))
+            {
+                customizationInfo.hasBeenBought = true;
+            }
+            else
+            {
+                print("Not enough money");
+            }
+            
         }
     }
 }

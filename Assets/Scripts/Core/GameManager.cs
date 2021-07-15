@@ -111,7 +111,7 @@ namespace Core
         //
         // public void RemoveStation()
         // {
-        //     //FIXME: FIX MONEY COSTS WHEN REMOVING STATIONS
+        //     //FIX MONEY COSTS WHEN REMOVING STATIONS
         //     if (stations.Count == 1)
         //     {
         //         Debug.LogWarning("Game Over");
