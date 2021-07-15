@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Barrier
   - Passenger
+  - MovingObstacle
   layers:
   - Default
   - TransparentFX

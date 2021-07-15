@@ -64,6 +64,9 @@ public class CarControllerSnap : MonoBehaviour
 
         if (_gameManager.isGameOver)
             inGas = false;
+        
+        if(!inGas)
+            SpeedIndicator.Instance.Stop();
 
     }
 
@@ -84,6 +87,7 @@ public class CarControllerSnap : MonoBehaviour
             if (gear < 2)
             {gear++;}
             inGas = true;
+            SpeedIndicator.Instance.SpeedUp();
             GearSet();
         }
         if (Input.GetKeyDown(KeyCode.S))
