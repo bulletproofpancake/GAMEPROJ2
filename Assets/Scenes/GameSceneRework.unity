@@ -295,6 +295,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 747024420991450378, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c58bf3a8a084f2498478b57d9e48f99, type: 2}
     - target: {fileID: 1292771598101547122, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_Name
       value: Jeep_Player
@@ -1539,6 +1543,10 @@ MonoBehaviour:
   tutorialManager: {fileID: 0}
   gameOverDisplay: {fileID: 474898679}
   pause: {fileID: 0}
+  completeTutorial: {fileID: 0}
+  moneyFail: {fileID: 0}
+  moneyManager: {fileID: 0}
+  isGameOver: 0
 --- !u!4 &3176591004548446134
 Transform:
   m_ObjectHideFlags: 0
