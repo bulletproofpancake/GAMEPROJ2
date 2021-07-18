@@ -1307,6 +1307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jeep_separated
       objectReference: {fileID: 0}
+    - target: {fileID: 1687803101290891305, guid: 9fa2aa7387aa3ca498245340c31cc2a4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3689dd0c74f838a4fae7bf622178111a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fa2aa7387aa3ca498245340c31cc2a4, type: 3}
 --- !u!1001 &2037984939
