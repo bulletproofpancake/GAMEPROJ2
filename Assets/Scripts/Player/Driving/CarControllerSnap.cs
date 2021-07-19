@@ -23,6 +23,7 @@ public class CarControllerSnap : MonoBehaviour
 
     public List<Transform> snapLocations;
     public int currentSnap;
+    public Animator anim;
 
     #endregion
 
@@ -52,7 +53,8 @@ public class CarControllerSnap : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
         rigidBody = GetComponent<Rigidbody>();
         _customerManager = FindObjectOfType<CustomerManagerPayment>();
-        
+        anim = GetComponent<Animator>();
+
         //Speed Set
         topspeed = TopSpeed;
         accel = Accel;
@@ -157,10 +159,9 @@ public class CarControllerSnap : MonoBehaviour
         if (inTurn == true && Turn == 1f && currentSnap < snapLocations.Count)
         {
             currentSnap++;
-            //Animation Here
             rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            Turn = 0f;
+            anim.Play("Jeep_Right");
             inTurn = false;
         }
 
@@ -168,10 +169,9 @@ public class CarControllerSnap : MonoBehaviour
         if (inTurn == true && Turn == -1 && currentSnap > 0)
         {
             currentSnap--;
-            //Animation Here
             rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            Turn = 0f;
+            anim.Play("Jeep_Left");
             inTurn = false;
         }
 
