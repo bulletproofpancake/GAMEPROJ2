@@ -513,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2103657367032365161, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_Constraints
-      value: 116
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2103657367032365161, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_IsKinematic
@@ -562,6 +562,7 @@ MonoBehaviour:
   - {fileID: 74078713}
   - {fileID: 1704053326}
   currentSnap: 0
+  anim: {fileID: 0}
   Turn: 0
   inGas: 0
   inTurn: 0
