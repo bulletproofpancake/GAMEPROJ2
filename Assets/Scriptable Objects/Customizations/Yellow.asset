@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6fa2e31ccdb4f4b8a831c1fd4859e4d, type: 3}
   m_Name: Yellow
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 200
   materialItem: {fileID: 2100000, guid: 7e34b9e88339a514cbada55de994ae2e, type: 2}
-  display: {fileID: 21300000, guid: 8372d2a39a758d747a927282ed8db8cf, type: 3}
+  display: {fileID: 21300000, guid: a938583894eee874f95450e615b81ac9, type: 3}
   hasBeenBought: 0
