@@ -64,6 +64,7 @@ namespace Customer
 
         public void Jump()
         {
+            AudioManager.Instance.Play("ParaPo");
             Debug.LogWarning("Jump");
             // var passenger = _gameManager.passengersList[0];
             // if (_gameManager.passengersList == null)

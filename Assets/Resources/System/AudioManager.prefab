@@ -123,3 +123,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: BayadPo
+    clip: {fileID: 8300000, guid: 5df4965f918ece34ab9274a60be1b207, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ParaPo
+    clip: {fileID: 8300000, guid: f63a2a4398fce69419e72ecb451137e2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Skid
+    clip: {fileID: 8300000, guid: fac1df785dbdf9345b3a408dd39e5787, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

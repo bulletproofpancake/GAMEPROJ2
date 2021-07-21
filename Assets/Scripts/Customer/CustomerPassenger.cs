@@ -33,6 +33,7 @@ namespace Customer
             
             if (customerManager.areSeatsFull) return;
             
+            AudioManager.Instance.Play("BayadPo");
             SpawnHand();
         }
 
