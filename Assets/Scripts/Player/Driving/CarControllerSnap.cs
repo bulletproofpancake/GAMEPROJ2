@@ -24,6 +24,7 @@ public class CarControllerSnap : MonoBehaviour
     public List<Transform> snapLocations;
     public int currentSnap;
     public Animator anim;
+    public ParticleSystem ps;
 
     #endregion
 
@@ -54,6 +55,7 @@ public class CarControllerSnap : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         _customerManager = FindObjectOfType<CustomerManagerPayment>();
         anim = GetComponent<Animator>();
+        ps = GetComponentInChildren<ParticleSystem>();
 
         //Speed Set
         topspeed = TopSpeed;
@@ -160,23 +162,27 @@ public class CarControllerSnap : MonoBehaviour
         // Right Movement
         if (inTurn == true && Turn == 1f && currentSnap < snapLocations.Count)
         {
+            ps.Play();
             //currentSnap++;
             // rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
             // transform.localEulerAngles = new Vector3(0, 0, 0);
             // anim.Play("Jeep_Right");
             rigidBody.MovePosition(transform.position + (Vector3.right * speed * Time.fixedDeltaTime));
             inTurn = false;
+            //ps.Pause();
         }
 
         // Left Movement
         if (inTurn == true && Turn == -1 && currentSnap > 0)
         {
+            ps.Play();
             //currentSnap--;
             // rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
             // transform.localEulerAngles = new Vector3(0, 0, 0);
             // anim.Play("Jeep_Left");
             rigidBody.MovePosition(transform.position + (Vector3.left * speed * Time.fixedDeltaTime));
             inTurn = false;
+            //ps.Pause();
         }
 
         if (inReset)

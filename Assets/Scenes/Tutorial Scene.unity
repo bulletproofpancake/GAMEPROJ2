@@ -459,6 +459,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 893127777070589819, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 893127777070589819, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 893127777070589819, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 893127777070589819, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 893127777070589819, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1292771598101547122, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: m_Name
       value: Jeep_Player
@@ -531,6 +551,10 @@ PrefabInstance:
       propertyPath: TopSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4786869140654948773, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: m_Name
+      value: smokeFX
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5212254881192569740, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
@@ -563,6 +587,7 @@ MonoBehaviour:
   - {fileID: 1704053326}
   currentSnap: 0
   anim: {fileID: 0}
+  ps: {fileID: 0}
   Turn: 0
   inGas: 0
   inTurn: 0
