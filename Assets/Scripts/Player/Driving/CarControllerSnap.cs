@@ -106,18 +106,20 @@ public class CarControllerSnap : MonoBehaviour
             GearSet();
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             if (_gameManager.pause._isPaused) return;
             inTurn = true;
             Turn = 1f;
+            print(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             if (_gameManager.pause._isPaused) return;
             inTurn = true;
             Turn = -1f;
+            print(true);
         }
 
 
@@ -158,20 +160,22 @@ public class CarControllerSnap : MonoBehaviour
         // Right Movement
         if (inTurn == true && Turn == 1f && currentSnap < snapLocations.Count)
         {
-            currentSnap++;
-            rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-            anim.Play("Jeep_Right");
+            //currentSnap++;
+            // rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
+            // transform.localEulerAngles = new Vector3(0, 0, 0);
+            // anim.Play("Jeep_Right");
+            rigidBody.MovePosition(transform.position + (Vector3.right * speed * Time.fixedDeltaTime));
             inTurn = false;
         }
 
         // Left Movement
         if (inTurn == true && Turn == -1 && currentSnap > 0)
         {
-            currentSnap--;
-            rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-            anim.Play("Jeep_Left");
+            //currentSnap--;
+            // rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
+            // transform.localEulerAngles = new Vector3(0, 0, 0);
+            // anim.Play("Jeep_Left");
+            rigidBody.MovePosition(transform.position + (Vector3.left * speed * Time.fixedDeltaTime));
             inTurn = false;
         }
 
