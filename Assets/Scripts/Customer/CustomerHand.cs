@@ -88,10 +88,8 @@ namespace Customer
         private void GivePayment()
         {
             _paymentCap = _gameManager.CustomerPaymentCap;
-            print(_paymentCap);
-            //cost = Random.Range(_gameManager.StationPayment, _paymentCap + 1);
-            cost = Random.Range(_gameManager.StationCost, _paymentCap);
-            _moneyToGive = cost + _paymentCap;
+            cost = _gameManager.StationCost;
+            _moneyToGive = cost + Random.Range(0, _paymentCap + 1);
             MoneyToReceive = _moneyToGive - cost;
             //_moneyDisplay.text = $"{_moneyToGive}";
         }

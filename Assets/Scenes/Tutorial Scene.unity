@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999946, b: 0.99999946, a: 1}
+  m_IndirectSpecularColor: {r: 0.34609905, g: 0.63212776, b: 0.86864024, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -521,6 +521,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 893127777070589819, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 893127777070589819, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
+      propertyPath: prewarm
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 893127777070589819, guid: a2d5e7fe38c7731408a126624ed0e2dc, type: 3}
@@ -2763,6 +2767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990fda44bd10d504c934bd6fbcfcd989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stationCostMin: 5
+  customerPaymentCap: 3
   levelDuration: 120
   hasGameStarted: 0
   passengersList: []

@@ -12,9 +12,9 @@ namespace Core
     public class GameManager : MonoBehaviour
     {
 
-        private float stationCostMin;
+        [SerializeField] private float stationCostMin;
         public int StationCost => (int) stationCostMin;
-        private float customerPaymentCap;
+        [SerializeField] private float customerPaymentCap;
         public int CustomerPaymentCap => (int) customerPaymentCap;
         public float levelDuration;
         //public List<StationData> stations;
@@ -77,15 +77,15 @@ namespace Core
                 switch (DifficultyManager.Instance.Difficulty)
                 {
                     case DifficultySelection.Easy:
-                        customerPaymentCap += Time.deltaTime / 3f;
-                        stationCostMin += Time.deltaTime / 2f;
+                        customerPaymentCap += Time.deltaTime / 7f;
+                        stationCostMin += Time.deltaTime / 5f;
                         break;
                     case DifficultySelection.Medium:
-                        customerPaymentCap += Time.deltaTime / 1.5f;
-                        stationCostMin += Time.deltaTime / 0.5f;
+                        customerPaymentCap += Time.deltaTime / 5f;
+                        stationCostMin += Time.deltaTime / 3f;
                         break;
                     case DifficultySelection.Hard:
-                        customerPaymentCap += Time.deltaTime * 1.5f;
+                        customerPaymentCap += Time.deltaTime / 3f;
                         stationCostMin += Time.deltaTime;
                         break;
                     default:
