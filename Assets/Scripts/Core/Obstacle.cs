@@ -27,6 +27,9 @@ namespace Core
                 AudioManager.Instance.Play("Crash");
             else if (gameObject.CompareTag("Barrier"))
                 AudioManager.Instance.Play("BarrierCrash");
+
+
+            GetComponent<Collider>().enabled = false;
             
             if(_gameManager.tutorialManager != null)
             {
@@ -57,10 +60,10 @@ namespace Core
             RoundStatManager.Instance.HitObstacle();
 
             // Destroy
-            if(gameObject.CompareTag("Obstacle"))
-                Destroy(gameObject);
-            else if (gameObject.CompareTag("Barrier"))
-                StartCoroutine(destroyTimer());
+            // if(gameObject.CompareTag("Obstacle"))
+            //     Destroy(gameObject);
+            // else if (gameObject.CompareTag("Barrier"))
+            StartCoroutine(destroyTimer());
         }
 
         public IEnumerator destroyTimer()
