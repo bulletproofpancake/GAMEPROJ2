@@ -21,9 +21,15 @@ public class CarControllerSnap : MonoBehaviour
     public float Decel = 15.0f;         // In meters/second2
     public float TopSpeed = 30.0f;      // In meters/second
 
-    public List<Transform> snapLocations;
-    public int currentSnap;
+    //Snap
+    //public List<Transform> snapLocations;
+    //public int currentSnap;
+
+    //Smooth
+    public Transform L;
+    public Transform R;
     public Animator anim;
+    public ParticleSystem ps;
 
     #endregion
 
@@ -54,6 +60,7 @@ public class CarControllerSnap : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         _customerManager = FindObjectOfType<CustomerManagerPayment>();
         anim = GetComponent<Animator>();
+        ps = GetComponentInChildren<ParticleSystem>();
 
         //Speed Set
         topspeed = TopSpeed;
@@ -61,7 +68,7 @@ public class CarControllerSnap : MonoBehaviour
         decel = Decel;
 
         //Location Set
-        currentSnap = 2;
+        //currentSnap = 2;
     }
 
 
@@ -106,18 +113,20 @@ public class CarControllerSnap : MonoBehaviour
             GearSet();
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             if (_gameManager.pause._isPaused) return;
             inTurn = true;
             Turn = 1f;
+            print(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             if (_gameManager.pause._isPaused) return;
             inTurn = true;
             Turn = -1f;
+            print(true);
         }
 
 
@@ -156,24 +165,56 @@ public class CarControllerSnap : MonoBehaviour
 
 
         // Right Movement
+        if (inTurn == true && Turn == 1f && transform.position.x < R.position.x)
+        {
+            ps.Play();
+            //currentSnap++;
+            // rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
+            // transform.localEulerAngles = new Vector3(0, 0, 0);
+            // anim.Play("Jeep_Right");
+            rigidBody.MovePosition(transform.position + (Vector3.right * Turn * speed * Time.fixedDeltaTime));
+            inTurn = false;
+            //ps.Pause();
+        }
+
+        // Left Movement
+        if (inTurn == true && Turn == -1 && transform.position.x > L.position.x)
+        {
+            ps.Play();
+            //currentSnap--;
+            // rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
+            // transform.localEulerAngles = new Vector3(0, 0, 0);
+            // anim.Play("Jeep_Left");
+            rigidBody.MovePosition(transform.position + (Vector3.right * Turn * speed * Time.fixedDeltaTime));
+            inTurn = false;
+            //ps.Pause();
+        }
+
+        /*// Right Movement
         if (inTurn == true && Turn == 1f && currentSnap < snapLocations.Count)
         {
-            currentSnap++;
-            rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-            anim.Play("Jeep_Right");
+            ps.Play();
+            //currentSnap++;
+            // rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
+            // transform.localEulerAngles = new Vector3(0, 0, 0);
+            // anim.Play("Jeep_Right");
+            rigidBody.MovePosition(transform.position + (Vector3.right * speed * Time.fixedDeltaTime));
             inTurn = false;
+            //ps.Pause();
         }
 
         // Left Movement
         if (inTurn == true && Turn == -1 && currentSnap > 0)
         {
-            currentSnap--;
-            rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-            anim.Play("Jeep_Left");
+            ps.Play();
+            //currentSnap--;
+            // rigidBody.position = new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z);
+            // transform.localEulerAngles = new Vector3(0, 0, 0);
+            // anim.Play("Jeep_Left");
+            rigidBody.MovePosition(transform.position + (Vector3.left * speed * Time.fixedDeltaTime));
             inTurn = false;
-        }
+            //ps.Pause();
+        }*/
 
         if (inReset)
         {  // Reset
@@ -183,7 +224,6 @@ public class CarControllerSnap : MonoBehaviour
             float z = transform.position.z / 100;
             z = Mathf.RoundToInt(z) * 100;
             transform.position = new Vector3(0, transform.position.y, z);
-            currentSnap = 2;
             StartCoroutine("resetTimer");
         }
     }
