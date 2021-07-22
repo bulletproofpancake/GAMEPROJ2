@@ -126,6 +126,7 @@ public class CarControllerSnap : MonoBehaviour
                 currentSnap = snapLocations.Length - 1;
             }
             //anim.Play("Jeep_Right");
+            AudioManager.Instance.Play("Skid");
             inTurn = true;
             Turn = 1f;
             print(true);
@@ -140,6 +141,7 @@ public class CarControllerSnap : MonoBehaviour
                 currentSnap = 0;
             }
             //anim.Play("Jeep_Left");
+            AudioManager.Instance.Play("Skid");
             inTurn = true;
             Turn = -1f;
             print(true);
