@@ -22,6 +22,7 @@ namespace Customization
         private void Start()
         {
             //_shopManager.shopItems.Add(this);
+            preview.sprite = customizationInfo.Display;
         }
 
         private void Update()
