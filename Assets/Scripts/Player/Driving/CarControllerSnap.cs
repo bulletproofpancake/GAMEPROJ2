@@ -32,6 +32,7 @@ public class CarControllerSnap : MonoBehaviour
     [SerializeField] private int currentSnap;
     public Animator anim;
     public ParticleSystem ps;
+    public TrailRenderer[] trails;
 
     #endregion
 
@@ -63,13 +64,19 @@ public class CarControllerSnap : MonoBehaviour
         _customerManager = FindObjectOfType<CustomerManagerPayment>();
         anim = GetComponent<Animator>();
         ps = GetComponentInChildren<ParticleSystem>();
-
+        trails = GetComponentsInChildren<TrailRenderer>();
+        
         //Speed Set
         topspeed = TopSpeed;
         accel = Accel;
         decel = Decel;
 
         currentSnap = 2;
+
+        foreach (var trail in trails)
+        {
+            trail.emitting = false;
+        }
 
         //Location Set
         //currentSnap = 2;
@@ -80,13 +87,19 @@ public class CarControllerSnap : MonoBehaviour
     {
         //PlayerControls
         InputKeyboard();
-
+        anim.SetInteger("Turn", (int)Turn);
         if (_gameManager.isGameOver)
             inGas = false;
         
-        if(!inGas)
-            SpeedIndicator.Instance.Stop();
-
+        switch (inGas)
+        {
+            case true:
+                ps.Play();
+                break;
+            case false:
+                SpeedIndicator.Instance.Stop();
+                break;
+        }
     }
 
     void FixedUpdate()
@@ -120,13 +133,16 @@ public class CarControllerSnap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             if (_gameManager.pause._isPaused) return;
+            if (!inGas) return;
             currentSnap++;
             if (currentSnap >= snapLocations.Length)
             {
                 currentSnap = snapLocations.Length - 1;
             }
-            //anim.Play("Jeep_Right");
-            AudioManager.Instance.Play("Skid");
+            else
+                AudioManager.Instance.Play("Skid");
+            
+            
             inTurn = true;
             Turn = 1f;
             print(true);
@@ -135,19 +151,35 @@ public class CarControllerSnap : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             if (_gameManager.pause._isPaused) return;
+            if (!inGas) return;
             currentSnap--;
             if (currentSnap < 0)
             {
                 currentSnap = 0;
             }
-            //anim.Play("Jeep_Left");
-            AudioManager.Instance.Play("Skid");
+            else
+                AudioManager.Instance.Play("Skid");
+            
+            
             inTurn = true;
             Turn = -1f;
             print(true);
         }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) { ps.Play(); }
-        //if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) { ps.Pause(); }
+
+        if (Turn!=0)
+        {
+            foreach (var trail in trails)
+            {
+                trail.emitting = true;
+            }
+        }
+        else
+        {
+            foreach (var trail in trails)
+            {
+                trail.emitting = false;
+            }
+        }
 
 
         //Game Manager checks if Jeep is active based on inGas variable
@@ -189,9 +221,12 @@ public class CarControllerSnap : MonoBehaviour
             rigidBody.MovePosition(Vector3.MoveTowards(transform.position,
                 new Vector3(snapLocations[currentSnap].position.x, transform.position.y, transform.position.z),
                speed*Time.fixedDeltaTime));
-            
+
             if(transform.position.x == snapLocations[currentSnap].position.x)
+            {
+                Turn = 0f;
                 inTurn = false;
+            }
         }
         
         // // Right Movement
