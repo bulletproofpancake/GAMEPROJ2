@@ -1471,8 +1471,8 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1552841734}
+  m_StandbyUpdate: 0
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1552841734}
   m_Lens:
     FieldOfView: 60

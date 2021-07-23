@@ -923,8 +923,8 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 2109321441}
+  m_StandbyUpdate: 0
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2109321441}
   m_Lens:
     FieldOfView: 60
@@ -1766,6 +1766,8 @@ MonoBehaviour:
   currentSnap: 0
   anim: {fileID: 0}
   ps: {fileID: 0}
+  trails: []
+  _collider: {fileID: 0}
   Turn: 0
   inGas: 0
   inTurn: 0
