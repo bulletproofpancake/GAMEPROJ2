@@ -33,6 +33,7 @@ public class CarControllerSnap : MonoBehaviour
     public Animator anim;
     public ParticleSystem ps;
     public TrailRenderer[] trails;
+    public BoxCollider _collider;
 
     #endregion
 
@@ -62,10 +63,10 @@ public class CarControllerSnap : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
         rigidBody = GetComponent<Rigidbody>();
         _customerManager = FindObjectOfType<CustomerManagerPayment>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         ps = GetComponentInChildren<ParticleSystem>();
         trails = GetComponentsInChildren<TrailRenderer>();
-        
+        _collider = GetComponentInChildren<BoxCollider>();
         //Speed Set
         topspeed = TopSpeed;
         accel = Accel;

@@ -679,8 +679,11 @@ MonoBehaviour:
   - {fileID: 257245386}
   - {fileID: 1486648304}
   - {fileID: 264395677}
+  currentSnap: 0
   anim: {fileID: 0}
   ps: {fileID: 0}
+  trails: []
+  _collider: {fileID: 0}
   Turn: 0
   inGas: 0
   inTurn: 0
