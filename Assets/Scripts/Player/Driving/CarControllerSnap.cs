@@ -187,7 +187,7 @@ public class CarControllerSnap : MonoBehaviour
         //which is connected to Timeline State
         //_gameManager.isJeepActive = inGas;
         // Reset will turn false after the respawn is successful
-        inReset = inReset || Input.GetKeyDown(KeyCode.R);
+        // inReset = inReset || Input.GetKeyDown(KeyCode.R);
     }
 
     // Executing the queued inputs
