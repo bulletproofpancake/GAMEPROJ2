@@ -15,4 +15,4 @@ MonoBehaviour:
   cost: 400
   materialItem: {fileID: 2100000, guid: 340f7cad131164348a13435f70d2b512, type: 2}
   display: {fileID: 21300000, guid: c3c975d266a7cfa4393d3ec3c4c1882a, type: 3}
-  hasBeenBought: 0
+  hasBeenBought: 1
