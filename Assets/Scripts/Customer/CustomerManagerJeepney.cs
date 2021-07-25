@@ -27,12 +27,17 @@ namespace Customer
             {
                 _playerTransform = GameObject.FindWithTag("Player").transform;
                 _hasPlayer = true;
-                StartCoroutine(SpawnCustomers());
+                Invoke("StartSpawning", 1f);
             }
             else
             {
                 _hasPlayer = false;
             }
+        }
+
+        private void StartSpawning()
+        {
+            StartCoroutine(SpawnCustomers());
         }
 
         private void Update()
