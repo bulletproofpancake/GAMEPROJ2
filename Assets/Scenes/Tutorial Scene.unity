@@ -3009,6 +3009,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6693589679327369903, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.1999998
+      objectReference: {fileID: 0}
     - target: {fileID: 6808990452281035511, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3016,6 +3020,10 @@ PrefabInstance:
     - target: {fileID: 6808990452281035511, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
       propertyPath: m_RenderMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063753371040284533, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -29.59996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d930e06b63a724fa5e4ecbc5fbcb17, type: 3}
@@ -3033,7 +3041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stationCostMin: 5
   customerPaymentCap: 3
-  levelDuration: 120
+  levelDuration: 30
   hasGameStarted: 0
   passengersList: []
   timelineManager: {fileID: 0}
