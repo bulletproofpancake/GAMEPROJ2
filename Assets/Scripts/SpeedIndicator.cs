@@ -9,20 +9,26 @@ public class SpeedIndicator : Singleton<SpeedIndicator>
     public Image[] speed;
     private int index;
     //private float offset = 18.75f;
-    public void SpeedUp()
-    {
-        index++;
-        if (index <= 2)
-            indicator.transform.position = speed[index].transform.position + new Vector3(25f,25f);
-        else
-        {
-            index = 2;
-        }
-    }
+    // public void SpeedUp()
+    // {
+    //     index++;
+    //     if (index <= 2)
+    //         indicator.transform.position = speed[index].transform.position + new Vector3(25f,25f);
+    //     else
+    //     {
+    //         index = 2;
+    //     }
+    // }
+    //
+    // public void Stop()
+    // {
+    //     index = 0;
+    //     indicator.transform.position = speed[index].transform.position + new Vector3(25f,25f);
+    // }
 
-    public void Stop()
+    public void SetIndicator(float gear)
     {
-        index = 0;
-        indicator.transform.position = speed[index].transform.position + new Vector3(25f,25f);
+        indicator.transform.position = speed[(int)gear].transform.position + new Vector3(25f,25f);
     }
+    
 }

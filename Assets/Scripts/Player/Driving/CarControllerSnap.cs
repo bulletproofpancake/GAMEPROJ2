@@ -74,6 +74,8 @@ public class CarControllerSnap : MonoBehaviour
 
         currentSnap = 2;
 
+        gear = 0;
+        
         foreach (var trail in trails)
         {
             trail.emitting = false;
@@ -91,14 +93,14 @@ public class CarControllerSnap : MonoBehaviour
         anim.SetInteger("Turn", (int)Turn);
         if (_gameManager.isGameOver)
             inGas = false;
-        
+        SpeedIndicator.Instance.SetIndicator(gear);
         switch (inGas)
         {
             case true:
                 ps.Play();
                 break;
             case false:
-                SpeedIndicator.Instance.Stop();
+                //SpeedIndicator.Instance.Stop();
                 break;
         }
     }
@@ -120,14 +122,20 @@ public class CarControllerSnap : MonoBehaviour
             if (gear < 2)
             {gear++;}
             inGas = true;
-            SpeedIndicator.Instance.SpeedUp();
+            //SpeedIndicator.Instance.SpeedUp();
             GearSet();
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             if (gear > 0)
-            {gear = 0;}
-            inGas = false;
+            {
+                gear--;
+            }
+            if(gear == 0)
+            {
+                inGas = false;
+            }
+            
             GearSet();
         }
 
